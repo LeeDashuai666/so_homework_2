@@ -1,0 +1,146 @@
+{
+  "hot": {
+    "questions": 72,
+    "anls": 0.9087501555306706,
+    "em": 0.8888888888888888,
+    "mean_ttft_s": 0.21328911711111687,
+    "mean_e2e_s": 0.32370135149999946,
+    "ttft_s": {
+      "p50": 0.21429475249988172,
+      "p95": 0.2215894440509146,
+      "p99": 0.22561338793957478
+    },
+    "e2e_s": {
+      "p50": 0.3247902670000258,
+      "p95": 0.4487250569004573,
+      "p99": 0.4934069787590672
+    },
+    "total_e2e_s": 23.306497307999962,
+    "decode_steps": 446,
+    "decode_ms_per_token": 17.824396582958627,
+    "encoder_calls": 71,
+    "encoded_images": 71,
+    "graph_replays": 0,
+    "prefix_hit_requests": 0,
+    "cached_tokens": 0,
+    "input_tokens": 55707,
+    "output_tokens": 518,
+    "peak_allocated_bytes": 6200360960,
+    "peak_reserved_bytes": 6331301888,
+    "wall_elapsed_s": 23.50576435400035,
+    "diagnostics_before": {
+      "encoder_calls": 16,
+      "encoded_images": 16,
+      "graph_replays": 0,
+      "pixel_inputs": [],
+      "graph_callers": {},
+      "peak_allocated_bytes": 6200360960,
+      "peak_reserved_bytes": 6331301888
+    },
+    "diagnostics_after": {
+      "encoder_calls": 87,
+      "encoded_images": 87,
+      "graph_replays": 0,
+      "pixel_inputs": [],
+      "graph_callers": {},
+      "peak_allocated_bytes": 6200360960,
+      "peak_reserved_bytes": 6331301888
+    }
+  },
+  "session": {
+    "questions": 269,
+    "anls": 0.9195868683243775,
+    "em": 0.8513011152416357,
+    "mean_ttft_s": 0.13287112321186248,
+    "mean_e2e_s": 0.22982138369521046,
+    "ttft_s": {
+      "p50": 0.10501496300094004,
+      "p95": 0.2359937623994483,
+      "p99": 0.2556810122800379
+    },
+    "e2e_s": {
+      "p50": 0.22459776100004092,
+      "p95": 0.3628967460001149,
+      "p99": 0.4567584849990086
+    },
+    "total_e2e_s": 61.82195221401162,
+    "decode_steps": 1411,
+    "decode_ms_per_token": 18.483075882367547,
+    "encoder_calls": 64,
+    "encoded_images": 64,
+    "graph_replays": 0,
+    "prefix_hit_requests": 0,
+    "cached_tokens": 0,
+    "input_tokens": 206929,
+    "output_tokens": 1680,
+    "peak_allocated_bytes": 6200528896,
+    "peak_reserved_bytes": 6331301888,
+    "wall_elapsed_s": 62.06302431200129,
+    "diagnostics_before": {
+      "encoder_calls": 0,
+      "encoded_images": 0,
+      "graph_replays": 0,
+      "pixel_inputs": [],
+      "graph_callers": {},
+      "peak_allocated_bytes": 6110731776,
+      "peak_reserved_bytes": 6331301888
+    },
+    "diagnostics_after": {
+      "encoder_calls": 64,
+      "encoded_images": 64,
+      "graph_replays": 0,
+      "pixel_inputs": [],
+      "graph_callers": {},
+      "peak_allocated_bytes": 6200528896,
+      "peak_reserved_bytes": 6331301888
+    }
+  },
+  "unique": {
+    "questions": 64,
+    "anls": 0.9115451388888889,
+    "em": 0.859375,
+    "mean_ttft_s": 0.23881722196884425,
+    "mean_e2e_s": 0.3290520838281452,
+    "ttft_s": {
+      "p50": 0.2368843559997913,
+      "p95": 0.26191060835071767,
+      "p99": 0.3090167720711178
+    },
+    "e2e_s": {
+      "p50": 0.31428387349933473,
+      "p95": 0.44716248575059575,
+      "p99": 0.5292126568697311
+    },
+    "total_e2e_s": 21.059333365001294,
+    "decode_steps": 291,
+    "decode_ms_per_token": 19.84546790032736,
+    "encoder_calls": 64,
+    "encoded_images": 64,
+    "graph_replays": 0,
+    "prefix_hit_requests": 0,
+    "cached_tokens": 0,
+    "input_tokens": 49021,
+    "output_tokens": 355,
+    "peak_allocated_bytes": 6200528896,
+    "peak_reserved_bytes": 6331301888,
+    "wall_elapsed_s": 21.123213441998814,
+    "diagnostics_before": {
+      "encoder_calls": 0,
+      "encoded_images": 0,
+      "graph_replays": 0,
+      "pixel_inputs": [],
+      "graph_callers": {},
+      "peak_allocated_bytes": 6110731776,
+      "peak_reserved_bytes": 6331301888
+    },
+    "diagnostics_after": {
+      "encoder_calls": 64,
+      "encoded_images": 64,
+      "graph_replays": 0,
+      "pixel_inputs": [],
+      "graph_callers": {},
+      "peak_allocated_bytes": 6200528896,
+      "peak_reserved_bytes": 6331301888
+    }
+  }
+}

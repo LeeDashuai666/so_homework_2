@@ -1,0 +1,40 @@
+{
+  "recorded_at": "2026-11-15T23:28:56.636334+08:00",
+  "scope": "environment smoke only",
+  "checks": {
+    "model_cuda_graphs": {
+      "passed": true,
+      "details": {
+        "model": "BAAI/bge-reranker-base",
+        "dtype": "float16",
+        "attention_backend": "sdpa",
+        "graphs": [
+          {
+            "batch_size": 2,
+            "sequence_length": 64,
+            "max_abs_error": 0.0,
+            "updated_input_replays": 3,
+            "scores": [
+              1.236328125,
+              -10.1953125
+            ]
+          },
+          {
+            "batch_size": 2,
+            "sequence_length": 128,
+            "max_abs_error": 0.0,
+            "updated_input_replays": 3,
+            "scores": [
+              1.2333984375,
+              -10.1953125
+            ]
+          }
+        ],
+        "peak_allocated_bytes": 602579968,
+        "scope": "correctness and capability smoke; no performance claim"
+      },
+      "elapsed_seconds": 11.353376881000258
+    }
+  },
+  "passed": true
+}

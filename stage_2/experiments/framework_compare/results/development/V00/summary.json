@@ -1,0 +1,50 @@
+{
+  "quality": {
+    "questions": 282,
+    "anls": 0.8756271838545197,
+    "em": 0.8049645390070922,
+    "mean_ttft_s": 0.16444930683330816,
+    "mean_e2e_s": 0.2546757439893664,
+    "ttft_s": {
+      "p50": 0.10154988849990332,
+      "p95": 0.23472276164970934,
+      "p99": 0.4241437355896505
+    },
+    "e2e_s": {
+      "p50": 0.1971622545001992,
+      "p95": 0.4215950453995901,
+      "p99": 0.5885240021895788
+    },
+    "total_e2e_s": 71.81855980500131,
+    "decode_steps": 1474,
+    "decode_ms_per_token": 17.261774272732982,
+    "encoder_calls": 64,
+    "encoded_images": 64,
+    "graph_replays": 0,
+    "prefix_hit_requests": 0,
+    "cached_tokens": 0,
+    "input_tokens": 217571,
+    "output_tokens": 1756,
+    "peak_allocated_bytes": 6200360960,
+    "peak_reserved_bytes": 6331301888,
+    "wall_elapsed_s": 72.06047222800044,
+    "diagnostics_before": {
+      "encoder_calls": 0,
+      "encoded_images": 0,
+      "graph_replays": 0,
+      "pixel_inputs": [],
+      "graph_callers": {},
+      "peak_allocated_bytes": 6110730240,
+      "peak_reserved_bytes": 6331301888
+    },
+    "diagnostics_after": {
+      "encoder_calls": 64,
+      "encoded_images": 64,
+      "graph_replays": 0,
+      "pixel_inputs": [],
+      "graph_callers": {},
+      "peak_allocated_bytes": 6200360960,
+      "peak_reserved_bytes": 6331301888
+    }
+  }
+}

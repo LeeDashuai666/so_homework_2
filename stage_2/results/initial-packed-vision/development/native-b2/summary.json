@@ -1,0 +1,51 @@
+{
+  "arrivals": 192,
+  "completed": 192,
+  "rejected": 0,
+  "failed": 0,
+  "good_requests": 3,
+  "window_s": 79.18580785499944,
+  "goodput_qps": 0.037885576737354626,
+  "completed_qps": 2.424676911190696,
+  "slo_attainment": 0.015625,
+  "ttft_s": {
+    "p50": 38.626913452000736,
+    "p95": 75.06005474499943,
+    "p99": 78.05982651600061
+  },
+  "latency_s": {
+    "p50": 38.86483448800027,
+    "p95": 75.18836986094948,
+    "p99": 78.24990916393948
+  },
+  "queue_s": {
+    "p50": 11.739930015000027,
+    "p95": 13.529905617249096,
+    "p99": 13.688493409910006
+  },
+  "sender_lag_s": {
+    "p50": 25.80812912950023,
+    "p95": 60.69783356199986,
+    "p99": 64.05649576579967
+  },
+  "anls": 0.8786170813259808,
+  "em": 0.8020833333333334,
+  "output_tokens": 1170,
+  "empty_answers": 0,
+  "variant": "B0",
+  "mode": "offline",
+  "measured_elapsed_s": 79.18580785499944,
+  "batch_count": 97,
+  "vision_images_encoded": 192,
+  "vision_s": 29.763391052246092,
+  "prefill_s": 22.4517958984375,
+  "preprocessing_s": 8.55907667399515,
+  "scheduling_s": 0.00609212400377146,
+  "batch_shared_images": 0,
+  "cache": {},
+  "peak_allocated_bytes": 4612533760,
+  "peak_reserved_bytes": 4672454656,
+  "cpu_rss_bytes": 2879332352,
+  "errors": [],
+  "recorded_at": "2026-11-16T12:49:40.140632+08:00"
+}

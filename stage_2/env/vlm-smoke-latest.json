@@ -1,0 +1,303 @@
+{
+  "recorded_at": "2026-11-16T11:16:28.264314+08:00",
+  "scope": "real-image environment and feature-interface smoke; no performance or full-dataset quality claim",
+  "config": {
+    "schema_version": 1,
+    "profile": "document-vqa-environment-smoke",
+    "model_path": "models/qwen3-vl-2b-instruct",
+    "dataset_path": "data/raw/docvqa-smoke",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "attention_backend": "sdpa",
+    "cpu_threads": 2,
+    "processor": {
+      "spatial_factor": 32,
+      "min_image_tokens": 128,
+      "max_image_tokens": 768,
+      "min_pixels": 131072,
+      "max_pixels": 786432,
+      "padding_side": "left",
+      "max_input_tokens": 2048
+    },
+    "generation": {
+      "do_sample": false,
+      "max_new_tokens": 64,
+      "use_cache": true
+    },
+    "smoke": {
+      "batch_sizes": [
+        1,
+        2
+      ],
+      "reserved_gpu_margin_mib": 768,
+      "prompt_suffix": "Answer with only the short answer, without explanation.",
+      "feature_atol": 0.0,
+      "feature_rtol": 0.0,
+      "logit_atol": 0.02,
+      "logit_rtol": 0.001
+    },
+    "note": "Environment starting configuration; no performance-optimality or dataset accuracy claim."
+  },
+  "checks": {
+    "pinned_assets_and_dependencies": {
+      "passed": true,
+      "details": {
+        "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+        "pages": 3,
+        "questions": 8,
+        "cuda": true,
+        "packages": {
+          "torch": "2.14.0+cu130",
+          "transformers": "5.17.0",
+          "torchvision": "0.29.0+cu130",
+          "pillow": "12.3.0",
+          "accelerate": "1.15.0",
+          "datasets": "5.1.0"
+        }
+      },
+      "elapsed_seconds": 0.0044255590000830125
+    },
+    "real_image_processor": {
+      "passed": true,
+      "details": {
+        "processor": "Qwen3VLProcessor",
+        "image_size_policy": {
+          "shortest_edge": 131072,
+          "longest_edge": 786432
+        },
+        "single": {
+          "input_lengths": [
+            770
+          ],
+          "visual_tokens": [
+            744
+          ],
+          "grid_thw": [
+            [
+              1,
+              62,
+              48
+            ]
+          ],
+          "pixel_shape": [
+            2976,
+            1536
+          ]
+        },
+        "batch2": {
+          "input_lengths": [
+            770,
+            764
+          ],
+          "visual_tokens": [
+            744,
+            736
+          ],
+          "grid_thw": [
+            [
+              1,
+              62,
+              48
+            ],
+            [
+              1,
+              64,
+              46
+            ]
+          ],
+          "pixel_shape": [
+            5920,
+            1536
+          ]
+        },
+        "same_page_key_equal": true,
+        "different_page_key_equal": false
+      },
+      "elapsed_seconds": 0.8958582969999043
+    },
+    "gpu_model_load": {
+      "passed": true,
+      "details": {
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "dtype": "torch.bfloat16",
+        "all_parameters_on_gpu": true,
+        "parameter_bytes": 4255064064,
+        "cpu_rss_bytes": 1055879168
+      },
+      "elapsed_seconds": 1.7769696209998074
+    },
+    "real_image_generation": {
+      "passed": true,
+      "details": {
+        "question_id": "24580",
+        "question": "What is name of university?",
+        "reference_answers": [
+          "university of california",
+          "University of California",
+          "university of california, san diego"
+        ],
+        "generated": {
+          "answers": [
+            "University of California, San Diego"
+          ],
+          "token_ids": [
+            [
+              30172,
+              315,
+              7043,
+              11,
+              5836,
+              18336,
+              151645
+            ]
+          ]
+        },
+        "vision_encoder_calls": 1,
+        "quality_scope": "answer inspection only; not an accuracy benchmark"
+      },
+      "elapsed_seconds": 3.468108932999712
+    },
+    "deepstack_feature_roundtrip_and_logits": {
+      "passed": true,
+      "details": {
+        "pooled_shapes": [
+          [
+            744,
+            2048
+          ]
+        ],
+        "deepstack_shapes": [
+          [
+            744,
+            2048
+          ],
+          [
+            744,
+            2048
+          ],
+          [
+            744,
+            2048
+          ]
+        ],
+        "cached_feature_bytes": 12189696,
+        "cpu_gpu_roundtrip_bitwise_equal": true,
+        "prefill_logits_max_abs_error": 0.0,
+        "replayed_vision_encoder_calls": 0,
+        "scope": "temporary diagnostic visual-boundary replacement, not a production cache"
+      },
+      "elapsed_seconds": 0.38392550099979417
+    },
+    "same_page_multiple_questions": {
+      "passed": true,
+      "details": {
+        "questions": [
+          {
+            "question_id": "24580",
+            "question": "What is name of university?",
+            "reference_answers": [
+              "university of california",
+              "University of California",
+              "university of california, san diego"
+            ],
+            "generated": {
+              "answers": [
+                "University of California, San Diego"
+              ],
+              "token_ids": [
+                [
+                  30172,
+                  315,
+                  7043,
+                  11,
+                  5836,
+                  18336,
+                  151645
+                ]
+              ]
+            },
+            "generated_tokens_identical": true,
+            "replayed_vision_encoder_calls": 0
+          },
+          {
+            "question_id": "24581",
+            "question": "Where is the university located ?",
+            "reference_answers": [
+              "san diego",
+              "San Diego"
+            ],
+            "generated": {
+              "answers": [
+                "San Diego"
+              ],
+              "token_ids": [
+                [
+                  23729,
+                  18336,
+                  151645
+                ]
+              ]
+            },
+            "generated_tokens_identical": true,
+            "replayed_vision_encoder_calls": 0
+          }
+        ],
+        "language_kv_reused_between_questions": false
+      },
+      "elapsed_seconds": 0.8932685319996381
+    },
+    "different_page_cache_miss": {
+      "passed": true,
+      "details": {
+        "question_id": "57349",
+        "page_id": "4733",
+        "generated": {
+          "answers": [
+            "ITC Limited"
+          ],
+          "token_ids": [
+            [
+              952,
+              34,
+              18905,
+              151645
+            ]
+          ]
+        },
+        "vision_encoder_calls": 1,
+        "cache_miss_correct": true
+      },
+      "elapsed_seconds": 0.35357193799973174
+    },
+    "batch_two_generation": {
+      "passed": true,
+      "details": {
+        "batch_size": 2,
+        "answers": [
+          "University of California, San Diego",
+          "ITC Limited"
+        ],
+        "page_ids": [
+          "7027",
+          "4733"
+        ]
+      },
+      "elapsed_seconds": 0.7776135469994188
+    },
+    "gpu_memory_margin": {
+      "passed": true,
+      "details": {
+        "device_total_bytes": 8585216000,
+        "free_after_smoke_bytes": 2686451712,
+        "peak_allocated_bytes": 4674918400,
+        "peak_reserved_bytes": 4722786304,
+        "free_before_model_bytes": 7440695296,
+        "required_margin_bytes": 805306368,
+        "cpu_rss_bytes": 2071556096,
+        "scope": "observed batch-1/2 samples at the configured image budget; not an arbitrary-input guarantee"
+      },
+      "elapsed_seconds": 0.0005321110002114438
+    }
+  },
+  "passed": true
+}

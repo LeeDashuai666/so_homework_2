@@ -1,0 +1,34 @@
+{
+  "checked_on": "2026-11-16",
+  "topic": "same_page_multiple_questions_document_vqa",
+  "candidate_model": {
+    "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision_candidate": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "weight_files": [
+      {
+        "name": "model.safetensors",
+        "bytes": 4255140312
+      }
+    ],
+    "metadata_checked": true,
+    "weights_downloaded": false,
+    "inference_tested": false,
+    "fits_8gb_verified": false
+  },
+  "software": {
+    "transformers": "5.17.0",
+    "qwen3_vl_class_import_passed": true,
+    "auto_processor_import_passed": true,
+    "local_modeling_source_sha256": "e96511fa034bd734fa06639611bc6cbdf1da12d02104785a9bc265baa764af8a",
+    "visual_cache_requires_deepstack_outputs": true
+  },
+  "data": {
+    "candidate": "DocVQA",
+    "downloaded": false,
+    "local_counts_verified": false,
+    "primary_source": "https://www.docvqa.org/datasets/docvqa"
+  },
+  "scope": "metadata, local imports and source inspection only; no VLM inference or performance results",
+  "historical_topic_selection_audit": true,
+  "current_environment_record": "../env/vlm-environment.json"
+}

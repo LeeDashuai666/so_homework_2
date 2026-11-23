@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "threshold": -0.005,
+  "variants": {
+    "NATIVE": {
+      "anls_delta_vs_native": 0.0,
+      "identical_tokens_vs_native": 282
+    },
+    "VISUAL_HF": {
+      "anls_delta_vs_native": 0.0,
+      "identical_tokens_vs_native": 282
+    },
+    "STATIC_EAGER": {
+      "anls_delta_vs_native": 0.0035460992907802025,
+      "identical_tokens_vs_native": 280
+    },
+    "PREFIX": {
+      "anls_delta_vs_native": 0.003223726627981982,
+      "identical_tokens_vs_native": 278
+    },
+    "GRAPH": {
+      "anls_delta_vs_native": 0.0035460992907802025,
+      "identical_tokens_vs_native": 280
+    },
+    "BOTH": {
+      "anls_delta_vs_native": 0.003223726627981982,
+      "identical_tokens_vs_native": 278
+    }
+  }
+}

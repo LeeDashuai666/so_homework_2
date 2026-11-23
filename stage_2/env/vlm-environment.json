@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-11-16T11:18:46.302133+08:00",
+  "profile": "document_vqa",
+  "ready": true,
+  "environment_smoke_checks_passed": 9,
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "runtime_config_sha256": "d8f5637cc02e65a02d7b5ebb044baff5bdae332acfba8adb303aaab83a4091cc",
+  "dtype": "bfloat16",
+  "attention_backend": "sdpa",
+  "tested_batch_sizes": [
+    1,
+    2
+  ],
+  "configured_max_image_tokens_per_image": 768,
+  "observed_visual_tokens": [
+    744,
+    736
+  ],
+  "peak_allocated_gib": 4.353857040405273,
+  "peak_reserved_gib": 4.3984375,
+  "free_after_smoke_gib": 2.501953125,
+  "docvqa_sample_pages": 3,
+  "docvqa_sample_questions": 8,
+  "full_evaluation_dataset_prepared": false,
+  "new_package_installs_required": 0,
+  "base_package_count_unchanged": 98,
+  "formal_performance_experiments_executed": false,
+  "production_visual_cache_or_scheduler_implemented": false
+}

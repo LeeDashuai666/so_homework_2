@@ -1,0 +1,86 @@
+{
+  "NATIVE": {
+    "questions": 282,
+    "anls": 0.8636300920701938,
+    "em": 0.8049645390070922,
+    "sum_generation_s": 136.99101126401,
+    "ttft_s": {
+      "p50": 0.2619935694983724,
+      "p95": 0.2797622074027458,
+      "p99": 0.2824283176091194
+    },
+    "measured_total_s_including_common_preprocessing": 159.2506250610022,
+    "prefix_hits": 0,
+    "peak_allocated_bytes": 4594682368
+  },
+  "VISUAL_HF": {
+    "questions": 282,
+    "anls": 0.8636300920701938,
+    "em": 0.8049645390070922,
+    "sum_generation_s": 108.10213078798552,
+    "ttft_s": {
+      "p50": 0.12288253249971604,
+      "p95": 0.27664316735044847,
+      "p99": 0.2870160544203827
+    },
+    "measured_total_s_including_common_preprocessing": 130.22486517500147,
+    "prefix_hits": 0,
+    "peak_allocated_bytes": 5375718912
+  },
+  "STATIC_EAGER": {
+    "questions": 282,
+    "anls": 0.867176191360974,
+    "em": 0.8085106382978723,
+    "sum_generation_s": 107.55904716800796,
+    "ttft_s": {
+      "p50": 0.11247157349862391,
+      "p95": 0.25955588625020026,
+      "p99": 0.26529987810183225
+    },
+    "measured_total_s_including_common_preprocessing": 128.84438175700052,
+    "prefix_hits": 0,
+    "peak_allocated_bytes": 5361988608
+  },
+  "PREFIX": {
+    "questions": 282,
+    "anls": 0.8668538186981758,
+    "em": 0.8049645390070922,
+    "sum_generation_s": 102.49091922597654,
+    "ttft_s": {
+      "p50": 0.05616965599983814,
+      "p95": 0.3071411105493098,
+      "p99": 0.323293632877685
+    },
+    "measured_total_s_including_common_preprocessing": 122.57818675399903,
+    "prefix_hits": 218,
+    "peak_allocated_bytes": 6136898560
+  },
+  "GRAPH": {
+    "questions": 282,
+    "anls": 0.867176191360974,
+    "em": 0.8085106382978723,
+    "sum_generation_s": 65.62186209602078,
+    "ttft_s": {
+      "p50": 0.11122429799979727,
+      "p95": 0.25693064799797866,
+      "p99": 0.26415376490156633
+    },
+    "measured_total_s_including_common_preprocessing": 84.92768820700076,
+    "prefix_hits": 0,
+    "peak_allocated_bytes": 5361894400
+  },
+  "BOTH": {
+    "questions": 282,
+    "anls": 0.8668538186981758,
+    "em": 0.8049645390070922,
+    "sum_generation_s": 55.80945706504281,
+    "ttft_s": {
+      "p50": 0.05402742000114813,
+      "p95": 0.29589139674972104,
+      "p99": 0.3082087341379156
+    },
+    "measured_total_s_including_common_preprocessing": 75.45884659399962,
+    "prefix_hits": 218,
+    "peak_allocated_bytes": 6134514688
+  }
+}

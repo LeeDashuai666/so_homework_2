@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "/home/lxy18/system_homework/stage_2/.venv/bin/python",
+    "-u",
+    "/home/lxy18/system_homework/stage_2/experiments/framework_compare/run_engine.py",
+    "--variant",
+    "P",
+    "--phase",
+    "development",
+    "--seed",
+    "4101",
+    "--options",
+    "/home/lxy18/system_homework/stage_2/experiments/framework_compare/options-candidate.json",
+    "--output",
+    "/home/lxy18/system_homework/stage_2/experiments/framework_compare/results/development/P"
+  ],
+  "variant": "P",
+  "phase": "development",
+  "seed": 4101,
+  "returncode": 0,
+  "elapsed_s": 85.0988116210001,
+  "output": "/home/lxy18/system_homework/stage_2/experiments/framework_compare/results/development/P",
+  "log": "/home/lxy18/system_homework/stage_2/experiments/framework_compare/results/development/P.log"
+}

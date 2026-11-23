@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="zh-CN"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>多模态推理项目计划</title><style>body{max-width:1060px;margin:44px auto;padding:0 30px;color:#253044;font:16px/1.85 system-ui,'Noto Sans CJK SC','Microsoft YaHei',sans-serif}h1{font-size:30px;line-height:1.45}h2{margin-top:38px;border-bottom:1px solid #d9dee7;padding-bottom:6px}h3{margin-top:28px}a{color:#286a9e}table{border-collapse:collapse;font-size:14px;display:block;overflow-x:auto;margin:20px 0}th,td{padding:8px 13px;border:1px solid #dae0e9}th{background:#f1f4f8}img{max-width:100%}code{background:#f2f4f7;padding:2px 5px;border-radius:3px}pre{background:#f2f4f7;padding:16px;overflow:auto}pre code{padding:0}blockquote{border-left:3px solid #a1adc2;padding-left:18px;color:#526078}@media print{body{max-width:none;margin:0;font-size:11pt}pre,table,figure,img{break-inside:avoid}h2,h3{break-after:avoid}a{color:inherit}}</style><body><h1>面向同页多问的文档视觉问答推理优化</h1>
+<p>版本：v3.2（统一视觉执行后重新冻结） · 日期：2026-11-16 · 当前选题：多模态推理系统优化</p>
+<p><strong>推荐题目：面向小显存 GPU 的文档视觉问答推理优化——视觉特征复用、图像亲和调度与 GPU/CPU 缓存管理。</strong></p>
+<p>应用场景是本地文档助手：用户对同一张扫描文档、表格或票据提出不同问题，视觉语言模型读取图像与问题，生成答案。核心研究问题是：<strong>同一页面被多次询问时，如何避免重复视觉编码，并在 8GB GPU 上协调缓存、推理批次和生成期间的显存需求，降低首 token 延迟与完整回答延迟。</strong></p>
+<p>当前 VLM 环境已就绪，固定模型权重和 3 页 8 问的 DocVQA 小样本已准备，9 项多模态环境验收通过。BF16/SDPA、每图最多 768 视觉 token 的 batch=1/2 实测峰值 reserved 约 4.40 GiB；同页两问的完整视觉特征复用对照通过。已导出源文档互斥的开发集 64 页 282 问和评估集 128 页 558 问，生产缓存、调度和两级管理已实现，当前正在执行开发校准及锁定后的正式实验。最终状态与实测结论以 <a href="../report/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A.md">研究报告</a> 为准。<a href="../env/VLM%E7%8E%AF%E5%A2%83%E8%AF%B4%E6%98%8E.md">环境与验收</a>。</p>
+<h2>1. 为什么选这个主题</h2>
+<p>输入同时包含页面图像和自然语言问题，输出是生成式答案，覆盖视觉编码、跨模态特征注入、语言模型 prefill 与 decode。优化直接落在这些真实推理阶段。</p>
+<p>“同页多问”有公开数据支撑：DocVQA 官方介绍约 5 万个问题和 1.2 万张文档图像，问题和答案由人工标注。<a href="https://www.docvqa.org/datasets/docvqa">DocVQA 官方说明</a>。可以保留同一图像的不同真实问题构造会话，避免人为改写问题制造复用。</p>
+<p>选题辨识度来自具体工作负载和约束：消费级 GPU、同页多个不同问题、视觉特征复用与生成显存竞争。不承诺基础缓存概念首次提出；相关工作已有多模态缓存和阶段调度，项目需要通过独立机制与本机实验建立贡献。</p>
+<h2>2. 三项优化与课程层次</h2>
+<table>
+<thead>
+<tr>
+<th>优化项</th>
+<th>层次</th>
+<th>具体工作</th>
+<th>独立证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O1：视觉特征精确复用</td>
+<td>模型推理计算图层</td>
+<td>对相同页面复用视觉编码结果，避免重复执行 ViT</td>
+<td>相同问题与生成配置下，视觉编码调用数、TTFT、答案一致性</td>
+</tr>
+<tr>
+<td>O2：图像亲和与视觉代价感知调度</td>
+<td>服务与运行时层</td>
+<td>在有界等待内优先处理可共享图像特征的请求，并按真实视觉/文本 token 代价组批</td>
+<td>相同缓存和预算下，缓存复用、排队、TTFT 与 goodput</td>
+</tr>
+<tr>
+<td>O3：受限 GPU/CPU 特征存储管理</td>
+<td>GPU/CPU 存储管理层</td>
+<td>根据特征大小、重编码代价和复访情况管理 GPU/CPU 缓存，为当前推理工作区与 KV 留出空间</td>
+<td>同资源上限下的命中率、搬运、显存、准入与性能曲线</td>
+</tr>
+</tbody>
+</table>
+<p>三项都服务于“图像编码如何有效复用并转化成回答延迟收益”。CPU 线程、图片解码、模型精度和 HTTP 框架使用统一公共配置；量化、动态降分辨率、视觉 token 丢弃不进入本轮主线。</p>
+<h2>3. 模型与本机可行性</h2>
+<p>主模型建议使用 <a href="https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct"><code>Qwen/Qwen3-VL-2B-Instruct</code></a>。本次查询的候选 revision 为 <code>89644892e4d85e24eaac8bacfd4f463576704203</code>，单个 safetensors 文件大小为 4,255,140,312 bytes；这是仓库元数据，不是实测 GPU 占用。</p>
+<p>本地已具备 PyTorch 2.14.0+cu130、Transformers 5.17.0、torchvision、Pillow、Accelerate、Profiler、perf 和 Z3；项目 <code>.venv</code> 与已有推理环境继续复用。模型已用固定 revision 完成真实图像生成与特征接口验证，没有升级或新增软件包。</p>
+<p>初始使用半精度、单模型、batch=1、短答案；processor 显式限制视觉 token 预算，再逐步检查 batch=2。所有对照固定同一图像预处理、有效像素、视觉 token、prompt 和生成参数。配置上限由显存与基线质量校准决定，不能把约 4.26GB 的权重文件大小当成整个服务的峰值显存。</p>
+<p>第一阶段必须测清：图片预处理、视觉编码、prefill、decode、峰值显存及 CPU RSS。视觉 token 上限和图像分辨率用于选择所有对照共有的运行配置，不作为降低质量换速度的优化项。</p>
+<h2>4. 数据与真实负载</h2>
+<h3>4.1 主数据</h3>
+<p>使用 Single Document DocVQA 的有答案数据，保留图像、页面 ID、文档 ID、问题和参考答案。可核查的公开镜像为 <a href="https://huggingface.co/datasets/lmms-lab-encoder/DocVQA">LMMs-Lab 的 DocVQA</a>，页面展示了同一文档图像对应多个不同问题。</p>
+<p>官方原始下载入口可能需要注册；实施时选择可获取的数据来源，记录上游来源、镜像 revision、文件哈希和使用条件。若使用 validation 自行划分开发/评测集，应明确标为自划分，不冒称官方隐藏 test 成绩。</p>
+<p>按源文档分组划分开发与评测，检查页面像素哈希，避免同一页面或近重复扫描跨集合。初始可取约 64 页开发、128 页评测，保留这些页面全部已有问题；实际规模和问题/页面比例在下载后冻结。不能只留下重复最多或回答最容易的页面。</p>
+<h3>4.2 会话与到达顺序</h3>
+<p>一条请求是“一张页面 + 一个真实问题”，不同问题独立回答，避免把上一条生成答案加入下一条输入而改变任务。</p>
+<p>主顺序固定为全局问题随机，辅助设置同页会话连续和 16 页会话交错。各方法复用相同请求与到达时刻。页面会话顺序和时间间隔属于合成负载，明确标注，不宣称生产日志。</p>
+<p>额外设置“每页只问一次”的冷复用控制组，检查缓存开销；禁止开启最终答案缓存。既报告页面复用的理论上限，也报告实际命中和重编码次数。</p>
+<h2>5. O1：视觉特征精确复用</h2>
+<p>在固定预处理与模型下，视觉编码器的输出只依赖图像及图像配置，不依赖本轮问题文本。因此可缓存模型视觉分支的完整结果，在下一次同页提问时直接注入正常多模态推理路径。</p>
+<p>本机 Transformers 5.17.0 的 Qwen3-VL 源码表明，<code>get_image_features</code> 返回内容包含主视觉特征和 DeepStack 特征。缓存需要保留完整的相关视觉输出、形状元数据和 <code>image_grid_thw</code>；不能只缓存最后一层特征而遗漏 DeepStack。<a href="https://huggingface.co/docs/transformers/model_doc/qwen3_vl">Qwen3-VL 架构文档</a>。</p>
+<p>缓存键至少包含：规范化图像像素哈希、尺寸/grid、processor 配置与 revision、模型 revision、精度及视觉后端。路径或文件名不足以作为正确身份标识。相同页面用不同分辨率处理时应视为不同条目。</p>
+<p>每条问题的文本、placeholder、attention mask、位置编码和语言模型 prefill 正常重算。<strong>同一图像不意味着不同问题的语言模型 KV 相同</strong>；本项目不直接跨问题复制整段 KV。生成期间的普通 KV 仅服务于当前请求。</p>
+<p>首版先在 batch=1 实现缓存关闭与命中的正确性，再处理多个页面和同页多个请求的特征拼接。对同页并发 miss 使用 single-flight：一个编码任务完成后唤醒等待者，避免重复编码；等待规则和超时必须记账。</p>
+<p>验证内容包括完整特征与 DeepStack 的形状/数值、GPU↔CPU 往返、同图不同问题、同问题不同图、模型/预处理变化失效，以及连续请求结果归属。先证明计算没有被错误省略，再开展性能实验。</p>
+<h2>6. O2：图像亲和与视觉代价感知调度</h2>
+<p>FIFO 可能在缓存尚未产生或刚被淘汰时分散同页请求；无限等待同页请求又会增加尾延迟。O2 在只看已到达请求的有界窗口中选择下一批。</p>
+<p>状态包括页面身份、GPU/CPU/miss 缓存状态、预计视觉 token 数、文本长度、到达与截止时刻。先按等待年龄保护最老请求，再比较候选批次的预计首 token 成本和可复用视觉编码成本。</p>
+<p>代价区分三条路径：GPU 特征命中、CPU 特征命中后搬运、未命中后重新编码。组批同时约束总视觉 token、文本长度与显存可行性。初始只探测 batch=1/2，最大组批等待从 0/2/5ms 中校准，不建设完整的连续批处理引擎。</p>
+<p>同页分组共享视觉特征，但每个问题都执行正常 prefill 和生成。decode 初始为普通静态小批次，不为了研究调度而同时引入 speculative decoding 或跨请求 KV 前缀缓存。</p>
+<p>独立消融保持 O1 缓存策略、容量、模型和 prompt 相同，比较 FIFO 与 O2；观察视觉编码次数、缓存有效复用、排队时间、TTFT、完整回答延迟及长等待请求，而非只看缓存命中率。</p>
+<h2>7. O3：受限 GPU/CPU 特征存储管理</h2>
+<p>视觉特征缓存、模型权重、视觉工作区、prefill 激活和正在生成的 KV 共享 GPU 显存。O3 在同一总资源上限下管理这些需求，不简单把空闲显存全部交给缓存。</p>
+<p>首版使用 GPU/CPU 两级精确特征缓存。GPU 缓存从 128/256/512 MiB、CPU 缓存从 256/512 MiB 开始做可行性检查，实际默认值在模型 smoke 后确定；为显示与外部波动留出明确余量。缓存保留完整 DeepStack，不能只按一份最后层 embedding 估算容量。</p>
+<p>基线是开发集调优的固定容量 LRU，加上对所有变体相同的基本 OOM 安全准入。优化策略依据实际特征字节数、视觉重编码时间、CPU 回搬代价和历史复访估计每字节收益；根据即将执行批次的工作区与 KV 需求，调整 GPU 缓存可用预算。</p>
+<p>首版使用可解释的收益/字节评分和 EMA 复访估计，不训练另一个决策网络。淘汰时可降级到 CPU；命中时复制完整特征，并在搬运事件结束前保持引用，防止被提前淘汰。CPU 回搬比重编码更慢时允许重新编码，但记录该决策。</p>
+<p>不能为优化策略提供未来请求信息。用相同页面总集、到达 trace、GPU/CPU 上限和基本准入边界，与固定 LRU 比较。报告 GPU 命中、CPU 命中、miss、重复编码、搬运字节、实际缓存占用、峰值显存、拒绝率与 TTFT。</p>
+<p>若开发负载的特征全部轻易放入 GPU，先用真实更大的工作集或预算敏感性检验管理价值，不通过故意制造不公平的 OOM 对照证明收益。</p>
+<h2>8. 测量、基线与正式实验</h2>
+<h3>8.1 阶段测量</h3>
+<p>正式实验前冻结 32 个原生无排队开发请求 p95 的两倍为 TTFT/完整回答 SLO；固定三种子区组随机顺序。所有缓存策略共用按批 KV/workspace 保护，O3 的独立作用是收益/字节准入淘汰。</p>
+<p>初版 packed BF16 视觉执行的 V1+S 在全量质量检查中下降 0.00585，未通过 0.005 门槛；初版全部原始结果与源码归档保留。最终对所有变体统一视觉 microbatch=1，保留语言 batch=2，严格特征与首步 logits 检查全通过后重新校准并冻结，质量门槛不变。</p>
+<p>统一记录排队、图像解码/预处理、哈希查找、视觉编码或缓存搬运、特征注入、LLM prefill、首 token、decode 和完整答案。CPU 使用单调时钟，GPU 使用 CUDA Events，短时 profiler 用于解释，正式计时关闭 profiler。</p>
+<p>首 token 必须以实际生成 token 可用为准，不把 <code>generate()</code> 提交返回或 prefill 启动当作首 token。记录输出 token 数、EOS、截断与错误，避免将答案变短误当作推理优化。</p>
+<p>主指标是 TTFT p50/p95 和满足 TTFT/完整回答 SLO 的请求 goodput，辅助看端到端 p95、视觉编码次数与显存。图像复用主要影响视觉阶段和 prefill 前路径，不直接承诺 decode 每 token 的同等加速。</p>
+<h3>8.2 对照</h3>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>特征复用</th>
+<th>调度</th>
+<th>缓存/显存策略</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B0</td>
+<td>关闭</td>
+<td>FIFO</td>
+<td>相同基础准入</td>
+<td>未修改模型路径的应用基线</td>
+</tr>
+<tr>
+<td>V1</td>
+<td>精确缓存</td>
+<td>FIFO</td>
+<td>固定 LRU</td>
+<td>O1 证据；也是后续强基线</td>
+</tr>
+<tr>
+<td>V1+S</td>
+<td>同 V1</td>
+<td>O2</td>
+<td>同 V1</td>
+<td>O2 证据</td>
+</tr>
+<tr>
+<td>V1+M</td>
+<td>同 V1</td>
+<td>FIFO</td>
+<td>O3</td>
+<td>O3 在相同调度下的证据</td>
+</tr>
+<tr>
+<td>FULL</td>
+<td>精确缓存</td>
+<td>O2</td>
+<td>O3</td>
+<td>最终协同方案</td>
+</tr>
+</tbody>
+</table>
+<p>图像解码、分词线程和已解码图像的公共缓存配置保持一致。O1 的主张是减少视觉编码，不把对照中人为重复的文件读取开销算作全部收益。每条请求仍执行生成，不使用最终答案缓存。</p>
+<p>初始主矩阵为 5 个变体、3 档到达率、3 个种子，共 45 个单元；到达率以开发集 V1 的容量校准，先取 50%/80%/110%。会话顺序、冷复用和缓存预算作为预登记的 18 个辅助单元：6 个预算、9 个次序、3 个冷页面对照。次序实验先固定同一组 192 个真实问题，再重排为会话/交错/随机顺序；所有 trace 在正式评估前冻结。</p>
+<p>每个单元独立进程，固定预热规则，观测 60 秒并 drain（最多 30 秒）；每轮至少 8 个开发预热请求且预热不少于 5 秒；允许保留同一轮请求自然填入的缓存，但正式冷启动与预热缓存实验分开标记。所有变体使用同一缓存初始化规则，不能只预填优化方案的测试特征。</p>
+<h3>8.3 质量与统计</h3>
+<p>质量采用 DocVQA 的 ANLS 和 EM，保存原始答案与统一规范化；prompt 固定为短答案要求，greedy 解码，初始 <code>max_new_tokens=64</code>，具体参数在开发集冻结。质量来自真实问题的正常 EOS 输出；固定解码步数的性能诊断另行标记。</p>
+<p>缓存前后分别检查视觉特征、首步 logits、生成 token 一致率及 ANLS/EM。固定视觉编码批次检查完整张量和 CPU/GPU 往返的严格一致性。开发诊断已观察到原生 BF16 单图/双图视觉编码也会产生舍入差异；去重改变视觉批次时记录数值差异，并以全量质量门槛约束，而不声称跨批次逐位相同。初始质量门槛为 ANLS 绝对下降不超过 0.005，正式前在开发集冻结，不在测试后放宽。</p>
+<p>保留计划/实际到达、拒绝、超时、完成、输入规模与输出长度。goodput 分母用固定窗口时长，拒绝计入失败；分位数与失败率并列报告。以独立运行和时间块处理不确定性，样本不足时不报告稳定 p99。</p>
+<h2>9. 当前环境如何迁移</h2>
+<p>继续使用现有 <code>stage_2/.venv</code>、驱动、PyTorch、Transformers、torchvision、Pillow、数据分析和性能工具，不重新构建 LLVM、CUDA 或大容器。新主题先走 Transformers 原生图像 processor；是否需要额外工具包由实际加载路径决定。</p>
+<p>Qwen3-VL 权重、processor/tokenizer 配套文件与 DocVQA 小样本已经按固定 revision 和白名单准备，保存在共享缓存与项目样本目录。正式数据已固定为原始 validation 六分片中的文档互斥自划分；环境小样本只用于环境验收。</p>
+<p>现有 <code>run.sh prepare/smoke</code> 已迁移为 <code>prepare-vlm/smoke-vlm</code> 的别名，增加了独立 VLM 资产锁、运行配置和 <code>ask-vlm</code> 示例；旧 BGE/SciFact 入口明确命名为 <code>prepare-rerank/smoke-rerank</code>。环境中已有临时视觉边界替换的诊断，用于验证完整特征、跨问题与跨页面行为，不是生产缓存实现。</p>
+<h2>10. 十日实施安排与阶段判断</h2>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>内容</th>
+<th>阶段产物</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>下载固定资产，batch=1 的真实页面问答，分阶段 profile 与显存检查</td>
+<td>VLM smoke、基线答案、阶段占比</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>按文档划分数据，固定问题会话、质量配置、SLO 与负载 trace</td>
+<td>数据/协议清单与开发基线</td>
+</tr>
+<tr>
+<td>D3–D4</td>
+<td>O1 完整特征缓存、DeepStack、失效与 single-flight</td>
+<td>缓存正确性、B0/V1 对照</td>
+</tr>
+<tr>
+<td>D5</td>
+<td>O2 有界亲和调度与 token 预算</td>
+<td>FIFO/O2、等待与首 token 日志</td>
+</tr>
+<tr>
+<td>D6</td>
+<td>O3 两级缓存、预算、淘汰与引用保护</td>
+<td>同资源 LRU/O3 对照</td>
+</tr>
+<tr>
+<td>D7–D8</td>
+<td>三项独立/组合实验、冷复用与预算敏感性</td>
+<td>原始数据、质量和显存曲线</td>
+</tr>
+<tr>
+<td>D9</td>
+<td>自动化、必要补测；有余力做 Z3 状态模型</td>
+<td>一键管线与验证记录</td>
+</tr>
+<tr>
+<td>D10</td>
+<td>报告、图表、数据清单与复现</td>
+<td>完整提交包</td>
+</tr>
+</tbody>
+</table>
+<p>首日重点验证：模型在统一图像预算下能稳定运行、基线答案有可评估质量、视觉编码在 TTFT 中有值得研究的占比。若原生 2B 路径显存不足，先降低所有对照共有的并发和合理输入上限；仍不可行时才评估更小 VLM，并在正式实验前固定主模型。不得在最终表格混用模型或精度。</p>
+<p>若视觉编码占比低，报告各阶段的 Amdahl 上限，再决定工作负载范围与调度投入；不预先承诺倍数收益。若是缓存、调度或内存管理造成质量变化，优先修复正确性后再测性能。</p>
+<h2>11. 课程成果与形式化验证</h2>
+<p>交付报告、三个模块的源代码、版本/模型/数据锁、原始与结果数据、阶段 trace、质量报告、复现脚本和 AI 辅助说明。主图建议为阶段耗时、TTFT-goodput、三项消融、缓存预算-显存-性能以及质量一致性。</p>
+<p>Z3 可验证有限模型中的缓存 key/版本失效、single-flight 唯一生产者、条目引用计数和搬运完成前不能释放的性质。形式模型不证明神经网络数值等价；实际特征与答案仍需执行验证。</p>
+<h2>12. 相关工作与定位</h2>
+<ul>
+<li><a href="https://huggingface.co/docs/transformers/model_doc/qwen3_vl">Qwen3-VL 模型与架构</a>：模型执行路径与 DeepStack；本地 5.17.0 源码用于确定实际接口。</li>
+<li><a href="https://www.docvqa.org/datasets/docvqa">DocVQA 官方任务</a>：真实图像与人工问题来源。</li>
+<li><a href="https://arxiv.org/abs/2507.10069">ElasticMM</a>：已有多模态阶段解耦、缓存与服务调度研究，作为机制比较对象。</li>
+<li><a href="https://arxiv.org/abs/2610.25136">VisMemo</a>：研究视觉 KV 的近似复用与分级管理；本项目先做相同页面的精确视觉编码复用，不把近似 KV 方法直接搬入课程工程。</li>
+</ul>
+<p>本项目的重点是单机小显存条件下的可实现机制、清晰测量与可复现证据，不将已有多模态缓存概念描述为首次提出。</p>
+</body></html>

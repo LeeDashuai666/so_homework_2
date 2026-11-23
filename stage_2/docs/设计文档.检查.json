@@ -1,0 +1,55 @@
+{
+  "reference_sha256": "e9b5063f87a44e71c3bc4b10894df6f69b54448bddf3aa6e920b6099f8d50dbe",
+  "reference_unchanged": true,
+  "source_sha256": "f536c432887eae5b58a5bb4785514901296ee91345b6359dc088351340bf5542",
+  "docx_sha256": "c178686800cb55b4ae607a85b42f70884bbba849704dba4428bd0398ee4fbdfb",
+  "paragraphs": 164,
+  "figures": 7,
+  "tables": 6,
+  "page_geometry_inherited": true,
+  "styles_inherited": true,
+  "source_scope": "第二轮开发验证与独立框架评估",
+  "pdf_sha256": "8faaae1c0e210ad2d099917709c2cb1500682d19f0d9a15e24adebdcfabd808c",
+  "pdf_pages": 14,
+  "pdf_text_matches_docx": true,
+  "pdf_text_normalization": "NFKC/whitespace; PDFium U+FFFE mapped to hyphen; page numbers removed",
+  "numerical_tables_match_audited_data": true,
+  "three_layer_structure_figure": "simplified three boxes",
+  "three_optimizations_described_separately": true,
+  "framework_comparison_status": "completed_24_starts_72_blocks_9720_requests",
+  "framework_analysis_sha256": "986248b4aae89fec16aa214c3cbf3ac14ae1f2f8943736c9cbc003ed5d977bdf",
+  "formal_quality_passed": true,
+  "first_round_frozen_sources_unchanged": true,
+  "visual_review_passed": true,
+  "visual_review": {
+    "contact_sheet_pages": 14,
+    "detail_pages": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "table6_and_figure7_readable": true,
+    "formal_section_readable": true,
+    "pdf_sha256": "8faaae1c0e210ad2d099917709c2cb1500682d19f0d9a15e24adebdcfabd808c",
+    "current_saved_word_edits_preserved": true,
+    "ai_cache_section_readable": true
+  },
+  "resaved_docx_previous_sha256": "ebf6459ae798687559d5c25a5313c38693ed273bd632c6a1a2f8c8a299aaf3a0",
+  "resaved_docx_revalidated": true,
+  "resaved_docx_checks": "Full Word/PDF text, all style formatting and page geometry, 7 source image hashes, tables and audited data; current Word preserved",
+  "styles_comparison": "Canonical XML, excluding qFormat quick-style gallery flags only",
+  "current_formal_verification": {
+    "safe_unsat": 9,
+    "negative_sat": 9,
+    "nonvacuity_sat_checks": 18,
+    "smt2_files": 36,
+    "summary_sha256": "d9193cfdd9690a96821e48ada82aec52dcd8217322226ebb689c951749e47fd8",
+    "runtime_source_unchanged": true
+  },
+  "ai_cache_selection": {
+    "summary_sha256": "17f365bb596bf0b41405663c1ee3b113489ad0459319093087f2c11860cd9460",
+    "pdf_section_page": 12,
+    "replay_from_archived_gpu_requests": true
+  }
+}

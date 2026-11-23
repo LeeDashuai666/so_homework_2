@@ -1,0 +1,13 @@
+{"offset_s": 4.900827286001004, "cpu_rss_bytes": 2347089920, "gpu_monitor_raw": "81, 2535, 84.88, 5675", "returncode": 0}
+{"offset_s": 10.059691375998227, "cpu_rss_bytes": 2375192576, "gpu_monitor_raw": "81, 2430, 78.77, 5853", "returncode": 0}
+{"offset_s": 15.135874375999265, "cpu_rss_bytes": 2357202944, "gpu_monitor_raw": "80, 2475, 82.98, 5953", "returncode": 0}
+{"offset_s": 20.23229624599844, "cpu_rss_bytes": 2357370880, "gpu_monitor_raw": "82, 2535, 49.21, 6117", "returncode": 0}
+{"offset_s": 25.339732078999077, "cpu_rss_bytes": 2420191232, "gpu_monitor_raw": "81, 2520, 56.71, 6133", "returncode": 0}
+{"offset_s": 30.401350846997957, "cpu_rss_bytes": 2543427584, "gpu_monitor_raw": "76, 2460, 86.49, 6137", "returncode": 0}
+{"offset_s": 35.460198094999214, "cpu_rss_bytes": 2611884032, "gpu_monitor_raw": "76, 2475, 47.45, 6153", "returncode": 0}
+{"offset_s": 40.53955771500114, "cpu_rss_bytes": 2651447296, "gpu_monitor_raw": "80, 2520, 46.60, 6153", "returncode": 0}
+{"offset_s": 45.66101780199824, "cpu_rss_bytes": 2788556800, "gpu_monitor_raw": "84, 2535, 49.30, 6157", "returncode": 0}
+{"offset_s": 50.7403539750012, "cpu_rss_bytes": 2825113600, "gpu_monitor_raw": "80, 2520, 48.07, 6153", "returncode": 0}
+{"offset_s": 55.84434485699967, "cpu_rss_bytes": 2843607040, "gpu_monitor_raw": "75, 2535, 57.38, 6157", "returncode": 0}
+{"offset_s": 60.98585070400077, "cpu_rss_bytes": 2843492352, "gpu_monitor_raw": "84, 2415, 95.12, 6157", "returncode": 0}
+{"offset_s": 66.04306486399946, "cpu_rss_bytes": 2843549696, "gpu_monitor_raw": "82, 2505, 89.81, 6153", "returncode": 0}

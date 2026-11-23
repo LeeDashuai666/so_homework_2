@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "variant": "V11E",
+  "scenarios": [
+    "hot",
+    "session",
+    "unique"
+  ]
+}

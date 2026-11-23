@@ -1,0 +1,4 @@
+79582789,,cycles:u,24031657,100.00,,
+263664719,,instructions:u,24031657,100.00,3.31,insn per cycle
+57965167,,branches:u,24031657,100.00,,
+334982,,branch-misses:u,24031657,100.00,0.58,of all branches

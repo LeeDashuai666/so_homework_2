@@ -1,0 +1,9 @@
+.venv/
+.cache/
+models/
+/data/raw/*
+!/data/raw/docvqa-smoke/
+env/wheelhouse/
+__pycache__/
+*.pyc
+/logs/

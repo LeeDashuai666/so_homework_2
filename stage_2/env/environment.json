@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-11-16T11:11:30.948039+08:00",
+  "mode": "project overlay with a referenced, unchanged base site-packages",
+  "project_python": "/home/lxy18/system_homework/stage_2/.venv/bin/python",
+  "base_python": "/home/lxy18/venvs/infer/bin/python3",
+  "base_site_packages": "/home/lxy18/venvs/infer/lib/python3.12/site-packages",
+  "python_version": [
+    3,
+    12,
+    3
+  ],
+  "base_package_count": 98,
+  "base_versions_verified": true,
+  "profile": "vlm",
+  "extra_requirements": "/home/lxy18/system_homework/stage_2/env/extra-requirements.lock",
+  "note": "Keep the referenced base environment; the project venv is not self-contained."
+}

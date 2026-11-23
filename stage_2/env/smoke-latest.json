@@ -1,0 +1,191 @@
+{
+  "recorded_at": "2026-11-15T23:30:13.520960+08:00",
+  "scope": "environment smoke only",
+  "checks": {
+    "dependencies": {
+      "passed": true,
+      "details": {
+        "torch": {
+          "version": "2.14.0+cu130",
+          "path": "/home/lxy18/venvs/infer/lib/python3.12/site-packages/torch/__init__.py"
+        },
+        "transformers": {
+          "version": "5.17.0",
+          "path": "/home/lxy18/venvs/infer/lib/python3.12/site-packages/transformers/__init__.py"
+        },
+        "triton": {
+          "version": "3.8.0",
+          "path": "/home/lxy18/venvs/infer/lib/python3.12/site-packages/triton/__init__.py"
+        },
+        "sentence-transformers": {
+          "version": "6.3.0",
+          "path": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages/sentence_transformers/__init__.py"
+        },
+        "datasets": {
+          "version": "5.1.0",
+          "path": "/home/lxy18/venvs/infer/lib/python3.12/site-packages/datasets/__init__.py"
+        },
+        "numpy": {
+          "version": "2.5.2",
+          "path": "/home/lxy18/venvs/infer/lib/python3.12/site-packages/numpy/__init__.py"
+        },
+        "pandas": {
+          "version": "3.0.6",
+          "path": "/home/lxy18/venvs/infer/lib/python3.12/site-packages/pandas/__init__.py"
+        },
+        "matplotlib": {
+          "version": "3.11.2",
+          "path": "/home/lxy18/venvs/infer/lib/python3.12/site-packages/matplotlib/__init__.py"
+        },
+        "scipy": {
+          "version": "1.18.1",
+          "path": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages/scipy/__init__.py"
+        },
+        "scikit-learn": {
+          "version": "1.9.1",
+          "path": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages/sklearn/__init__.py"
+        },
+        "sentencepiece": {
+          "version": "0.2.3",
+          "path": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages/sentencepiece/__init__.py"
+        },
+        "fastapi": {
+          "version": "0.163.1",
+          "path": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages/fastapi/__init__.py"
+        },
+        "uvicorn": {
+          "version": "0.54.0",
+          "path": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages/uvicorn/__init__.py"
+        },
+        "rank-bm25": {
+          "version": "0.2.2",
+          "path": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages/rank_bm25.py"
+        },
+        "z3-solver": {
+          "version": "5.4.1.0",
+          "path": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages/z3/__init__.py"
+        },
+        "safetensors": {
+          "version": "0.8.0",
+          "path": "/home/lxy18/venvs/infer/lib/python3.12/site-packages/safetensors/__init__.py"
+        },
+        "psutil": {
+          "version": "7.2.2",
+          "path": "/home/lxy18/venvs/infer/lib/python3.12/site-packages/psutil/__init__.py"
+        }
+      },
+      "elapsed_seconds": 7.1891862200000105
+    },
+    "cuda_and_transfers": {
+      "passed": true,
+      "details": {
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "runtime": "13.0",
+        "pinned_host_memory": true,
+        "async_transfer": true,
+        "compute_capability": [
+          8,
+          9
+        ]
+      },
+      "elapsed_seconds": 0.7226561680004124
+    },
+    "torch_compile": {
+      "passed": true,
+      "details": {
+        "backend": "inductor",
+        "mode": "reduce-overhead",
+        "scope": "small GPU tensor function"
+      },
+      "elapsed_seconds": 3.4164375660002406
+    },
+    "cuda_profiler": {
+      "passed": true,
+      "details": {
+        "trace": "/home/lxy18/system_homework/stage_2/env/profiler-smoke.json",
+        "cuda_events": 3,
+        "finite": true
+      },
+      "elapsed_seconds": 0.210756382999989
+    },
+    "cpu_perf": {
+      "passed": true,
+      "details": {
+        "counts": {
+          "cycles:u": 79582789,
+          "instructions:u": 263664719,
+          "branches:u": 57965167,
+          "branch-misses:u": 334982
+        },
+        "scope": "interface smoke only, not a workload benchmark"
+      },
+      "elapsed_seconds": 0.0858424279999781
+    },
+    "dataset": {
+      "passed": true,
+      "details": {
+        "corpus_documents": 5183,
+        "test_queries": 300,
+        "qrels_valid": true,
+        "bm25_smoke_documents": 100
+      },
+      "elapsed_seconds": 0.08004228499976307
+    },
+    "http_and_solver": {
+      "passed": true,
+      "details": {
+        "http_testclient": "passed",
+        "z3": "5.4.1",
+        "solver_smoke": "unsat",
+        "scope": "tool availability, not project formal verification"
+      },
+      "elapsed_seconds": 0.10707215599995834
+    },
+    "model_cuda_graphs": {
+      "passed": true,
+      "details": {
+        "model": "BAAI/bge-reranker-base",
+        "dtype": "float16",
+        "attention_backend": "sdpa",
+        "graphs": [
+          {
+            "batch_size": 2,
+            "sequence_length": 64,
+            "max_abs_error": 0.0,
+            "updated_input_replays": 3,
+            "scores": [
+              1.236328125,
+              -10.1953125
+            ]
+          },
+          {
+            "batch_size": 2,
+            "sequence_length": 128,
+            "max_abs_error": 0.0,
+            "updated_input_replays": 3,
+            "scores": [
+              1.2333984375,
+              -10.1953125
+            ]
+          }
+        ],
+        "peak_allocated_bytes": 602317824,
+        "scope": "correctness and capability smoke; no performance claim"
+      },
+      "elapsed_seconds": 3.905635455000265
+    },
+    "crossencoder": {
+      "passed": true,
+      "details": {
+        "scores": [
+          1.236328125,
+          -10.1953125
+        ],
+        "pair_count": 2,
+        "scope": "standard SDK baseline available"
+      },
+      "elapsed_seconds": 2.7352535830000306
+    }
+  },
+  "passed": true
+}

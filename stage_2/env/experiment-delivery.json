@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-11-16T08:39:51.104997+00:00",
+  "complete": true,
+  "main_runs": 45,
+  "auxiliary_runs": 18,
+  "quality_questions_per_variant": 558,
+  "quality_gate_passed": true,
+  "full_integrity_passed": true,
+  "protocol_sha256": "808660fecf9c49567c5b5093ec3542c4d9124c5e42767950068ea20a6b79cf09",
+  "optimization_layers": [
+    "model visual computation graph",
+    "service scheduling",
+    "GPU/CPU feature storage"
+  ],
+  "visual_execution": "canonical per-image BF16; language batches up to two",
+  "initial_quality_failure_preserved": "results/initial-packed-vision",
+  "environment": "unchanged existing CUDA/PyTorch stack with project overlay",
+  "report": "report/研究报告.html",
+  "reproduction": "REPRODUCE.md"
+}

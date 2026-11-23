@@ -1,0 +1,17 @@
+{"offset_s": 4.900653621998572, "cpu_rss_bytes": 2924691456, "gpu_monitor_raw": "77, 2535, 44.19, 5618", "returncode": 0}
+{"offset_s": 10.097116409999217, "cpu_rss_bytes": 2997960704, "gpu_monitor_raw": "75, 2505, 87.45, 5791", "returncode": 0}
+{"offset_s": 15.15892908999922, "cpu_rss_bytes": 3034660864, "gpu_monitor_raw": "81, 2520, 50.10, 5870", "returncode": 0}
+{"offset_s": 20.310528971998792, "cpu_rss_bytes": 3034791936, "gpu_monitor_raw": "82, 2415, 72.17, 5987", "returncode": 0}
+{"offset_s": 25.400614938000217, "cpu_rss_bytes": 3107799040, "gpu_monitor_raw": "78, 2535, 49.72, 6050", "returncode": 0}
+{"offset_s": 30.4874970689998, "cpu_rss_bytes": 3126128640, "gpu_monitor_raw": "76, 2400, 89.74, 6110", "returncode": 0}
+{"offset_s": 35.559829317999174, "cpu_rss_bytes": 3164520448, "gpu_monitor_raw": "84, 2400, 80.11, 6087", "returncode": 0}
+{"offset_s": 40.62460770500002, "cpu_rss_bytes": 3158626304, "gpu_monitor_raw": "77, 2535, 35.15, 6082", "returncode": 0}
+{"offset_s": 45.70019937399957, "cpu_rss_bytes": 3173617664, "gpu_monitor_raw": "79, 2535, 50.40, 6082", "returncode": 0}
+{"offset_s": 50.7765535439994, "cpu_rss_bytes": 3207045120, "gpu_monitor_raw": "83, 2535, 47.88, 6087", "returncode": 0}
+{"offset_s": 55.87381117699988, "cpu_rss_bytes": 3268308992, "gpu_monitor_raw": "77, 2535, 50.56, 6082", "returncode": 0}
+{"offset_s": 61.00113570099893, "cpu_rss_bytes": 3304902656, "gpu_monitor_raw": "81, 2385, 70.08, 6088", "returncode": 0}
+{"offset_s": 66.085370969, "cpu_rss_bytes": 3298938880, "gpu_monitor_raw": "75, 2535, 49.57, 6083", "returncode": 0}
+{"offset_s": 71.15243207200001, "cpu_rss_bytes": 3323252736, "gpu_monitor_raw": "77, 2535, 46.62, 6088", "returncode": 0}
+{"offset_s": 76.22310444499999, "cpu_rss_bytes": 3335585792, "gpu_monitor_raw": "84, 2535, 46.50, 6088", "returncode": 0}
+{"offset_s": 81.31572808499914, "cpu_rss_bytes": 3363057664, "gpu_monitor_raw": "77, 2385, 91.76, 6083", "returncode": 0}
+{"offset_s": 86.37191988599989, "cpu_rss_bytes": 3405549568, "gpu_monitor_raw": "82, 2535, 49.58, 6090", "returncode": 0}

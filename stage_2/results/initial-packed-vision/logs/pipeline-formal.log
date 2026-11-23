@@ -1,0 +1,26 @@
+RESUME development/native-b1
+RESUME development/native-b2
+RESUME development/lru-128
+RESUME development/lru-256
+RESUME development/lru-512
+RESUME development/quality-B0
+RESUME development/quality-FULL
+PROTOCOL FROZEN /home/lxy18/system_homework/stage_2/configs/protocol.lock.json SLO {'ttft_s': 0.62, 'e2e_s': 1.63, 'rule': '2x native isolated development p95, rounded upward to 10 ms'}
+START quality/B0 2026-11-16T04:59:25.561444+00:00
+DONE quality/B0 qps 2.4388 goodput 0.0044 ANLS 0.89126
+START quality/V1 2026-11-16T05:04:01.350641+00:00
+DONE quality/V1 qps 2.8257 goodput 0.0051 ANLS 0.8882
+START quality/V1+S 2026-11-16T05:07:56.888661+00:00
+DONE quality/V1+S qps 2.9053 goodput 0.0052 ANLS 0.88541
+START quality/V1+M 2026-11-16T05:11:52.501388+00:00
+DONE quality/V1+M qps 2.8563 goodput 0.0051 ANLS 0.8882
+START quality/FULL 2026-11-16T05:15:48.611979+00:00
+DONE quality/FULL qps 2.8216 goodput 0.0051 ANLS 0.88814
+Traceback (most recent call last):
+  File "/home/lxy18/system_homework/stage_2/scripts/pipeline.py", line 227, in <module>
+    main()
+  File "/home/lxy18/system_homework/stage_2/scripts/pipeline.py", line 221, in main
+    formal()
+  File "/home/lxy18/system_homework/stage_2/scripts/pipeline.py", line 165, in formal
+    raise RuntimeError("Evaluation quality gate failed; preserve results and inspect correctness")
+RuntimeError: Evaluation quality gate failed; preserve results and inspect correctness

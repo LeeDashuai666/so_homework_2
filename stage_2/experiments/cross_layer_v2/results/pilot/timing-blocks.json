@@ -1,0 +1,200 @@
+[
+  {
+    "seed": 2901,
+    "variant": "GRAPH",
+    "questions": 57,
+    "mean_generation_s": 0.21266527296482532,
+    "mean_ttft_s": 0.11022626522804913,
+    "total_decode_s": 5.836183375013206,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4700054016
+  },
+  {
+    "seed": 2901,
+    "variant": "PREFIX",
+    "questions": 57,
+    "mean_generation_s": 0.31812690250865816,
+    "mean_ttft_s": 0.05394349056121172,
+    "total_decode_s": 15.055783109000913,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 1,
+    "peak_allocated_bytes": 5844764160
+  },
+  {
+    "seed": 2901,
+    "variant": "BOTH",
+    "questions": 57,
+    "mean_generation_s": 0.15338250843878518,
+    "mean_ttft_s": 0.05251290363173068,
+    "total_decode_s": 5.746494433009502,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 1,
+    "peak_allocated_bytes": 5844764160
+  },
+  {
+    "seed": 2901,
+    "variant": "VISUAL_HF",
+    "questions": 57,
+    "mean_generation_s": 0.3638607279827467,
+    "mean_ttft_s": 0.11746869342108798,
+    "total_decode_s": 14.044345970014547,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4791622144
+  },
+  {
+    "seed": 2901,
+    "variant": "STATIC_EAGER",
+    "questions": 57,
+    "mean_generation_s": 0.37425884347363825,
+    "mean_ttft_s": 0.1103004996490965,
+    "total_decode_s": 15.042829399997572,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4700054016
+  },
+  {
+    "seed": 2901,
+    "variant": "NATIVE",
+    "questions": 57,
+    "mean_generation_s": 0.503994773490839,
+    "mean_ttft_s": 0.26029237299984453,
+    "total_decode_s": 13.891036827986682,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4610697728
+  },
+  {
+    "seed": 2902,
+    "variant": "PREFIX",
+    "questions": 57,
+    "mean_generation_s": 0.3163972525265611,
+    "mean_ttft_s": 0.052899968719430035,
+    "total_decode_s": 15.016798988992377,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 1,
+    "peak_allocated_bytes": 5844764160
+  },
+  {
+    "seed": 2902,
+    "variant": "NATIVE",
+    "questions": 57,
+    "mean_generation_s": 0.5050890701050664,
+    "mean_ttft_s": 0.260597457228039,
+    "total_decode_s": 13.93602193399056,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4610697728
+  },
+  {
+    "seed": 2902,
+    "variant": "STATIC_EAGER",
+    "questions": 57,
+    "mean_generation_s": 0.37418151147389916,
+    "mean_ttft_s": 0.11057243589516076,
+    "total_decode_s": 15.023161363002146,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4700054016
+  },
+  {
+    "seed": 2902,
+    "variant": "VISUAL_HF",
+    "questions": 57,
+    "mean_generation_s": 0.3605729200350189,
+    "mean_ttft_s": 0.11701462056130128,
+    "total_decode_s": 13.882823070001905,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4791622144
+  },
+  {
+    "seed": 2902,
+    "variant": "BOTH",
+    "questions": 57,
+    "mean_generation_s": 0.15510063021046286,
+    "mean_ttft_s": 0.05414822189464885,
+    "total_decode_s": 5.751400488014042,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 1,
+    "peak_allocated_bytes": 5844764160
+  },
+  {
+    "seed": 2902,
+    "variant": "GRAPH",
+    "questions": 57,
+    "mean_generation_s": 0.2188455249300827,
+    "mean_ttft_s": 0.11376575707024465,
+    "total_decode_s": 5.986564724997152,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4700054016
+  },
+  {
+    "seed": 2903,
+    "variant": "STATIC_EAGER",
+    "questions": 57,
+    "mean_generation_s": 0.4242362990174259,
+    "mean_ttft_s": 0.11881719570157113,
+    "total_decode_s": 17.40591416600728,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4700054016
+  },
+  {
+    "seed": 2903,
+    "variant": "PREFIX",
+    "questions": 57,
+    "mean_generation_s": 0.36037831121071223,
+    "mean_ttft_s": 0.06034756707046191,
+    "total_decode_s": 17.098833184987598,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 1,
+    "peak_allocated_bytes": 5844764160
+  },
+  {
+    "seed": 2903,
+    "variant": "VISUAL_HF",
+    "questions": 57,
+    "mean_generation_s": 0.39616147866667906,
+    "mean_ttft_s": 0.12517713082470755,
+    "total_decode_s": 15.446107826992375,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4791622144
+  },
+  {
+    "seed": 2903,
+    "variant": "BOTH",
+    "questions": 57,
+    "mean_generation_s": 0.167599832491409,
+    "mean_ttft_s": 0.060210582193050005,
+    "total_decode_s": 6.117908250005712,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 1,
+    "peak_allocated_bytes": 5844764160
+  },
+  {
+    "seed": 2903,
+    "variant": "GRAPH",
+    "questions": 57,
+    "mean_generation_s": 0.22277557712266316,
+    "mean_ttft_s": 0.11632354589451815,
+    "total_decode_s": 6.064416210996569,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4700054016
+  },
+  {
+    "seed": 2903,
+    "variant": "NATIVE",
+    "questions": 57,
+    "mean_generation_s": 0.5833946063160654,
+    "mean_ttft_s": 0.28197578078974755,
+    "total_decode_s": 17.18087305500012,
+    "total_decode_steps": 323,
+    "prefix_hit_rate": 0,
+    "peak_allocated_bytes": 4610697728
+  }
+]

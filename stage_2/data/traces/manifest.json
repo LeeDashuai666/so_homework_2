@@ -1,0 +1,18 @@
+{
+  "protocol_sha256": "808660fecf9c49567c5b5093ec3542c4d9124c5e42767950068ea20a6b79cf09",
+  "traces": {
+    "data/traces/load-0.5-seed-1701.jsonl": "31891736475317ae968f1946b9030b77954204f795a4f2127396cb35ffacde63",
+    "data/traces/load-0.5-seed-1702.jsonl": "c21f3252ead7ec17b50905ee0ad93e12e0b412fb1436bbf57eb32e45631a9bd6",
+    "data/traces/load-0.5-seed-1703.jsonl": "e52e3f301ac99a0e8e69ca0c9ab057566bf3ddc1ce0b6a3aa64433b84665aa25",
+    "data/traces/load-0.8-seed-1701.jsonl": "c3df5454fb9b642e6eaf3fb215092076b9aaf00d14c628c1cd7e10d13b592e00",
+    "data/traces/load-0.8-seed-1702.jsonl": "b1e9d10cb51ebc730f1d19d969a5e5c5e646a160958609f8853c2b3500b6500b",
+    "data/traces/load-0.8-seed-1703.jsonl": "be494ac7ffbc2e3902ae600d4811df79ca4dd11e7780b961a04e974de40ab7dd",
+    "data/traces/load-1.1-seed-1701.jsonl": "9aeea13a225c451c2d5b548900ee13f491b1b472e5c803eb7ddb8492897cdfb1",
+    "data/traces/load-1.1-seed-1702.jsonl": "36b7194ec2e0d2631ce6e165f8039f47bdaa39646319d31b25cf77eb4843cdaf",
+    "data/traces/load-1.1-seed-1703.jsonl": "a1ee8417bdf5169d8c7cba9935484a4cc8ed028d2f1195cbf047846807c6a975",
+    "data/traces/aux-order-session.jsonl": "07266b694df9940f9de015029596ecca201a82f4985e113c6ddddb5d05c25b95",
+    "data/traces/aux-order-interleaved.jsonl": "db48a6afc96422ea5d5985d2033760bf58ada14fb72f42c7ff70f43d3f799fe4",
+    "data/traces/aux-order-random.jsonl": "b9d72cc9bd477c1c1b99b956e7cbcf217e457c8a8b84aa7d14e7f83bf9d49a5b",
+    "data/traces/cold-128.jsonl": "779f45be18a08a54b8ef011df7f436a0bf54d42b2657669abaab146b378ca04c"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "vlm_smoke": "9/9 passed",
+  "same_page_generation_token_parity": true,
+  "different_page_cache_miss": true,
+  "batch2": true,
+  "base_unchanged": true,
+  "new_installs": 0,
+  "runtime_and_asset_lock_consistency": "passed",
+  "sample_checksums": "passed",
+  "demo_answer": "University of California, San Diego",
+  "python_and_doc_links": "passed",
+  "html_navigation": "passed",
+  "peak_reserved_gib": 4.3984375
+}

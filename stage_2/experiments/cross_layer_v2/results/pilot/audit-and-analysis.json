@@ -1,0 +1,160 @@
+{
+  "passed": true,
+  "scope": "DEVELOPMENT only; formal first-round results unchanged",
+  "quality_rows": 1692,
+  "timing_rows": 1026,
+  "timing_blocks": 18,
+  "exact_token_pairs": {
+    "NATIVE__VISUAL_HF": 282,
+    "STATIC_EAGER__GRAPH": 282,
+    "PREFIX__BOTH": 282
+  },
+  "all_timing_tokens_identical": true,
+  "cache_quota_bytes": 1610612736,
+  "trace_launch_counts_recomputed": true,
+  "trace_diagnostics": {
+    "eager": {
+      "kernel_events": 14360,
+      "kernel_union_ms": 141.22248291015626,
+      "first_to_last_kernel_ms": 723.6010380859375,
+      "kernel_gap_ms": 582.3785551757812,
+      "kernel_coverage_fraction": 0.19516622486296675,
+      "scope": "Profiled decode window; includes profiler perturbation, not GPU occupancy or unprofiled latency"
+    },
+    "graph": {
+      "kernel_events": 14368,
+      "kernel_union_ms": 151.44942333984375,
+      "first_to_last_kernel_ms": 158.6170068359375,
+      "kernel_gap_ms": 7.16758349609375,
+      "kernel_coverage_fraction": 0.9548120114036233,
+      "scope": "Profiled decode window; includes profiler perturbation, not GPU occupancy or unprofiled latency"
+    }
+  },
+  "runtime_invariants_passed": true,
+  "means": {
+    "NATIVE": {
+      "variant": "NATIVE",
+      "mean_generation_s": 0.5308261499706569,
+      "mean_generation_s_sd": 0.04552890645704458,
+      "mean_ttft_s": 0.26762187033921037,
+      "mean_ttft_s_sd": 0.012431786999989333,
+      "decode_ms_per_token": 46.447814052608216,
+      "decode_ms_per_token_sd": 5.840668235871531,
+      "peak_allocated_gib": 4.294046878814697
+    },
+    "VISUAL_HF": {
+      "variant": "VISUAL_HF",
+      "mean_generation_s": 0.3735317088948149,
+      "mean_generation_s_sd": 0.01966678113522822,
+      "mean_ttft_s": 0.11988681493569894,
+      "mean_ttft_s_sd": 0.004587169845844107,
+      "decode_ms_per_token": 44.76086363984399,
+      "decode_ms_per_token_sd": 2.6617241363077997,
+      "peak_allocated_gib": 4.462545871734619
+    },
+    "STATIC_EAGER": {
+      "variant": "STATIC_EAGER",
+      "mean_generation_s": 0.3908922179883211,
+      "mean_generation_s_sd": 0.028876847123884126,
+      "mean_ttft_s": 0.11323004374860947,
+      "mean_ttft_s_sd": 0.0048405255437393825,
+      "decode_ms_per_token": 48.99061396182353,
+      "decode_ms_per_token_sd": 4.241611743871764,
+      "peak_allocated_gib": 4.3772664070129395
+    },
+    "PREFIX": {
+      "variant": "PREFIX",
+      "mean_generation_s": 0.3316341554153105,
+      "mean_generation_s_sd": 0.02490818723949793,
+      "mean_ttft_s": 0.05573034211703456,
+      "mean_ttft_s_sd": 0.0040325313590204165,
+      "decode_ms_per_token": 48.680511127947256,
+      "decode_ms_per_token_sd": 3.687209836165089,
+      "peak_allocated_gib": 5.443360805511475
+    },
+    "GRAPH": {
+      "variant": "GRAPH",
+      "mean_generation_s": 0.2180954583391904,
+      "mean_generation_s_sd": 0.005096715850337144,
+      "mean_ttft_s": 0.11343852273093731,
+      "mean_ttft_s_sd": 0.003061783731101968,
+      "decode_ms_per_token": 18.459405893712,
+      "decode_ms_per_token_sd": 0.3591990253860225,
+      "peak_allocated_gib": 4.3772664070129395
+    },
+    "BOTH": {
+      "variant": "BOTH",
+      "mean_generation_s": 0.15869432371355235,
+      "mean_generation_s_sd": 0.007760093462706469,
+      "mean_ttft_s": 0.05562390257314318,
+      "mean_ttft_s_sd": 0.0040554640803501015,
+      "decode_ms_per_token": 18.17936343759469,
+      "decode_ms_per_token_sd": 0.6595471659028606,
+      "peak_allocated_gib": 5.443360805511475
+    }
+  },
+  "paired_diagnostics": [
+    {
+      "comparison": "A: TTFT saved, ms",
+      "mean_saved": 57.49970163157491,
+      "block_differences": [
+        56.35700908788478,
+        57.67246717573072,
+        58.469628631109224
+      ],
+      "t95_low": 54.8494907436962,
+      "t95_high": 60.149912519453615
+    },
+    {
+      "comparison": "B: decode saved, ms/token",
+      "mean_saved": 30.53120806811153,
+      "block_differences": [
+        28.503548064967077,
+        27.977079374628467,
+        35.11299676473904
+      ],
+      "t95_low": 20.65261878233005,
+      "t95_high": 40.409797353893005
+    },
+    {
+      "comparison": "Combined generation saved, ms",
+      "mean_saved": 214.83738518126253,
+      "block_differences": [
+        210.47821954396153,
+        205.47228982455604,
+        228.56164617527006
+      ],
+      "t95_low": 184.66443272422507,
+      "t95_high": 245.0103376383
+    }
+  ],
+  "first_round_frozen_sources_unchanged": true,
+  "audit_source_sha256": {
+    "analyze_pilot.py": "1c365bb6eae382235653f37cd68a4d5d4f5d9d5d447d13b4ed55f4f85eac1885",
+    "run.sh": "5aa7d0028cc44cba3d6f34929964d65620f09e821bdcd88be81ab9afd77aa508",
+    "verify_runtime.py": "ee7f0d0c2f1c1de147cc67e02ac0aeadf86202047ba25d2ef92914d787b00e0c"
+  },
+  "raw_sha256": {
+    "manifest.json": "2f379f335c7d37d79eec69ba9262f1045182fab56f5efc089e3c7d1d207893f8",
+    "graph-build.json": "99e510f5a5fd8d84a53904f626fb11d854e69374d136672335bfee05588da1f7",
+    "decode-eager-trace.json": "1b90e6245056e3d64960f1f1578cc92db8cc50cb4882e36306a8b80439bc73ae",
+    "quality-requests.jsonl": "9d93dd4134a2c776eaed3927a0730ce0bcdc76e8efb694d08fede75fdd9452e5",
+    "timing-requests.jsonl": "2e7add346bc792a63759514be49a2ea1792a4969a1eda994808a29de2ab8f303",
+    "decode-graph-trace.json": "1e2256c27b6221cc2acaa004455a5e9420a10549c79be8987f56bb73ffff6597",
+    "complete.json": "ca4e752272b8e705e1633e7cb4c499175e345d864415aaf816961ef1a0e12495",
+    "launch-counts.json": "63524b29e00389bdd8a983c9fab62c5e66026e325809d72ed7e26889519d5888",
+    "timing-blocks.json": "a90332c2c8f513b6303d7b6203392212ca986f69720dc5084b75b6fe892d1e61",
+    "quality-gate.json": "bbe829efa6c6efb3dbef01f9814948f33ee43a5375093e287104eac82a6782f5",
+    "quality-summary.json": "ab2b71b73959682a2b622f37ea9d753cef27300704329438d712c332c5dc3ca5"
+  },
+  "input_sha256": {
+    "data/processed/docvqa/development.jsonl": "2c22a19613d396515656c32ba5bd6867c5bc5fe61a6903fa5ace13977ca8f32e",
+    "configs/protocol.lock.json": "808660fecf9c49567c5b5093ec3542c4d9124c5e42767950068ea20a6b79cf09",
+    "configs/vlm-assets.lock.json": "af28b5367d54b971db621a54316dbce21b4de896a9572317d72db326a23beba6"
+  },
+  "measured_source_sha256": {
+    "runtime.py": "3e84b00485ea92db7f1b8d6abb64be1ea6765a19ec1a4e76f75e14bca70f10f1",
+    "smoke.py": "3083daae27616261224510359886fb9b88fc438e47d21720c1bc197ad2e8811b",
+    "pilot.py": "744b4bc4d169f7afd8efa5a9df290e11746ccabda3e4d2fc4863328c3076be7e"
+  }
+}

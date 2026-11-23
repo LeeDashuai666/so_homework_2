@@ -1,0 +1,15 @@
+START development/native-b1 2026-11-16T04:45:58.342414+00:00
+DONE development/native-b1 qps 2.1764 goodput 0.0227 ANLS 0.88073
+START development/native-b2 2026-11-16T04:47:55.395746+00:00
+DONE development/native-b2 qps 2.4247 goodput 0.0379 ANLS 0.87862
+START development/lru-128 2026-11-16T04:49:41.922571+00:00
+DONE development/lru-128 qps 2.8383 goodput 0.0443 ANLS 0.88035
+START development/lru-256 2026-11-16T04:51:19.509568+00:00
+DONE development/lru-256 qps 2.9091 goodput 0.0455 ANLS 0.88035
+START development/lru-512 2026-11-16T04:52:49.809687+00:00
+DONE development/lru-512 qps 3.1089 goodput 0.0486 ANLS 0.88035
+START development/quality-B0 2026-11-16T04:54:20.507272+00:00
+DONE development/quality-B0 qps 2.4002 goodput 0.0255 ANLS 0.86515
+START development/quality-FULL 2026-11-16T04:56:49.316927+00:00
+DONE development/quality-FULL qps 3.1415 goodput 0.0334 ANLS 0.86266
+PROTOCOL FROZEN /home/lxy18/system_homework/stage_2/configs/protocol.lock.json SLO {'ttft_s': 0.62, 'e2e_s': 1.63, 'rule': '2x native isolated development p95, rounded upward to 10 ms'}

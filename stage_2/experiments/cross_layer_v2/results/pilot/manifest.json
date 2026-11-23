@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-11-16T10:26:06.541908+00:00",
+  "scope": "DEVELOPMENT pilot, not formal held-out experiment",
+  "read_split": "development only",
+  "variants": [
+    "NATIVE",
+    "VISUAL_HF",
+    "STATIC_EAGER",
+    "PREFIX",
+    "GRAPH",
+    "BOTH"
+  ],
+  "quality_count": 282,
+  "timing_pages": 16,
+  "timing_questions": 57,
+  "timing_rule": "Hot pages: warm each page with its first different real question, measure remaining independent questions",
+  "cache_quota_mib": 1536,
+  "batch_size": 1,
+  "static_kv_capacity": 1024,
+  "max_new_tokens": 64,
+  "do_sample": false,
+  "repeats": 3,
+  "quality_max_anls_drop": 0.005,
+  "source_sha256": {
+    "runtime.py": "3e84b00485ea92db7f1b8d6abb64be1ea6765a19ec1a4e76f75e14bca70f10f1",
+    "smoke.py": "3083daae27616261224510359886fb9b88fc438e47d21720c1bc197ad2e8811b",
+    "pilot.py": "744b4bc4d169f7afd8efa5a9df290e11746ccabda3e4d2fc4863328c3076be7e"
+  }
+}

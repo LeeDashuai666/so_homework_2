@@ -1,0 +1,17 @@
+{"offset_s": 4.900707243001307, "cpu_rss_bytes": 2831409152, "gpu_monitor_raw": "74, 2535, 78.87, 5312", "returncode": 0}
+{"offset_s": 9.996565868999824, "cpu_rss_bytes": 2886197248, "gpu_monitor_raw": "80, 2520, 90.46, 5317", "returncode": 0}
+{"offset_s": 15.05752511799983, "cpu_rss_bytes": 2886328320, "gpu_monitor_raw": "72, 2535, 50.42, 5313", "returncode": 0}
+{"offset_s": 20.12758799600124, "cpu_rss_bytes": 2886328320, "gpu_monitor_raw": "72, 2505, 86.43, 5318", "returncode": 0}
+{"offset_s": 25.19516322799973, "cpu_rss_bytes": 2886656000, "gpu_monitor_raw": "72, 2475, 87.18, 5318", "returncode": 0}
+{"offset_s": 30.272059990000344, "cpu_rss_bytes": 2886656000, "gpu_monitor_raw": "80, 2535, 46.36, 5313", "returncode": 0}
+{"offset_s": 35.366625454000314, "cpu_rss_bytes": 2923225088, "gpu_monitor_raw": "74, 2430, 83.66, 5318", "returncode": 0}
+{"offset_s": 40.46837682000114, "cpu_rss_bytes": 2923225088, "gpu_monitor_raw": "82, 2535, 45.74, 5320", "returncode": 0}
+{"offset_s": 45.554019614000936, "cpu_rss_bytes": 2923225088, "gpu_monitor_raw": "82, 2535, 66.10, 5320", "returncode": 0}
+{"offset_s": 50.619592175000435, "cpu_rss_bytes": 2938941440, "gpu_monitor_raw": "81, 2505, 65.94, 5316", "returncode": 0}
+{"offset_s": 55.775117872999544, "cpu_rss_bytes": 2939072512, "gpu_monitor_raw": "83, 2505, 78.01, 5320", "returncode": 0}
+{"offset_s": 60.86481764600103, "cpu_rss_bytes": 2939203584, "gpu_monitor_raw": "83, 2535, 59.82, 5316", "returncode": 0}
+{"offset_s": 65.95745093200094, "cpu_rss_bytes": 2886926336, "gpu_monitor_raw": "77, 2535, 48.62, 5320", "returncode": 0}
+{"offset_s": 71.06695174800006, "cpu_rss_bytes": 2886926336, "gpu_monitor_raw": "83, 2535, 63.11, 5316", "returncode": 0}
+{"offset_s": 76.17194091500096, "cpu_rss_bytes": 2941714432, "gpu_monitor_raw": "81, 2535, 49.12, 5316", "returncode": 0}
+{"offset_s": 81.27536203700038, "cpu_rss_bytes": 2941714432, "gpu_monitor_raw": "76, 2490, 86.62, 5320", "returncode": 0}
+{"offset_s": 86.36925827300001, "cpu_rss_bytes": 2941714432, "gpu_monitor_raw": "83, 2535, 48.56, 5315", "returncode": 0}

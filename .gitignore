@@ -1,0 +1,10 @@
+**/.venv/
+**/.cache/
+**/cache/
+**/__pycache__/
+**/.pytest_cache/
+**/*.pyc
+stage_2/dist/
+stage_2/models/
+stage_2/replays/
+stage_2_framework_replay/

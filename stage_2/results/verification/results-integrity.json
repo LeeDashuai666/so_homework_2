@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "scope": "full",
+  "formal_runs": 45,
+  "checked_requests": 6295,
+  "auxiliary_runs": 18,
+  "historical_failed_gate_runs_rescored": 5,
+  "checked_batches": 3846,
+  "checked_original_images": 192,
+  "source_document_overlap": 0,
+  "pixel_hash_overlap": 0,
+  "maximum_completed_request_sender_lag_s": 0.01594471835051081,
+  "quality": {
+    "B0": {
+      "questions": 558,
+      "anls": 0.8887655954422761,
+      "em": 0.8154121863799283,
+      "anls_delta_vs_B0": 0.0,
+      "identical_token_sequences_vs_B0": 558,
+      "output_tokens": 3352,
+      "truncated": 0
+    },
+    "V1": {
+      "questions": 558,
+      "anls": 0.8887655954422761,
+      "em": 0.8154121863799283,
+      "anls_delta_vs_B0": 0.0,
+      "identical_token_sequences_vs_B0": 558,
+      "output_tokens": 3352,
+      "truncated": 0
+    },
+    "V1+S": {
+      "questions": 558,
+      "anls": 0.8868471136850847,
+      "em": 0.8136200716845878,
+      "anls_delta_vs_B0": -0.001918481757191337,
+      "identical_token_sequences_vs_B0": 555,
+      "output_tokens": 3356,
+      "truncated": 0
+    },
+    "V1+M": {
+      "questions": 558,
+      "anls": 0.8887655954422761,
+      "em": 0.8154121863799283,
+      "anls_delta_vs_B0": 0.0,
+      "identical_token_sequences_vs_B0": 558,
+      "output_tokens": 3352,
+      "truncated": 0
+    },
+    "FULL": {
+      "questions": 558,
+      "anls": 0.8893561786941496,
+      "em": 0.8154121863799283,
+      "anls_delta_vs_B0": 0.0005905832518735554,
+      "identical_token_sequences_vs_B0": 554,
+      "output_tokens": 3360,
+      "truncated": 0
+    }
+  },
+  "protocol_sha256": "808660fecf9c49567c5b5093ec3542c4d9124c5e42767950068ea20a6b79cf09",
+  "checks": [
+    "frozen source and data hashes",
+    "original file and RGB pixel integrity",
+    "source document split isolation",
+    "paired trace equality",
+    "complete unique request ledger",
+    "timestamps and live token timing",
+    "reference answer rescoring",
+    "fixed-window SLO recomputation",
+    "per-batch memory and lease bounds"
+  ]
+}

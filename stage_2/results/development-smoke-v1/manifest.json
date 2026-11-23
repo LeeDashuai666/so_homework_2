@@ -1,0 +1,97 @@
+{
+  "recorded_at": "2026-11-16T12:37:47.858360+08:00",
+  "variant": "V1",
+  "split": "development",
+  "seed": 1701,
+  "runtime": {
+    "schema_version": 1,
+    "profile": "document-vqa-environment-smoke",
+    "model_path": "models/qwen3-vl-2b-instruct",
+    "dataset_path": "data/processed/docvqa",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "attention_backend": "sdpa",
+    "cpu_threads": 2,
+    "processor": {
+      "spatial_factor": 32,
+      "min_image_tokens": 128,
+      "max_image_tokens": 768,
+      "min_pixels": 131072,
+      "max_pixels": 786432,
+      "padding_side": "left",
+      "max_input_tokens": 2048
+    },
+    "generation": {
+      "do_sample": false,
+      "max_new_tokens": 64,
+      "use_cache": true
+    },
+    "smoke": {
+      "batch_sizes": [
+        1,
+        2
+      ],
+      "reserved_gpu_margin_mib": 768,
+      "prompt_suffix": "Answer with only the short answer, without explanation.",
+      "feature_atol": 0.0,
+      "feature_rtol": 0.0,
+      "logit_atol": 0.02,
+      "logit_rtol": 0.001
+    },
+    "note": "Environment starting configuration; no performance-optimality or dataset accuracy claim."
+  },
+  "experiment": {
+    "schema_version": 1,
+    "dataset_path": "data/processed/docvqa",
+    "runtime": "configs/vlm-runtime.json",
+    "queue_limit": 32,
+    "batch_size": 2,
+    "max_batch_visual_tokens": 1536,
+    "lookahead": 16,
+    "batch_wait_ms": 2.0,
+    "age_guard_slo_fraction": 0.5,
+    "gpu_cache_mib": 128,
+    "cpu_cache_mib": 256,
+    "process_budget_mib": 6144,
+    "workspace_reserve_mib": 256,
+    "scheduler_vision_cost_per_token_s": 6e-05,
+    "scheduler_prefill_cost_per_token_s": 0.0001,
+    "cpu_transfer_cost_per_mib_s": 0.00025,
+    "main_window_s": 120.0,
+    "main_warmup_requests": 8,
+    "main_warmup_min_s": 5.0,
+    "drain_timeout_s": 30.0,
+    "rate_multipliers": [
+      0.5,
+      0.8,
+      1.1
+    ],
+    "seeds": [
+      1701,
+      1702,
+      1703
+    ],
+    "variants": [
+      "B0",
+      "V1",
+      "V1+S",
+      "V1+M",
+      "FULL"
+    ],
+    "quality_max_anls_drop": 0.005,
+    "trace_order": "interleaved",
+    "session_width": 16,
+    "note": "Development configuration; formal values are frozen into protocol.lock.json after calibration."
+  },
+  "source_sha256": {
+    "src/vlmbench/__init__.py": "29d3ed5dbeffc637fddfe9ccf1d2ed954dee38e13ff8adf363e0ee3ceff72f50",
+    "src/vlmbench/cache.py": "1ac9a2cece68ac7a89d1e7eb802dbd1c18cd87b588ebce94b218ab0aae27465b",
+    "src/vlmbench/engine.py": "ccbea4fee572e6c99003df09ef0e647989eebae26c972036d923b5f83d7c4c52",
+    "src/vlmbench/metrics.py": "a3be0bed5ae2c942ae8e16de39d84a5bebc823fce0bd33fad0c39ae00cb6f92d",
+    "src/vlmbench/runner.py": "7fe1feee9d23a1096be64eb3a5e34f0eae4530db490273d8714e87a81908fc00",
+    "src/vlmbench/scheduler.py": "b5f251ed503fd1abdf776d1af4bce09789fc308c5c79b1e360277205af11a9c5",
+    "tools/vlm_runtime.py": "791ba559dade09aa4d16c7f5fdac8903f776061595c37971859992814c5e2ce3"
+  },
+  "data_manifest_sha256": "3149a3e51b8b07496313e835d4bb56c64d1c6ae320a880662a91200560455ee5",
+  "protocol_sha256": null
+}

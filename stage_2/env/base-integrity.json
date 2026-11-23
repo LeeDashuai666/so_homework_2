@@ -1,0 +1,9 @@
+{
+  "base_packages_unchanged": true,
+  "base_package_count": 98,
+  "project_python": "/home/lxy18/system_homework/stage_2/.venv/bin/python",
+  "torch_import_path": "/home/lxy18/venvs/infer/lib/python3.12/site-packages/torch/__init__.py",
+  "project_pip_path": "/home/lxy18/system_homework/stage_2/.venv/bin/pip",
+  "base_torch_reused": true,
+  "ninja_version": "1.13.2.git.kitware.jobserver-pipe-1"
+}

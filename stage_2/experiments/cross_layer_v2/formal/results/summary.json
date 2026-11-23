@@ -1,0 +1,387 @@
+{
+  "passed": true,
+  "created_at": "2026-11-18T06:16:34.622592+00:00",
+  "scope": "Source-linked symbolic state/control/dataflow contracts; causal-dependency induction; not BF16 neural arithmetic or CUDA driver/kernel verification",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "z3_version": "5.4.1",
+  "z3_solver_package": "5.4.1.0",
+  "transformers": "5.17.0",
+  "capacity": 1024,
+  "layers": 28,
+  "max_new_tokens": 64,
+  "safe_unsat": 9,
+  "negative_sat": 9,
+  "nonvacuity_sat_checks": 18,
+  "source_sha256": {
+    "experiments/cross_layer_v2/runtime.py": "3e84b00485ea92db7f1b8d6abb64be1ea6765a19ec1a4e76f75e14bca70f10f1",
+    "experiments/cross_layer_v2/formal/verify.py": "e5a6943b4b2b8fb6429a70ff5d51c6ef1720c139dc95a06babff46004fbfd5a1",
+    "configs/protocol.lock.json": "808660fecf9c49567c5b5093ec3542c4d9124c5e42767950068ea20a6b79cf09",
+    "configs/vlm-assets.lock.json": "af28b5367d54b971db621a54316dbce21b4de896a9572317d72db326a23beba6",
+    "env/qwen3-vl-2b-config.json": "bec4b3d446efa05807365c9e1cec03ac590836879d02f3a6da879971154bdd3b",
+    "@transformers/cache_utils.py": "702144bb44553f6339ea1bf23c8205a708bb5f8c7c09cb3a2db484182646743c"
+  },
+  "source_contract": {
+    "prefix_components_checked": [
+      "locations.numel() == 1",
+      "boundary < cpu['input_ids'].shape[1]",
+      "not cpu['mm_token_type_ids'][:, boundary:].any()",
+      "row['pixel_sha256']",
+      "metadata['grid_thw']",
+      "cpu['input_ids'][:, :boundary]",
+      "positions[:, :, :boundary]"
+    ],
+    "decode_host_scalar_or_python_branch": false,
+    "methods_executed": [
+      "_save",
+      "_restore",
+      "_decode",
+      "build_graph",
+      "StaticLayer.update",
+      "CacheLayerMixin.reset"
+    ]
+  },
+  "cases": [
+    {
+      "id": "P1-key",
+      "title": "缓存身份覆盖前缀状态的全部上下文",
+      "results": [
+        {
+          "kind": "safe",
+          "result": "unsat",
+          "expected": "unsat",
+          "premises": "sat",
+          "query": "P1-key-safe.smt2",
+          "query_sha256": "735bc5d6f9b3bc56761782739392a5d1d86c34ae99b69befd30cc7821bb79ce9",
+          "premises_file": "P1-key-safe-premises.smt2",
+          "premises_sha256": "b1312d0bb5758ac2a6689f8197073ce48131c48adc2929d69fe2e2a7e929770b",
+          "counterexample": null
+        },
+        {
+          "kind": "negative",
+          "result": "sat",
+          "expected": "sat",
+          "premises": "sat",
+          "query": "P1-key-negative.smt2",
+          "query_sha256": "ad86fafa4365bd14e7270a59e18db57a6a92504da93c6f2e1e361dd5d625d334",
+          "premises_file": "P1-key-negative-premises.smt2",
+          "premises_sha256": "c26731fe7de834e18bb41ed99943d6d0b321815414719317de516287898be66f",
+          "counterexample": {
+            "positions_A": "6",
+            "positions_B": "7",
+            "KV_A": "8",
+            "KV_B": "9"
+          }
+        }
+      ],
+      "source_mapping": [
+        "Runtime.__init__: identity",
+        "Runtime.prepare: pixel/grid/prefix-token/prefix-position key inputs"
+      ]
+    },
+    {
+      "id": "P2-causality",
+      "title": "因果依赖逐层保持前缀不依赖后续问题",
+      "results": [
+        {
+          "kind": "safe",
+          "result": "unsat",
+          "expected": "unsat",
+          "premises": "sat",
+          "query": "P2-causality-safe.smt2",
+          "query_sha256": "cd0377b585e7c2279c3c29383b62c0f9389f4ad6be182ed0b40a5a66809abafa",
+          "premises_file": "P2-causality-safe-premises.smt2",
+          "premises_sha256": "aaa9b80cebad55f3ba294b590db3bfca0393545d6379de4735c98b7afc6cca39",
+          "counterexample": null
+        },
+        {
+          "kind": "negative",
+          "result": "sat",
+          "expected": "sat",
+          "premises": "sat",
+          "query": "P2-causality-negative.smt2",
+          "query_sha256": "317f9f011ab63f6a555421f741e31b2a6ba1e5df624604a1db0bdc805b06c17d",
+          "premises_file": "P2-causality-negative-premises.smt2",
+          "premises_sha256": "9753b0200bfcb86bc1ad51090a97fe7ce5cb6872e782992de78b00174ac159fa",
+          "counterexample": {
+            "boundary": "1",
+            "position": "0",
+            "suffix_dependency_at_boundary": "True"
+          }
+        }
+      ],
+      "source_mapping": [
+        "Causal-attention/local-MLP contract; induction applies across 28 language layers",
+        "Runtime.prepare: no visual token after boundary; Runtime._language: prefix-only end"
+      ]
+    },
+    {
+      "id": "P3-isolation",
+      "title": "工作区重置及后续请求不改写持久前缀",
+      "results": [
+        {
+          "kind": "safe",
+          "result": "unsat",
+          "expected": "unsat",
+          "premises": "sat",
+          "query": "P3-isolation-safe.smt2",
+          "query_sha256": "bd331a4431bd8f04dc14cd9e69a9f5512aeb7886ea568ed7b9365ac4b38e9427",
+          "premises_file": "P3-isolation-safe-premises.smt2",
+          "premises_sha256": "6d8fcb9e13e956eb72796bf0026cd8fb5c392c4d0a19ae28b2da37e872b5dec4",
+          "counterexample": null
+        },
+        {
+          "kind": "negative",
+          "result": "sat",
+          "expected": "sat",
+          "premises": "sat",
+          "query": "P3-isolation-negative.smt2",
+          "query_sha256": "0089029657e2ca8a7dfe3dfb4ef51b5080bba6087b4fbeaff02b891bd5b0ee3b",
+          "premises_file": "P3-isolation-negative-premises.smt2",
+          "premises_sha256": "eb6cdbb7ab34a109c17cad0c0d14ab995d0a957c832295dc29d0d589ca4bf3bf",
+          "counterexample": {
+            "prefix_length": "1",
+            "cell": "0",
+            "original_K": "4",
+            "saved_K_after_requests": "0"
+          }
+        }
+      ],
+      "source_mapping": [
+        "Runtime._save/_restore",
+        "Transformers.CacheLayerMixin.reset",
+        "negative: clone returns alias"
+      ]
+    },
+    {
+      "id": "P4-restore",
+      "title": "28层K/V恢复准确且游标回到前缀边界",
+      "results": [
+        {
+          "kind": "safe",
+          "result": "unsat",
+          "expected": "unsat",
+          "premises": "sat",
+          "query": "P4-restore-safe.smt2",
+          "query_sha256": "7c018b4b151bd22609eb9f52ff4fb4c6f9d318cf0155b2cabd742c8e1b991cde",
+          "premises_file": "P4-restore-safe-premises.smt2",
+          "premises_sha256": "6d8fcb9e13e956eb72796bf0026cd8fb5c392c4d0a19ae28b2da37e872b5dec4",
+          "counterexample": null
+        },
+        {
+          "kind": "negative",
+          "result": "sat",
+          "expected": "sat",
+          "premises": "sat",
+          "query": "P4-restore-negative.smt2",
+          "query_sha256": "ec035be3e10ec177407c19e589b6d01c73baf9e67ab44e5c7a0c8f424f59a01e",
+          "premises_file": "P4-restore-negative-premises.smt2",
+          "premises_sha256": "6d8fcb9e13e956eb72796bf0026cd8fb5c392c4d0a19ae28b2da37e872b5dec4",
+          "counterexample": {
+            "prefix_length": "1",
+            "restored_cursor": "2"
+          }
+        }
+      ],
+      "source_mapping": [
+        "Runtime._restore: slices.copy_ and cumulative_length.fill_"
+      ]
+    },
+    {
+      "id": "G1-capacity",
+      "title": "真实准入守卫保证最多63步decode写入不越界",
+      "results": [
+        {
+          "kind": "safe",
+          "result": "unsat",
+          "expected": "unsat",
+          "premises": "sat",
+          "query": "G1-capacity-safe.smt2",
+          "query_sha256": "dd990559f718fab782e698f9d2beb6fb063bc7912bff6be09a7fcb1bd6498219",
+          "premises_file": "G1-capacity-safe-premises.smt2",
+          "premises_sha256": "311893dce1194764de2db1ec03c7264a5ee5b31b934464359838d62b24f3bf8e",
+          "counterexample": null
+        },
+        {
+          "kind": "negative",
+          "result": "sat",
+          "expected": "sat",
+          "premises": "sat",
+          "query": "G1-capacity-negative.smt2",
+          "query_sha256": "5a2905a1b404d49bed3d19b5c86eecb2579c3525c20adfbf9781f9d847539721",
+          "premises_file": "G1-capacity-negative-premises.smt2",
+          "premises_sha256": "a426dd698425e929de6633b26b257c76021ac8286d6e4abc4e5f13d82c2395be",
+          "counterexample": {
+            "prompt_length": "1024",
+            "decode_step": "0",
+            "write_slot": "1024",
+            "capacity": "1024"
+          }
+        }
+      ],
+      "source_mapping": [
+        "Runtime.prepare: extracted admission assert",
+        "Runtime.generate: at most max_new_tokens-1 decode calls",
+        "fixed_steps diagnostic calls must be <=64; first token comes from prefill"
+      ]
+    },
+    {
+      "id": "G2-mask",
+      "title": "单步写入后mask恰好覆盖有效KV，不暴露未来槽位",
+      "results": [
+        {
+          "kind": "safe",
+          "result": "unsat",
+          "expected": "unsat",
+          "premises": "sat",
+          "query": "G2-mask-safe.smt2",
+          "query_sha256": "de95fe065b3f4fc96605d26c34c34d2855bc5661bca9bc4a478e15c6ee87905f",
+          "premises_file": "G2-mask-safe-premises.smt2",
+          "premises_sha256": "9d689c4e98972c2cf837bd9a399323927355086952980933155e6ee08a86011e",
+          "counterexample": null
+        },
+        {
+          "kind": "negative",
+          "result": "sat",
+          "expected": "sat",
+          "premises": "sat",
+          "query": "G2-mask-negative.smt2",
+          "query_sha256": "86accc66359f525ef64726775f0d27882f2167e144ed818f7983113eecdd63f8",
+          "premises_file": "G2-mask-negative-premises.smt2",
+          "premises_sha256": "9d689c4e98972c2cf837bd9a399323927355086952980933155e6ee08a86011e",
+          "counterexample": {
+            "cursor_before_write": "1",
+            "cursor_after_write": "2",
+            "column": "2",
+            "visible": "True"
+          }
+        }
+      ],
+      "source_mapping": [
+        "Runtime._decode: device cursor / columns<=cursor / torch.where",
+        "StaticLayer.update: add_ and index_copy_"
+      ]
+    },
+    {
+      "id": "G3-replay",
+      "title": "固定绑定下图数据流重放与eager单步迁移相同",
+      "results": [
+        {
+          "kind": "safe",
+          "result": "unsat",
+          "expected": "unsat",
+          "premises": "sat",
+          "query": "G3-replay-safe.smt2",
+          "query_sha256": "8572ef507b379862509177c2b6512626346868e4e1669b8a845a7e623d2ab1a5",
+          "premises_file": "G3-replay-safe-premises.smt2",
+          "premises_sha256": "7e20f88abb04cb554fb37c053770f671e5e9f0731cf20c5a30a01ad54bdd3a34",
+          "counterexample": null
+        },
+        {
+          "kind": "negative",
+          "result": "sat",
+          "expected": "sat",
+          "premises": "sat",
+          "query": "G3-replay-negative.smt2",
+          "query_sha256": "38cc92c094c4191de089685bc53d1b70f40d8268aff6eba0d58149661e0da45b",
+          "premises_file": "G3-replay-negative-premises.smt2",
+          "premises_sha256": "9258ea0bf59a3623a159bd27ba264e5bc550fd29f8ca64d92d6845da3aa2c808",
+          "counterexample": {
+            "captured_cursor": "1",
+            "live_cursor": "2",
+            "captured_delta": "0",
+            "live_delta": "0",
+            "replay_position": "1",
+            "eager_position": "2"
+          }
+        }
+      ],
+      "source_mapping": [
+        "Runtime._decode and StaticLayer.update executed symbolically",
+        "Graph replay substitutes CURRENT buffer contents into the captured tensor DAG",
+        "negative: freeze capture-time cursor/delta; CUDA faithfully replaying the DAG is an assumption"
+      ]
+    },
+    {
+      "id": "G4-addresses",
+      "title": "恢复与解码保持全部KV、游标及输入缓冲地址",
+      "results": [
+        {
+          "kind": "safe",
+          "result": "unsat",
+          "expected": "unsat",
+          "premises": "sat",
+          "query": "G4-addresses-safe.smt2",
+          "query_sha256": "17bc654c236449b66f348aa440981a23f00f170237951a2337d9b572f5013dea",
+          "premises_file": "G4-addresses-safe-premises.smt2",
+          "premises_sha256": "bf5d5a8082a2d9e86415c001f5f250f318999d08fadabd37608f9c879fdf505a",
+          "counterexample": null
+        },
+        {
+          "kind": "negative",
+          "result": "sat",
+          "expected": "sat",
+          "premises": "sat",
+          "query": "G4-addresses-negative.smt2",
+          "query_sha256": "bf5d5a8082a2d9e86415c001f5f250f318999d08fadabd37608f9c879fdf505a",
+          "premises_file": "G4-addresses-negative-premises.smt2",
+          "premises_sha256": "bf5d5a8082a2d9e86415c001f5f250f318999d08fadabd37608f9c879fdf505a",
+          "counterexample": {
+            "captured_token_address": "1086",
+            "current_token_address": "1259"
+          }
+        }
+      ],
+      "source_mapping": [
+        "Runtime._restore/_decode",
+        "StaticLayer.update/reset",
+        "negative: replace token tensor instead of copy_"
+      ]
+    },
+    {
+      "id": "G5-rollback",
+      "title": "预热和图捕获后恢复有效KV、首token与游标",
+      "results": [
+        {
+          "kind": "safe",
+          "result": "unsat",
+          "expected": "unsat",
+          "premises": "sat",
+          "query": "G5-rollback-safe.smt2",
+          "query_sha256": "1a3113a9b61d946faf9126f625f153e31bbd3e5ac8fdea7b735432dc474f659b",
+          "premises_file": "G5-rollback-safe-premises.smt2",
+          "premises_sha256": "1d9602849bff310cc595e17fcf4db5525993a59a0328f6907834f17c202288e9",
+          "counterexample": null
+        },
+        {
+          "kind": "negative",
+          "result": "sat",
+          "expected": "sat",
+          "premises": "sat",
+          "query": "G5-rollback-negative.smt2",
+          "query_sha256": "1b9538c1d81d7a9a856f3d73cf210a027a3d92addd7147ecae09ccecaf7dda75",
+          "premises_file": "G5-rollback-negative-premises.smt2",
+          "premises_sha256": "1d9602849bff310cc595e17fcf4db5525993a59a0328f6907834f17c202288e9",
+          "counterexample": {
+            "prefill_length": "1",
+            "length_after_build": "2",
+            "token_before": "0",
+            "token_after": "0"
+          }
+        }
+      ],
+      "source_mapping": [
+        "Runtime.build_graph: actual 3 warmups, restore, capture, restore, token.copy_",
+        "Prefill success and CUDA stream/capture ordering are contracts"
+      ]
+    }
+  ],
+  "assumptions": [
+    "Successful disjoint allocation, correct slice/clone/copy_/index_copy_ tensor semantics",
+    "Structural cache identities are collision-free abstractions of SHA256; identical deterministic preprocessing/visual features",
+    "Language layers obey causal attention, token-local operations and supplied mask",
+    "B=1, 28 initialized layers, capacity1024, output limit64; fixed_steps<=64",
+    "Valid prepared positions fit int64; tested mRoPE delta is modeled within [-1024,1024]",
+    "CUDA streams preserve ordering and CUDA Graph faithfully replays captured tensor operations at bound addresses",
+    "Neural step is a deterministic uninterpreted function; BF16 numerical differences and answer accuracy are measured separately"
+  ]
+}

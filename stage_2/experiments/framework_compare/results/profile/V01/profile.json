@@ -1,0 +1,33 @@
+{
+  "question_id": "4741",
+  "answer": "3-6-01\n",
+  "token_ids": [
+    18,
+    12,
+    21,
+    12,
+    15,
+    16,
+    151645,
+    198,
+    151643
+  ],
+  "ttft_s": 0.10374830099954124,
+  "e2e_s": 0.26964007999958994,
+  "decode_s": 0.1658917790000487,
+  "decode_steps": 8,
+  "input_tokens": 770,
+  "prompt_sha256": "b2087e2f9a2d85f2594bca1e5eec65fb1ad2716953d87cd0ee05e5783f82dfb6",
+  "num_cached_tokens": 0,
+  "finish_reason": "length",
+  "encoder_calls": 0,
+  "encoded_images": 0,
+  "graph_replays": 8,
+  "peak_allocated_bytes": 6208701952,
+  "peak_reserved_bytes": 6356467712,
+  "profile_runtime_calls": {
+    "cudaLaunchKernel": 84,
+    "cudaGraphLaunch": 7
+  },
+  "scope": "Eight decode steps after first CPU-visible token; excludes prefill, diagnostic only"
+}

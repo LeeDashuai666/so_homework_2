@@ -1,0 +1,72 @@
+{
+  "prompt": "<|im_start|>system\nYou select one experiment for vLLM's multimodal encoder cache. The visual encoder results are cached in units of visual tokens. Requests to the pages in the supplied working set alternate across pages. A revisit can avoid encoding when its encoder result remains resident or APC skips the image segment. Use the baseline's encoder calls, TTFT and memory and the distribution of page sizes. Choose the smallest offered capacity that is likely to hold the active visual working set within the peak allocated memory limit and remove repeat encoder work. Only one trial remains. Answer using the corresponding single letter.<|im_end|>\n<|im_start|>user\n{\"active_working_set_visual_tokens\": 11880, \"baseline\": {\"capacity\": 1024, \"development_access_order\": \"questions grouped by page\", \"mean_revisit_ttft_ms\": 29.163, \"page_revisits\": 218, \"peak_allocated_gib\": 5.7825, \"questions\": 282, \"revisit_encoder_calls\": 0, \"total_encoder_calls\": 64}, \"candidates\": [1024, 16384], \"choices\": {\"A\": 1024, \"B\": 16384}, \"page_visual_tokens\": [744, 744, 744, 736, 736, 744, 744, 744, 736, 744, 744, 744, 744, 744, 744, 744], \"peak_allocated_limit_gib\": 6.75, \"target_access_order\": \"sixteen warm pages, interleaved revisits\"}<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "observation": {
+    "page_visual_tokens": [
+      744,
+      744,
+      744,
+      736,
+      736,
+      744,
+      744,
+      744,
+      736,
+      744,
+      744,
+      744,
+      744,
+      744,
+      744,
+      744
+    ],
+    "active_working_set_visual_tokens": 11880,
+    "baseline": {
+      "capacity": 1024,
+      "development_access_order": "questions grouped by page",
+      "questions": 282,
+      "total_encoder_calls": 64,
+      "page_revisits": 218,
+      "revisit_encoder_calls": 0,
+      "mean_revisit_ttft_ms": 29.163,
+      "peak_allocated_gib": 5.7825
+    },
+    "target_access_order": "sixteen warm pages, interleaved revisits",
+    "peak_allocated_limit_gib": 6.75,
+    "candidates": [
+      1024,
+      16384
+    ]
+  },
+  "prompt_tokens": 387,
+  "choices": {
+    "A": 1024,
+    "B": 16384
+  },
+  "raw_choice_logits": {
+    "A": 29.125,
+    "B": 28.625
+  },
+  "candidate_token_ids": {
+    "A": [
+      32
+    ],
+    "B": [
+      33
+    ]
+  },
+  "choice": "A",
+  "capacity": 1024,
+  "model_load_s": 2.1632963700030814,
+  "decision_s": 14.771460743999342,
+  "model_and_decision_s": 16.96080306100339,
+  "process_peak_rss_kib": 1765800,
+  "environment": {
+    "torch": "2.14.0+cu130",
+    "transformers": "5.17.0",
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "threads": 2,
+    "decoding": "one greedy token constrained to candidate letters",
+    "thinking": false
+  }
+}

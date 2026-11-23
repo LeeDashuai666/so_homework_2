@@ -1,0 +1,175 @@
+[
+  {
+    "case": 0,
+    "page_ids": [
+      "1985"
+    ],
+    "question_ids": [
+      "4741"
+    ],
+    "tokens_equal_native_miss_gpu_cpu": true,
+    "features_bitwise_equal": true,
+    "first_logits_max_abs_error": 0.0,
+    "feature_max_abs_error": 0.0,
+    "native_batch_vs_single_feature_max_abs_error": 0.0,
+    "cpu_gpu_roundtrip_bitwise_equal": true,
+    "first_logits_within_tolerance": true,
+    "native_images": 1,
+    "miss_images": 1,
+    "gpu_hit_images_encoded": 0,
+    "cpu_hit_images_encoded": 0,
+    "answers": [
+      "3-6-01"
+    ],
+    "cache": {
+      "misses": 1,
+      "gpu_peak_payload_bytes": 12189696,
+      "gpu_hits": 3,
+      "d2h_bytes": 12189696,
+      "d2h_s": 0.0017320320002909284,
+      "gpu_evictions": 1,
+      "cpu_hits": 1,
+      "h2d_s": 0.0015382210003735963,
+      "h2d_bytes": 12189696,
+      "gpu_payload_bytes": 12189696,
+      "cpu_payload_bytes": 0,
+      "gpu_limit": 134217728,
+      "cpu_limit": 268435456,
+      "gpu_entries": 1,
+      "cpu_entries": 0,
+      "active_leases": 0
+    }
+  },
+  {
+    "case": 1,
+    "page_ids": [
+      "1985",
+      "1985"
+    ],
+    "question_ids": [
+      "4741",
+      "4742"
+    ],
+    "tokens_equal_native_miss_gpu_cpu": true,
+    "features_bitwise_equal": false,
+    "first_logits_max_abs_error": 0.375,
+    "feature_max_abs_error": 3.90625,
+    "native_batch_vs_single_feature_max_abs_error": 3.90625,
+    "cpu_gpu_roundtrip_bitwise_equal": true,
+    "first_logits_within_tolerance": false,
+    "native_images": 2,
+    "miss_images": 1,
+    "gpu_hit_images_encoded": 0,
+    "cpu_hit_images_encoded": 0,
+    "answers": [
+      "3-6-01",
+      "Morehead, Ky"
+    ],
+    "cache": {
+      "misses": 1,
+      "gpu_peak_payload_bytes": 12189696,
+      "gpu_hits": 4,
+      "d2h_bytes": 12189696,
+      "d2h_s": 0.0015321979990403634,
+      "gpu_evictions": 1,
+      "cpu_hits": 1,
+      "h2d_s": 0.0014457889992627315,
+      "h2d_bytes": 12189696,
+      "gpu_payload_bytes": 12189696,
+      "cpu_payload_bytes": 0,
+      "gpu_limit": 134217728,
+      "cpu_limit": 268435456,
+      "gpu_entries": 1,
+      "cpu_entries": 0,
+      "active_leases": 0
+    }
+  },
+  {
+    "case": 2,
+    "page_ids": [
+      "1985",
+      "6573"
+    ],
+    "question_ids": [
+      "4741",
+      "59623"
+    ],
+    "tokens_equal_native_miss_gpu_cpu": true,
+    "features_bitwise_equal": true,
+    "first_logits_max_abs_error": 0.0,
+    "feature_max_abs_error": 0.0,
+    "native_batch_vs_single_feature_max_abs_error": 3.4375,
+    "cpu_gpu_roundtrip_bitwise_equal": true,
+    "first_logits_within_tolerance": true,
+    "native_images": 2,
+    "miss_images": 2,
+    "gpu_hit_images_encoded": 0,
+    "cpu_hit_images_encoded": 0,
+    "answers": [
+      "3-6-01",
+      "DATE"
+    ],
+    "cache": {
+      "misses": 2,
+      "gpu_peak_payload_bytes": 22740992,
+      "gpu_hits": 6,
+      "d2h_bytes": 22740992,
+      "d2h_s": 0.002825682000548113,
+      "gpu_evictions": 2,
+      "cpu_hits": 2,
+      "h2d_s": 0.0026418180004839087,
+      "h2d_bytes": 22740992,
+      "gpu_payload_bytes": 22740992,
+      "cpu_payload_bytes": 0,
+      "gpu_limit": 134217728,
+      "cpu_limit": 268435456,
+      "gpu_entries": 2,
+      "cpu_entries": 0,
+      "active_leases": 0
+    }
+  },
+  {
+    "case": 3,
+    "page_ids": [
+      "6573",
+      "6299"
+    ],
+    "question_ids": [
+      "59624",
+      "21121"
+    ],
+    "tokens_equal_native_miss_gpu_cpu": true,
+    "features_bitwise_equal": true,
+    "first_logits_max_abs_error": 0.0,
+    "feature_max_abs_error": 0.0,
+    "native_batch_vs_single_feature_max_abs_error": 10.328125,
+    "cpu_gpu_roundtrip_bitwise_equal": true,
+    "first_logits_within_tolerance": true,
+    "native_images": 2,
+    "miss_images": 2,
+    "gpu_hit_images_encoded": 0,
+    "cpu_hit_images_encoded": 0,
+    "answers": [
+      "NAME",
+      "Research 478"
+    ],
+    "cache": {
+      "misses": 2,
+      "gpu_peak_payload_bytes": 22740992,
+      "gpu_hits": 6,
+      "d2h_bytes": 22740992,
+      "d2h_s": 0.0027074620011262596,
+      "gpu_evictions": 2,
+      "cpu_hits": 2,
+      "h2d_s": 0.002912367001044913,
+      "h2d_bytes": 22740992,
+      "gpu_payload_bytes": 22740992,
+      "cpu_payload_bytes": 0,
+      "gpu_limit": 134217728,
+      "cpu_limit": 268435456,
+      "gpu_entries": 2,
+      "cpu_entries": 0,
+      "active_leases": 0
+    }
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "scope": "Analytical byte model from pinned model config, not a prefix-KV performance benchmark",
+  "config_sha256": "bec4b3d446efa05807365c9e1cec03ac590836879d02f3a6da879971154bdd3b",
+  "dtype_bytes": 2,
+  "encoder_feature_bytes_per_visual_token": 16384,
+  "language_kv_bytes_per_token": 114688,
+  "kv_to_encoder_byte_ratio": 7.0,
+  "example_visual_tokens": 744,
+  "example_encoder_mib": 11.625,
+  "example_visual_kv_mib": 81.375
+}

@@ -1,0 +1,59 @@
+Loading weights:   0%|          | 0/625 [00:00<?, ?it/s]Loading weights:   0%|          | 1/625 [00:00<07:16,  1.43it/s]Loading weights:   2%|▏         | 15/625 [00:00<00:25, 24.21it/s]Loading weights:   4%|▍         | 26/625 [00:00<00:15, 39.50it/s]Loading weights:   6%|▌         | 37/625 [00:01<00:11, 53.19it/s]Loading weights:   8%|▊         | 48/625 [00:01<00:08, 64.62it/s]Loading weights:   9%|▉         | 59/625 [00:01<00:07, 73.83it/s]Loading weights:  11%|█         | 70/625 [00:01<00:06, 81.42it/s]Loading weights:  13%|█▎        | 81/625 [00:01<00:06, 84.99it/s]Loading weights:  15%|█▍        | 92/625 [00:01<00:06, 88.82it/s]Loading weights:  16%|█▋        | 102/625 [00:01<00:06, 84.74it/s]Loading weights:  18%|█▊        | 114/625 [00:01<00:05, 88.91it/s]Loading weights:  20%|██        | 125/625 [00:01<00:05, 90.56it/s]Loading weights:  22%|██▏       | 136/625 [00:02<00:05, 91.07it/s]Loading weights:  24%|██▎       | 147/625 [00:02<00:05, 92.14it/s]Loading weights:  25%|██▌       | 158/625 [00:02<00:05, 92.49it/s]Loading weights:  27%|██▋       | 169/625 [00:02<00:04, 92.30it/s]Loading weights:  29%|██▉       | 180/625 [00:02<00:04, 92.65it/s]Loading weights:  31%|███       | 191/625 [00:02<00:04, 92.63it/s]Loading weights:  32%|███▏      | 202/625 [00:02<00:04, 90.27it/s]Loading weights:  34%|███▍      | 212/625 [00:02<00:04, 92.51it/s]Loading weights:  36%|███▌      | 222/625 [00:03<00:04, 86.62it/s]Loading weights:  37%|███▋      | 234/625 [00:03<00:04, 90.10it/s]Loading weights:  39%|███▉      | 245/625 [00:03<00:04, 88.81it/s]Loading weights:  41%|████      | 256/625 [00:03<00:04, 89.29it/s]Loading weights:  43%|████▎     | 267/625 [00:03<00:04, 88.86it/s]Loading weights:  44%|████▍     | 278/625 [00:03<00:03, 88.23it/s]Loading weights:  46%|████▌     | 289/625 [00:03<00:03, 88.54it/s]Loading weights:  48%|████▊     | 300/625 [00:03<00:03, 89.31it/s]Loading weights:  51%|█████     | 316/625 [00:04<00:02, 105.73it/s]Loading weights:  56%|█████▋    | 352/625 [00:04<00:01, 171.02it/s]Loading weights:  62%|██████▏   | 388/625 [00:04<00:01, 219.07it/s]Loading weights:  68%|██████▊   | 426/625 [00:04<00:00, 258.41it/s]Loading weights:  74%|███████▍  | 462/625 [00:04<00:00, 285.92it/s]Loading weights:  80%|███████▉  | 498/625 [00:04<00:00, 300.63it/s]Loading weights:  85%|████████▌ | 534/625 [00:04<00:00, 310.96it/s]Loading weights:  91%|█████████ | 568/625 [00:04<00:00, 319.17it/s]Loading weights:  96%|█████████▌| 601/625 [00:04<00:00, 309.15it/s]Loading weights: 100%|██████████| 625/625 [00:05<00:00, 120.08it/s]
+{
+  "passed": true,
+  "recorded_at": "2026-11-16T11:22:37.010028+00:00",
+  "scope": "Development GPU invariants; synthetic long suffix is only a correctness check",
+  "source_sha256": {
+    "runtime.py": "3e84b00485ea92db7f1b8d6abb64be1ea6765a19ec1a4e76f75e14bca70f10f1",
+    "verify_runtime.py": "ee7f0d0c2f1c1de147cc67e02ac0aeadf86202047ba25d2ef92914d787b00e0c"
+  },
+  "torch": "2.14.0+cu130",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "shared_prefix_key_for_different_questions": true,
+  "different_image_misses": true,
+  "working_kv_disjoint_from_persistent_prefix": true,
+  "cases": [
+    {
+      "question_id": "4742",
+      "prompt_tokens": 770,
+      "graph_matches_eager": true,
+      "both_matches_prefix": true,
+      "persistent_prefix_unchanged": true,
+      "working_addresses_unchanged": true
+    },
+    {
+      "question_id": "59623",
+      "prompt_tokens": 677,
+      "graph_matches_eager": true,
+      "both_matches_prefix": true,
+      "persistent_prefix_unchanged": true,
+      "working_addresses_unchanged": true
+    },
+    {
+      "question_id": "4741",
+      "prompt_tokens": 770,
+      "graph_matches_eager": true,
+      "both_matches_prefix": true,
+      "persistent_prefix_unchanged": true,
+      "working_addresses_unchanged": true
+    }
+  ],
+  "capacity_edge": {
+    "prompt_tokens": 960,
+    "output_tokens": 64,
+    "final_cache_length": 1023,
+    "capacity": 1024,
+    "graph_tokens_equal": true
+  },
+  "eviction": {
+    "quota_bytes": 85902336,
+    "remaining_bytes": 85901312,
+    "readmission_missed": true
+  },
+  "memory": {
+    "peak_allocated_bytes": 4940051456,
+    "peak_reserved_bytes": 5010096128,
+    "final_driver_free_bytes": 2371878912,
+    "driver_total_bytes": 8585216000
+  }
+}

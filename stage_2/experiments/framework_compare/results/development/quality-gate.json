@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "max_anls_drop": 0.005,
+  "baseline": "fresh H0 in this development run",
+  "read_split": "original development only",
+  "variants": {
+    "H0": {
+      "questions": 282,
+      "anls": 0.8636300920701939,
+      "delta_vs_H0": 0.0,
+      "input_ids_match": true,
+      "identical_output_tokens": 282,
+      "encoder_calls": 282,
+      "graph_probe_replays": 0,
+      "cached_tokens": 0
+    },
+    "H1": {
+      "questions": 282,
+      "anls": 0.8636300920701939,
+      "delta_vs_H0": 0.0,
+      "input_ids_match": true,
+      "identical_output_tokens": 282,
+      "encoder_calls": 64,
+      "graph_probe_replays": 0,
+      "cached_tokens": 0
+    },
+    "P": {
+      "questions": 282,
+      "anls": 0.8668538186981758,
+      "delta_vs_H0": 0.003223726627981871,
+      "input_ids_match": true,
+      "identical_output_tokens": 278,
+      "encoder_calls": 64,
+      "graph_probe_replays": 1433,
+      "cached_tokens": 162586
+    },
+    "V00": {
+      "questions": 282,
+      "anls": 0.8756271838545197,
+      "delta_vs_H0": 0.01199709178432573,
+      "input_ids_match": true,
+      "identical_output_tokens": 272,
+      "encoder_calls": 64,
+      "graph_probe_replays": 0,
+      "cached_tokens": 0
+    },
+    "V10": {
+      "questions": 282,
+      "anls": 0.8751839214431721,
+      "delta_vs_H0": 0.01155382937297822,
+      "input_ids_match": true,
+      "identical_output_tokens": 271,
+      "encoder_calls": 64,
+      "graph_probe_replays": 0,
+      "cached_tokens": 161520
+    },
+    "V01": {
+      "questions": 282,
+      "anls": 0.8688077621414809,
+      "delta_vs_H0": 0.005177670071286999,
+      "input_ids_match": true,
+      "identical_output_tokens": 274,
+      "encoder_calls": 64,
+      "graph_probe_replays": 1747,
+      "cached_tokens": 0
+    },
+    "V11": {
+      "questions": 282,
+      "anls": 0.8720810845637396,
+      "delta_vs_H0": 0.00845099249354564,
+      "input_ids_match": true,
+      "identical_output_tokens": 273,
+      "encoder_calls": 64,
+      "graph_probe_replays": 1747,
+      "cached_tokens": 161520
+    },
+    "V11E": {
+      "questions": 282,
+      "anls": 0.8720810845637396,
+      "delta_vs_H0": 0.00845099249354564,
+      "input_ids_match": true,
+      "identical_output_tokens": 273,
+      "encoder_calls": 64,
+      "graph_probe_replays": 1747,
+      "cached_tokens": 161520
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "host_effective_packages_unchanged": true,
+  "overlay_freeze_unchanged": true,
+  "effective_package_count": 116,
+  "image_reused_without_pull": true,
+  "host_inference_dependencies_installed": false,
+  "original_stage1_reference_unchanged": true
+}

@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-11-15T23:18:28.406113+08:00",
+  "scope": "environment smoke only",
+  "checks": {
+    "cuda_and_transfers": {
+      "passed": true,
+      "details": {
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "runtime": "13.0",
+        "pinned_host_memory": true,
+        "async_transfer": true,
+        "compute_capability": [
+          8,
+          9
+        ]
+      },
+      "elapsed_seconds": 1.821690287000365
+    },
+    "torch_compile": {
+      "passed": true,
+      "details": {
+        "backend": "inductor",
+        "mode": "reduce-overhead",
+        "scope": "small GPU tensor function"
+      },
+      "elapsed_seconds": 5.5402644680002595
+    },
+    "cuda_profiler": {
+      "passed": true,
+      "details": {
+        "trace": "/home/lxy18/system_homework/stage_2/env/profiler-smoke.json",
+        "cuda_events": 3,
+        "finite": true
+      },
+      "elapsed_seconds": 0.23375095599976703
+    }
+  },
+  "passed": true
+}

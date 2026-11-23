@@ -1,0 +1,100 @@
+{
+  "recorded_at": "2026-11-17T04:56:16.738269+00:00",
+  "variant": "V11E",
+  "phase": "formal",
+  "seed": 4103,
+  "options": {
+    "persistent_cache_mib": 1536,
+    "vllm_kv_cache_bytes": 1728053248,
+    "gpu_memory_utilization": 0.8,
+    "processor_cache_gib": 0.125,
+    "expanded_encoder_cache_tokens": 16384,
+    "compilation_mode": 3,
+    "graph_mode": "FULL_DECODE_ONLY",
+    "note": "Frozen after development quality and compatibility gates",
+    "seed": 4103
+  },
+  "dataset": "evaluation",
+  "input_sha256": "1bb75f45dcbdb8cfe7876e38f08c8d454607aee18f29f4da8142d751f7f36f06",
+  "initialization_s": 30.382167400999606,
+  "environment": {
+    "vllm": "0.32.0",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.19.0",
+    "cuda": "13.0",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "threads": 2,
+    "startup_s": 25.63099659799991,
+    "engine_args": {
+      "model": "/home/lxy18/system_homework/stage_2/models/qwen3-vl-2b-instruct",
+      "dtype": "bfloat16",
+      "max_model_len": 1024,
+      "max_num_seqs": 1,
+      "tensor_parallel_size": 1,
+      "max_num_batched_tokens": 1024,
+      "enable_prefix_caching": true,
+      "enable_chunked_prefill": false,
+      "kv_cache_memory_bytes": 1728053248,
+      "gpu_memory_utilization": 0.8,
+      "mm_processor_cache_gb": 0.125,
+      "mm_device_do_normalize": true,
+      "mm_processor_kwargs": {
+        "size": {
+          "shortest_edge": 131072,
+          "longest_edge": 786432
+        }
+      },
+      "limit_mm_per_prompt": {
+        "image": 1,
+        "video": 0
+      },
+      "compilation_config": {
+        "mode": 3,
+        "cudagraph_mode": "FULL_DECODE_ONLY",
+        "cudagraph_capture_sizes": [
+          1
+        ],
+        "max_cudagraph_capture_size": 1
+      },
+      "seed": 4103,
+      "disable_log_stats": false,
+      "generation_config": "vllm",
+      "worker_extension_cls": "adapters.WorkerProbe"
+    },
+    "worker": [
+      {
+        "model": "Qwen3VLForConditionalGeneration",
+        "runner": "GPUModelRunner",
+        "encoder_cache_tokens": 16384
+      }
+    ],
+    "resolved_compilation": "{'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'ir_enable_torch_wrap': True, 'splitting_ops': ['vllm::unified_attention_with_output', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::qwen4_exp_ple_short_conv', 'vllm::qwen4_exp_qsa_with_output', 'vllm::qwen4_exp_qsa_prepare_with_output', 'vllm::linear_attention', 'vllm::qwen_gdn_attention_core', 'vllm::qwen_gdn_attention_core_fused_norm_packed', 'vllm::gdn_attention_core_xpu', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::deepseek_v4_attention', 'vllm::hpc_rope_norm_forward', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'cudagraph_decoder_replay': True, 'decoder_replay_cudagraph_capture_sizes': [], 'decoder_replay_trim_threshold': 768, 'compile_sizes': [], 'compile_ranges_endpoints': [1024], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_DECODE_ONLY: (2, 0)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 1, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': '/home/lxy18/system_homework/stage_2/experiments/framework_compare/cache/vllm/torch_compile_cache/torch_aot_compile/811c4cdd713ac438e21f347c07172f3169e66a7f9bea4559635feb26f299a48c', 'fast_moe_cold_start': False, 'static_all_moe_layers': []}",
+    "resolved_encoder_cache_tokens": 16384,
+    "normalization": {
+      "mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "rescale_factor": 0.00392156862745098,
+      "patch_size": 16,
+      "temporal_patch_size": 2
+    },
+    "engine_core_client": "InprocClient",
+    "python_graph_probe_scope": "Dynamic replay dispatch only; CUDA profiler provides authoritative runtime launch counts",
+    "resolved_cache": "CacheConfig(block_size=16, user_specified_block_size=False, kv_cache_layout='LBNHC', prefix_match_unit=None, gpu_memory_utilization=0.8, cache_dtype='auto', is_attention_free=False, num_gpu_blocks_override=None, sliding_window=None, enable_prefix_caching=True, prefix_caching_hash_algo='sha256', prefix_cache_retention_interval=0, kv_cache_dtype_skip_layers=[], mamba_page_size_padded=None, skip_page_size_padded=None, mamba_block_size=None, mamba_cache_dtype='auto', mamba_ssm_cache_dtype='auto', mamba_cache_mode='none', enable_mamba_shared_prefix_checkpoint=False, replayssm_buffer_len=16, use_replayssm=False, use_kda_recoverssm=False, num_gpu_blocks=941, num_cpu_blocks=None, effective_attention_block_size=16, kv_cache_size_tokens=15056, kv_cache_max_concurrency=14.703125, hash_block_size=16, cache_hit_alignment_tokens=16, kv_sharing_fast_prefill=False, swa_bounded_replay=True, kv_cache_memory_bytes=1728053248, kv_offloading_size=None, kv_offloading_backend='native', _block_size_resolved=True)"
+  },
+  "source_sha256": {
+    "run_engine.py": "e9ffdf25f5b5aa3ab4d8f58cd383db4ceae3139baaebf92db0731a477215b60a",
+    "launch.py": "1e5acfc2807fa113e5d336e3a43b5558e5513e7117319e81f771318dc2411f96",
+    "execute.py": "c9df9677daf2d5f3b9d806ea0f0f969032609a2da82b84ed2d0a635210d18f37",
+    "prepare_data.py": "eda0a3d38e96f48217af62bddaaab73ebf41e3d5485b39970d9395f10ba5cc66",
+    "adapters.py": "80683f5a19fd01894c9204276b465d0075efd676ebff19aa15220b6528afa8e8",
+    "common.py": "2faa402dd11dae6c87176507e2dfac78164902296e737df6c709051a98243ded"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "/home/lxy18/system_homework/stage_2/.venv/bin/python",
+    "-u",
+    "/home/lxy18/system_homework/stage_2/experiments/framework_compare/run_engine.py",
+    "--variant",
+    "H0",
+    "--phase",
+    "formal",
+    "--seed",
+    "4101",
+    "--options",
+    "/home/lxy18/system_homework/stage_2/experiments/framework_compare/options.lock.json",
+    "--output",
+    "/home/lxy18/system_homework/stage_2/experiments/framework_compare/results/formal/seed-4101-H0"
+  ],
+  "variant": "H0",
+  "phase": "formal",
+  "seed": 4101,
+  "returncode": 0,
+  "elapsed_s": 240.9754203780003,
+  "output": "/home/lxy18/system_homework/stage_2/experiments/framework_compare/results/formal/seed-4101-H0",
+  "log": "/home/lxy18/system_homework/stage_2/experiments/framework_compare/results/formal/seed-4101-H0.log"
+}

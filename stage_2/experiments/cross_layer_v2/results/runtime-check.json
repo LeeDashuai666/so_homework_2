@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "recorded_at": "2026-11-16T11:22:37.010028+00:00",
+  "scope": "Development GPU invariants; synthetic long suffix is only a correctness check",
+  "source_sha256": {
+    "runtime.py": "3e84b00485ea92db7f1b8d6abb64be1ea6765a19ec1a4e76f75e14bca70f10f1",
+    "verify_runtime.py": "ee7f0d0c2f1c1de147cc67e02ac0aeadf86202047ba25d2ef92914d787b00e0c"
+  },
+  "torch": "2.14.0+cu130",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "shared_prefix_key_for_different_questions": true,
+  "different_image_misses": true,
+  "working_kv_disjoint_from_persistent_prefix": true,
+  "cases": [
+    {
+      "question_id": "4742",
+      "prompt_tokens": 770,
+      "graph_matches_eager": true,
+      "both_matches_prefix": true,
+      "persistent_prefix_unchanged": true,
+      "working_addresses_unchanged": true
+    },
+    {
+      "question_id": "59623",
+      "prompt_tokens": 677,
+      "graph_matches_eager": true,
+      "both_matches_prefix": true,
+      "persistent_prefix_unchanged": true,
+      "working_addresses_unchanged": true
+    },
+    {
+      "question_id": "4741",
+      "prompt_tokens": 770,
+      "graph_matches_eager": true,
+      "both_matches_prefix": true,
+      "persistent_prefix_unchanged": true,
+      "working_addresses_unchanged": true
+    }
+  ],
+  "capacity_edge": {
+    "prompt_tokens": 960,
+    "output_tokens": 64,
+    "final_cache_length": 1023,
+    "capacity": 1024,
+    "graph_tokens_equal": true
+  },
+  "eviction": {
+    "quota_bytes": 85902336,
+    "remaining_bytes": 85901312,
+    "readmission_missed": true
+  },
+  "memory": {
+    "peak_allocated_bytes": 4940051456,
+    "peak_reserved_bytes": 5010096128,
+    "final_driver_free_bytes": 2371878912,
+    "driver_total_bytes": 8585216000
+  }
+}

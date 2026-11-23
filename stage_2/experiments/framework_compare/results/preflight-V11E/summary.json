@@ -1,0 +1,107 @@
+{
+  "preflight": {
+    "questions": 6,
+    "anls": 0.8333333333333334,
+    "em": 0.8333333333333334,
+    "mean_ttft_s": 0.1710510579999512,
+    "mean_e2e_s": 0.22539133783334364,
+    "ttft_s": {
+      "p50": 0.12801601649994154,
+      "p95": 0.40311818024986223,
+      "p99": 0.437353018449835
+    },
+    "e2e_s": {
+      "p50": 0.17620109850008703,
+      "p95": 0.4842591817500761,
+      "p99": 0.5210533939501147
+    },
+    "total_e2e_s": 1.3523480270000618,
+    "decode_steps": 23,
+    "decode_ms_per_token": 14.175725173928463,
+    "encoder_calls": 3,
+    "encoded_images": 3,
+    "graph_replays": 29,
+    "prefix_hit_requests": 3,
+    "cached_tokens": 2112,
+    "input_tokens": 4443,
+    "output_tokens": 29,
+    "peak_allocated_bytes": 6231836160,
+    "peak_reserved_bytes": 6356467712,
+    "wall_elapsed_s": 1.4880359079998016,
+    "diagnostics_before": {
+      "encoder_calls": 0,
+      "encoded_images": 0,
+      "graph_replays": 0,
+      "pixel_inputs": [],
+      "graph_callers": {},
+      "peak_allocated_bytes": 6119255040,
+      "peak_reserved_bytes": 6232735744
+    },
+    "diagnostics_after": {
+      "encoder_calls": 3,
+      "encoded_images": 3,
+      "graph_replays": 29,
+      "pixel_inputs": [
+        {
+          "grid_thw": [
+            [
+              1,
+              48,
+              62
+            ]
+          ],
+          "dtype": "torch.uint8",
+          "shape": [
+            2976,
+            1536
+          ],
+          "min": 0.0,
+          "max": 255.0,
+          "pixel_bf16_sha256": "2c1c7e73dcdebf53b6ec7f147d63859711ce831c833a5e4d7017dba52f19c3af",
+          "normalized_pixel_bf16_sha256": "b0c7d47cbe97981ecf2434cef322f2e4aa9c54e03555532072cd1edebbf1ae25"
+        },
+        {
+          "grid_thw": [
+            [
+              1,
+              46,
+              56
+            ]
+          ],
+          "dtype": "torch.uint8",
+          "shape": [
+            2576,
+            1536
+          ],
+          "min": 30.0,
+          "max": 255.0,
+          "pixel_bf16_sha256": "2d99c69540e3c2a32ac8210a31e76fe93a5eb5ac11e2ec9d7960a99f9dfc85bc",
+          "normalized_pixel_bf16_sha256": "b203d5862a2997c6c6da408921e23e7ef6a1c9e16633831fef4bf81e7b3c61ed"
+        },
+        {
+          "grid_thw": [
+            [
+              1,
+              62,
+              48
+            ]
+          ],
+          "dtype": "torch.uint8",
+          "shape": [
+            2976,
+            1536
+          ],
+          "min": 30.0,
+          "max": 255.0,
+          "pixel_bf16_sha256": "8c3a57856aaaf007814bd81feec9ce11f81f0927a67ccfa703061e21f1642580",
+          "normalized_pixel_bf16_sha256": "22373d83c9ff6a2c3c9a754a917cf3b57039ca26e3e6faff4667d80977b41fe7"
+        }
+      ],
+      "graph_callers": {
+        "cudagraph_utils.py:run_fullgraph": 29
+      },
+      "peak_allocated_bytes": 6231836160,
+      "peak_reserved_bytes": 6356467712
+    }
+  }
+}

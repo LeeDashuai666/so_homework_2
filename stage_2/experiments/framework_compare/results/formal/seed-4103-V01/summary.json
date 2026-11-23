@@ -1,0 +1,158 @@
+{
+  "hot": {
+    "questions": 72,
+    "anls": 0.9087501555306706,
+    "em": 0.8888888888888888,
+    "mean_ttft_s": 0.22744556027782892,
+    "mean_e2e_s": 0.32112173061118987,
+    "ttft_s": {
+      "p50": 0.22664842799986218,
+      "p95": 0.23548721669931183,
+      "p99": 0.2681492517200611
+    },
+    "e2e_s": {
+      "p50": 0.3144522444999893,
+      "p95": 0.4336937939001473,
+      "p99": 0.46869955637035676
+    },
+    "total_e2e_s": 23.12076460400567,
+    "decode_steps": 446,
+    "decode_ms_per_token": 15.122610457403564,
+    "encoder_calls": 71,
+    "encoded_images": 71,
+    "graph_replays": 518,
+    "prefix_hit_requests": 0,
+    "cached_tokens": 0,
+    "input_tokens": 55707,
+    "output_tokens": 518,
+    "peak_allocated_bytes": 6208885760,
+    "peak_reserved_bytes": 6356467712,
+    "wall_elapsed_s": 23.207735500000126,
+    "diagnostics_before": {
+      "encoder_calls": 16,
+      "encoded_images": 16,
+      "graph_replays": 107,
+      "pixel_inputs": [],
+      "graph_callers": {
+        "cudagraph_utils.py:run_fullgraph": 625
+      },
+      "peak_allocated_bytes": 6208885760,
+      "peak_reserved_bytes": 6356467712
+    },
+    "diagnostics_after": {
+      "encoder_calls": 87,
+      "encoded_images": 87,
+      "graph_replays": 625,
+      "pixel_inputs": [],
+      "graph_callers": {
+        "cudagraph_utils.py:run_fullgraph": 625
+      },
+      "peak_allocated_bytes": 6208885760,
+      "peak_reserved_bytes": 6356467712
+    }
+  },
+  "session": {
+    "questions": 269,
+    "anls": 0.9195868683243775,
+    "em": 0.8513011152416357,
+    "mean_ttft_s": 0.14112461681045524,
+    "mean_e2e_s": 0.22076988098517014,
+    "ttft_s": {
+      "p50": 0.1153631929992116,
+      "p95": 0.24577518979895102,
+      "p99": 0.2517917596803454
+    },
+    "e2e_s": {
+      "p50": 0.21093616300095164,
+      "p95": 0.3415301782002643,
+      "p99": 0.417501740760708
+    },
+    "total_e2e_s": 59.38709798501077,
+    "decode_steps": 1411,
+    "decode_ms_per_token": 15.183966026221341,
+    "encoder_calls": 64,
+    "encoded_images": 64,
+    "graph_replays": 1680,
+    "prefix_hit_requests": 0,
+    "cached_tokens": 0,
+    "input_tokens": 206929,
+    "output_tokens": 1680,
+    "peak_allocated_bytes": 6209053696,
+    "peak_reserved_bytes": 6356467712,
+    "wall_elapsed_s": 59.66583723200165,
+    "diagnostics_before": {
+      "encoder_calls": 0,
+      "encoded_images": 0,
+      "graph_replays": 0,
+      "pixel_inputs": [],
+      "graph_callers": {
+        "cudagraph_utils.py:run_fullgraph": 1680
+      },
+      "peak_allocated_bytes": 6119256576,
+      "peak_reserved_bytes": 6356467712
+    },
+    "diagnostics_after": {
+      "encoder_calls": 64,
+      "encoded_images": 64,
+      "graph_replays": 1680,
+      "pixel_inputs": [],
+      "graph_callers": {
+        "cudagraph_utils.py:run_fullgraph": 1680
+      },
+      "peak_allocated_bytes": 6209053696,
+      "peak_reserved_bytes": 6356467712
+    }
+  },
+  "unique": {
+    "questions": 64,
+    "anls": 0.9115451388888889,
+    "em": 0.859375,
+    "mean_ttft_s": 0.2447857775312059,
+    "mean_e2e_s": 0.3155000044217502,
+    "ttft_s": {
+      "p50": 0.24723723900024197,
+      "p95": 0.26405196350024196,
+      "p99": 0.28663839963977794
+    },
+    "e2e_s": {
+      "p50": 0.30374947100062855,
+      "p95": 0.4039276160993722,
+      "p99": 0.5046705910998933
+    },
+    "total_e2e_s": 20.192000282992012,
+    "decode_steps": 291,
+    "decode_ms_per_token": 15.552269831597371,
+    "encoder_calls": 64,
+    "encoded_images": 64,
+    "graph_replays": 355,
+    "prefix_hit_requests": 0,
+    "cached_tokens": 0,
+    "input_tokens": 49021,
+    "output_tokens": 355,
+    "peak_allocated_bytes": 6209053696,
+    "peak_reserved_bytes": 6356467712,
+    "wall_elapsed_s": 20.262974483001017,
+    "diagnostics_before": {
+      "encoder_calls": 0,
+      "encoded_images": 0,
+      "graph_replays": 0,
+      "pixel_inputs": [],
+      "graph_callers": {
+        "cudagraph_utils.py:run_fullgraph": 355
+      },
+      "peak_allocated_bytes": 6119256576,
+      "peak_reserved_bytes": 6356467712
+    },
+    "diagnostics_after": {
+      "encoder_calls": 64,
+      "encoded_images": 64,
+      "graph_replays": 355,
+      "pixel_inputs": [],
+      "graph_callers": {
+        "cudagraph_utils.py:run_fullgraph": 355
+      },
+      "peak_allocated_bytes": 6209053696,
+      "peak_reserved_bytes": 6356467712
+    }
+  }
+}

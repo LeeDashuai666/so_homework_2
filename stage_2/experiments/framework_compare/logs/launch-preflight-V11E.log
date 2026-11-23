@@ -1,0 +1,2 @@
+START V11E preflight 4101 /home/lxy18/system_homework/stage_2/experiments/framework_compare/results/preflight-V11E
+FINISH {"variant": "V11E", "phase": "preflight", "seed": 4101, "returncode": 0, "elapsed_s": 71.9014951119998, "output": "/home/lxy18/system_homework/stage_2/experiments/framework_compare/results/preflight-V11E", "log": "/home/lxy18/system_homework/stage_2/experiments/framework_compare/results/preflight-V11E.log"}

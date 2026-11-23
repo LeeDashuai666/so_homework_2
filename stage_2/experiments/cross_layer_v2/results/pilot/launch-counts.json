@@ -1,0 +1,14 @@
+{
+  "eager": {
+    "fixed_decode_steps": 8,
+    "runtime_launch_calls": {
+      "cudaLaunchKernel": 14352
+    }
+  },
+  "graph": {
+    "fixed_decode_steps": 8,
+    "runtime_launch_calls": {
+      "cudaGraphLaunch": 8
+    }
+  }
+}

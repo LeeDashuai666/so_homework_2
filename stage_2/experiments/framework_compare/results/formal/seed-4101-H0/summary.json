@@ -1,0 +1,128 @@
+{
+  "hot": {
+    "questions": 72,
+    "anls": 0.9087501555306706,
+    "em": 0.8888888888888888,
+    "mean_ttft_s": 0.3057134089027866,
+    "mean_e2e_s": 0.5667352498194558,
+    "ttft_s": {
+      "p50": 0.30378357800009326,
+      "p95": 0.31692769750011396,
+      "p99": 0.3589910304396201
+    },
+    "e2e_s": {
+      "p50": 0.5612086225000894,
+      "p95": 0.8559001041496686,
+      "p99": 0.9177687850804894
+    },
+    "total_e2e_s": 40.80493798700081,
+    "decode_steps": 446,
+    "decode_ms_per_token": 42.09908868608891,
+    "encoder_calls": 72,
+    "encoded_images": 72,
+    "graph_replays": 0,
+    "prefix_hit_requests": 0,
+    "cached_tokens": 0,
+    "input_tokens": 55707,
+    "output_tokens": 518,
+    "peak_allocated_bytes": 4559004160,
+    "peak_reserved_bytes": 4645191680,
+    "wall_elapsed_s": 40.846241107000424,
+    "diagnostics_before": {
+      "encoder_calls": 16,
+      "encoded_images": 16,
+      "peak_allocated_bytes": 4556826112,
+      "peak_reserved_bytes": 4645191680
+    },
+    "diagnostics_after": {
+      "encoder_calls": 88,
+      "encoded_images": 88,
+      "peak_allocated_bytes": 4559004160,
+      "peak_reserved_bytes": 4645191680
+    }
+  },
+  "session": {
+    "questions": 269,
+    "anls": 0.9164889748919116,
+    "em": 0.8513011152416357,
+    "mean_ttft_s": 0.2982098441449923,
+    "mean_e2e_s": 0.5138292888363998,
+    "ttft_s": {
+      "p50": 0.3025120580005023,
+      "p95": 0.3099522287999207,
+      "p99": 0.3197338417598803
+    },
+    "e2e_s": {
+      "p50": 0.4786731280000822,
+      "p95": 0.7909703752000495,
+      "p99": 0.9634971431200389
+    },
+    "total_e2e_s": 138.22007869699155,
+    "decode_steps": 1410,
+    "decode_ms_per_token": 41.08912498227223,
+    "encoder_calls": 269,
+    "encoded_images": 269,
+    "graph_replays": 0,
+    "prefix_hit_requests": 0,
+    "cached_tokens": 0,
+    "input_tokens": 206929,
+    "output_tokens": 1679,
+    "peak_allocated_bytes": 4562508288,
+    "peak_reserved_bytes": 4655677440,
+    "wall_elapsed_s": 138.34437366900056,
+    "diagnostics_before": {
+      "encoder_calls": 0,
+      "encoded_images": 0,
+      "peak_allocated_bytes": 4382768640,
+      "peak_reserved_bytes": 4416602112
+    },
+    "diagnostics_after": {
+      "encoder_calls": 269,
+      "encoded_images": 269,
+      "peak_allocated_bytes": 4562508288,
+      "peak_reserved_bytes": 4655677440
+    }
+  },
+  "unique": {
+    "questions": 64,
+    "anls": 0.9115451388888889,
+    "em": 0.859375,
+    "mean_ttft_s": 0.29955633493742084,
+    "mean_e2e_s": 0.4889912853437295,
+    "ttft_s": {
+      "p50": 0.30446549650014276,
+      "p95": 0.32026341214964305,
+      "p99": 0.3221620026899564
+    },
+    "e2e_s": {
+      "p50": 0.4642092680001042,
+      "p95": 0.7322710859497874,
+      "p99": 1.0069065257094458
+    },
+    "total_e2e_s": 31.295442261998687,
+    "decode_steps": 290,
+    "decode_ms_per_token": 41.75156770001634,
+    "encoder_calls": 64,
+    "encoded_images": 64,
+    "graph_replays": 0,
+    "prefix_hit_requests": 0,
+    "cached_tokens": 0,
+    "input_tokens": 49021,
+    "output_tokens": 354,
+    "peak_allocated_bytes": 4560355840,
+    "peak_reserved_bytes": 4655677440,
+    "wall_elapsed_s": 31.3268797719993,
+    "diagnostics_before": {
+      "encoder_calls": 0,
+      "encoded_images": 0,
+      "peak_allocated_bytes": 4382768640,
+      "peak_reserved_bytes": 4416602112
+    },
+    "diagnostics_after": {
+      "encoder_calls": 64,
+      "encoded_images": 64,
+      "peak_allocated_bytes": 4560355840,
+      "peak_reserved_bytes": 4655677440
+    }
+  }
+}

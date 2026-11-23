@@ -1,0 +1,57 @@
+{
+  "complete": true,
+  "completed_at": "2026-11-17T05:05:47.180712+00:00",
+  "main_engine_starts": 21,
+  "capacity_auxiliary_starts": 3,
+  "independent_seeds": 3,
+  "scene_blocks": 72,
+  "timed_requests": 9720,
+  "evaluation_pages": 64,
+  "evaluation_questions": 269,
+  "all_quality_gates_passed": true,
+  "frozen_sources_verified": true,
+  "environment_integrity": {
+    "host_effective_packages_unchanged": true,
+    "overlay_freeze_unchanged": true,
+    "effective_package_count": 116,
+    "image_reused_without_pull": true,
+    "host_inference_dependencies_installed": false,
+    "original_stage1_reference_unchanged": true
+  },
+  "document": {
+    "pages": 14,
+    "figures": 7,
+    "tables": 6,
+    "visual_review_passed": true,
+    "word_pdf_text_identical": true
+  },
+  "file_sha256": {
+    "docs/设计文档.md": "f536c432887eae5b58a5bb4785514901296ee91345b6359dc088351340bf5542",
+    "docs/设计文档.docx": "c178686800cb55b4ae607a85b42f70884bbba849704dba4428bd0398ee4fbdfb",
+    "docs/设计文档.检查.json": "3f0b19bd7bb7ab398fbe8f76975dcbeb171d7353e11ef29a5789f0702ef9a515",
+    "experiments/framework_compare/框架对比实验报告.md": "e62a946ca5723c28e98df96646f255c704671c438891cf17cf078da72ff43016",
+    "experiments/framework_compare/框架对比实验报告.html": "69552912014e0f0b5de25bdfbb7944bf2519671006efa442317a4a1014000878",
+    "experiments/framework_compare/protocol.lock.json": "6fa32ec1c8b81d9ee376e25d8742d4ba90aeb2b3d6fc4cc31638f3121f513f12",
+    "experiments/framework_compare/results/analysis/analysis.json": "986248b4aae89fec16aa214c3cbf3ac14ae1f2f8943736c9cbc003ed5d977bdf",
+    "experiments/framework_compare/environment-integrity.json": "346ab901d1b5d0784dd87a5db4896310911f2a3930c11394978f2477cbd3aab7"
+  },
+  "results_scope": "CPU-ready closed-loop B=1, three independent process seeds; original GPU-ready development evidence retained separately",
+  "reproduce_results": "./stage_2/experiments/framework_compare/run.sh report",
+  "delivery_revalidated_at": "2026-11-22T23:08:59.324074+08:00",
+  "saved_word_edits_preserved": true,
+  "submission_checklist": "docs/课程要求自查.md",
+  "current_archive": "dist/多模态推理系统优化-最终提交包.tar.gz",
+  "current_formal_verification": {
+    "passed": true,
+    "safe_unsat": 9,
+    "negative_sat": 9,
+    "smt2_files": 36,
+    "scope": "Source-linked symbolic state/control/dataflow contracts; causal-dependency induction; not BF16 neural arithmetic or CUDA driver/kernel verification",
+    "summary": "experiments/cross_layer_v2/formal/results/summary.json",
+    "summary_sha256": "d9193cfdd9690a96821e48ada82aec52dcd8217322226ebb689c951749e47fd8"
+  },
+  "ai_cache_tuning": {
+    "path": "experiments/ai_cache_tuning/results/replay/summary.json",
+    "sha256": "17f365bb596bf0b41405663c1ee3b113489ad0459319093087f2c11860cd9460"
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "recorded_at": "2026-11-16T11:10:04.023235+08:00",
+  "python": "/home/lxy18/system_homework/stage_2/.venv/bin/python",
+  "direct_requirements": [
+    "torch",
+    "torchvision",
+    "pillow",
+    "transformers",
+    "datasets",
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "safetensors",
+    "accelerate",
+    "fastapi",
+    "uvicorn",
+    "z3-solver",
+    "sentencepiece",
+    "psutil",
+    "pytest",
+    "ninja"
+  ],
+  "packages": {
+    "accelerate": {
+      "version": "1.15.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "aiohappyeyeballs": {
+      "version": "2.7.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "aiohttp": {
+      "version": "3.14.5",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "aiosignal": {
+      "version": "1.4.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "annotated-doc": {
+      "version": "0.0.5",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "annotated-types": {
+      "version": "0.8.0",
+      "location": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages"
+    },
+    "anyio": {
+      "version": "4.15.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "attrs": {
+      "version": "26.1.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "certifi": {
+      "version": "2026.7.22",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "click": {
+      "version": "8.5.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "contourpy": {
+      "version": "1.4.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "cuda-bindings": {
+      "version": "13.3.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "cuda-pathfinder": {
+      "version": "1.6.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "cuda-toolkit": {
+      "version": "13.0.3.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "cycler": {
+      "version": "0.12.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "datasets": {
+      "version": "5.1.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "dill": {
+      "version": "0.4.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "fastapi": {
+      "version": "0.163.1",
+      "location": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages"
+    },
+    "filelock": {
+      "version": "3.32.3",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "fonttools": {
+      "version": "4.66.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "frozenlist": {
+      "version": "1.8.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "fsspec": {
+      "version": "2026.7.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "h11": {
+      "version": "0.16.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "hf-xet": {
+      "version": "1.6.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "httpcore": {
+      "version": "1.0.9",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "httpx": {
+      "version": "0.28.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "huggingface-hub": {
+      "version": "1.33.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "idna": {
+      "version": "3.20",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "iniconfig": {
+      "version": "2.3.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "jinja2": {
+      "version": "3.1.6",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "kiwisolver": {
+      "version": "1.5.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "markdown-it-py": {
+      "version": "4.2.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "markupsafe": {
+      "version": "3.0.3",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "matplotlib": {
+      "version": "3.11.2",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "mdurl": {
+      "version": "0.1.2",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "mpmath": {
+      "version": "1.3.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "multidict": {
+      "version": "7.1.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "multiprocess": {
+      "version": "0.70.19",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "networkx": {
+      "version": "3.6.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "ninja": {
+      "version": "1.13.2",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "numpy": {
+      "version": "2.5.2",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-cublas": {
+      "version": "13.1.1.3",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-cuda-cupti": {
+      "version": "13.0.85",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-cuda-nvrtc": {
+      "version": "13.0.88",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-cuda-runtime": {
+      "version": "13.0.96",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-cudnn-cu13": {
+      "version": "9.24.0.43",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-cufft": {
+      "version": "12.0.0.61",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-cufile": {
+      "version": "1.15.1.6",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-curand": {
+      "version": "10.4.0.35",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-cusolver": {
+      "version": "12.0.4.66",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-cusparse": {
+      "version": "12.6.3.3",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-cusparselt-cu13": {
+      "version": "0.8.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-nccl-cu13": {
+      "version": "2.30.7",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-nvjitlink": {
+      "version": "13.3.33",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-nvshmem-cu13": {
+      "version": "3.4.5",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "nvidia-nvtx": {
+      "version": "13.0.85",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "opentelemetry-api": {
+      "version": "1.45.2",
+      "location": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages"
+    },
+    "packaging": {
+      "version": "26.3",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "pandas": {
+      "version": "3.0.6",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "pillow": {
+      "version": "12.3.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "pluggy": {
+      "version": "1.6.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "propcache": {
+      "version": "0.5.4",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "psutil": {
+      "version": "7.2.2",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "pyarrow": {
+      "version": "26.0.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "pydantic": {
+      "version": "2.14.3",
+      "location": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages"
+    },
+    "pydantic-core": {
+      "version": "2.50.4",
+      "location": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages"
+    },
+    "pygments": {
+      "version": "2.21.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "pyparsing": {
+      "version": "3.3.3",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "pytest": {
+      "version": "9.1.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "python-dateutil": {
+      "version": "2.9.0.post0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "pyyaml": {
+      "version": "6.0.3",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "regex": {
+      "version": "2026.9.10",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "rich": {
+      "version": "15.0.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "safetensors": {
+      "version": "0.8.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "sentencepiece": {
+      "version": "0.2.3",
+      "location": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages"
+    },
+    "setuptools": {
+      "version": "78.1.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "shellingham": {
+      "version": "1.5.4",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "six": {
+      "version": "1.17.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "starlette": {
+      "version": "1.10.0",
+      "location": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages"
+    },
+    "sympy": {
+      "version": "1.14.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "tokenizers": {
+      "version": "0.23.2",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "torch": {
+      "version": "2.14.0+cu130",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "torchvision": {
+      "version": "0.29.0+cu130",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "tqdm": {
+      "version": "4.70.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "transformers": {
+      "version": "5.17.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "triton": {
+      "version": "3.8.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "typer": {
+      "version": "0.27.2",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "typing-extensions": {
+      "version": "4.16.0",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "typing-inspection": {
+      "version": "0.4.5",
+      "location": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages"
+    },
+    "uvicorn": {
+      "version": "0.54.0",
+      "location": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages"
+    },
+    "xxhash": {
+      "version": "4.0.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "yarl": {
+      "version": "1.25.1",
+      "location": "/home/lxy18/venvs/infer/lib/python3.12/site-packages"
+    },
+    "z3-solver": {
+      "version": "5.4.1.0",
+      "location": "/home/lxy18/system_homework/stage_2/.venv/lib/python3.12/site-packages"
+    }
+  }
+}

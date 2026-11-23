@@ -1,0 +1,246 @@
+{
+  "frozen_at": "2026-11-17T03:42:05.065622+00:00",
+  "source_sha256": {
+    "common.py": "2faa402dd11dae6c87176507e2dfac78164902296e737df6c709051a98243ded",
+    "adapters.py": "80683f5a19fd01894c9204276b465d0075efd676ebff19aa15220b6528afa8e8",
+    "run_engine.py": "e9ffdf25f5b5aa3ab4d8f58cd383db4ceae3139baaebf92db0731a477215b60a",
+    "launch.py": "1e5acfc2807fa113e5d336e3a43b5558e5513e7117319e81f771318dc2411f96",
+    "execute.py": "c9df9677daf2d5f3b9d806ea0f0f969032609a2da82b84ed2d0a635210d18f37",
+    "prepare_data.py": "eda0a3d38e96f48217af62bddaaab73ebf41e3d5485b39970d9395f10ba5cc66"
+  },
+  "options_sha256": "ac1fffec44af54f0ebb9ee74fa6a5ff5017427a2e91ec6bbddc15e459a44618a",
+  "dataset_manifest_sha256": "6326ffa5cf694406fb7473f5fa2309879cfb63e94b57a74023534fbda5c8af30",
+  "evaluation_sha256": "1bb75f45dcbdb8cfe7876e38f08c8d454607aee18f29f4da8142d751f7f36f06",
+  "image": {
+    "id": "sha256:befccf0e7e4089aa23926bb6f887a85c0d46c2a99e6de5c5ffdf5cb7957c5b34",
+    "repo_digests": [
+      "vllm/vllm-openai@sha256:befccf0e7e4089aa23926bb6f887a85c0d46c2a99e6de5c5ffdf5cb7957c5b34"
+    ],
+    "build_commit": "5df63a7203cdb9328d824a27b682e77c7b9928be",
+    "reused_from": "infer-lab experiment 5.3; no pull/install"
+  },
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "quality_gate": {
+    "passed": true,
+    "max_anls_drop": 0.005,
+    "baseline": "fresh H0 in this development run",
+    "read_split": "original development only",
+    "variants": {
+      "H0": {
+        "questions": 282,
+        "anls": 0.8636300920701939,
+        "delta_vs_H0": 0.0,
+        "input_ids_match": true,
+        "identical_output_tokens": 282,
+        "encoder_calls": 282,
+        "graph_probe_replays": 0,
+        "cached_tokens": 0
+      },
+      "H1": {
+        "questions": 282,
+        "anls": 0.8636300920701939,
+        "delta_vs_H0": 0.0,
+        "input_ids_match": true,
+        "identical_output_tokens": 282,
+        "encoder_calls": 64,
+        "graph_probe_replays": 0,
+        "cached_tokens": 0
+      },
+      "P": {
+        "questions": 282,
+        "anls": 0.8668538186981758,
+        "delta_vs_H0": 0.003223726627981871,
+        "input_ids_match": true,
+        "identical_output_tokens": 278,
+        "encoder_calls": 64,
+        "graph_probe_replays": 1433,
+        "cached_tokens": 162586
+      },
+      "V00": {
+        "questions": 282,
+        "anls": 0.8756271838545197,
+        "delta_vs_H0": 0.01199709178432573,
+        "input_ids_match": true,
+        "identical_output_tokens": 272,
+        "encoder_calls": 64,
+        "graph_probe_replays": 0,
+        "cached_tokens": 0
+      },
+      "V10": {
+        "questions": 282,
+        "anls": 0.8751839214431721,
+        "delta_vs_H0": 0.01155382937297822,
+        "input_ids_match": true,
+        "identical_output_tokens": 271,
+        "encoder_calls": 64,
+        "graph_probe_replays": 0,
+        "cached_tokens": 161520
+      },
+      "V01": {
+        "questions": 282,
+        "anls": 0.8688077621414809,
+        "delta_vs_H0": 0.005177670071286999,
+        "input_ids_match": true,
+        "identical_output_tokens": 274,
+        "encoder_calls": 64,
+        "graph_probe_replays": 1747,
+        "cached_tokens": 0
+      },
+      "V11": {
+        "questions": 282,
+        "anls": 0.8720810845637396,
+        "delta_vs_H0": 0.00845099249354564,
+        "input_ids_match": true,
+        "identical_output_tokens": 273,
+        "encoder_calls": 64,
+        "graph_probe_replays": 1747,
+        "cached_tokens": 161520
+      },
+      "V11E": {
+        "questions": 282,
+        "anls": 0.8720810845637396,
+        "delta_vs_H0": 0.00845099249354564,
+        "input_ids_match": true,
+        "identical_output_tokens": 273,
+        "encoder_calls": 64,
+        "graph_probe_replays": 1747,
+        "cached_tokens": 161520
+      }
+    }
+  },
+  "variants": [
+    "H0",
+    "H1",
+    "P",
+    "V00",
+    "V10",
+    "V01",
+    "V11",
+    "V11E"
+  ],
+  "main_starts": 21,
+  "capacity_control_starts": 3,
+  "jobs": [
+    {
+      "seed": 4101,
+      "variant": "V00"
+    },
+    {
+      "seed": 4101,
+      "variant": "V01"
+    },
+    {
+      "seed": 4101,
+      "variant": "V10"
+    },
+    {
+      "seed": 4101,
+      "variant": "V11"
+    },
+    {
+      "seed": 4101,
+      "variant": "H0"
+    },
+    {
+      "seed": 4101,
+      "variant": "V11E"
+    },
+    {
+      "seed": 4101,
+      "variant": "H1"
+    },
+    {
+      "seed": 4101,
+      "variant": "P"
+    },
+    {
+      "seed": 4102,
+      "variant": "H1"
+    },
+    {
+      "seed": 4102,
+      "variant": "V00"
+    },
+    {
+      "seed": 4102,
+      "variant": "H0"
+    },
+    {
+      "seed": 4102,
+      "variant": "V10"
+    },
+    {
+      "seed": 4102,
+      "variant": "V01"
+    },
+    {
+      "seed": 4102,
+      "variant": "V11E"
+    },
+    {
+      "seed": 4102,
+      "variant": "V11"
+    },
+    {
+      "seed": 4102,
+      "variant": "P"
+    },
+    {
+      "seed": 4103,
+      "variant": "P"
+    },
+    {
+      "seed": 4103,
+      "variant": "V10"
+    },
+    {
+      "seed": 4103,
+      "variant": "H0"
+    },
+    {
+      "seed": 4103,
+      "variant": "V00"
+    },
+    {
+      "seed": 4103,
+      "variant": "V11"
+    },
+    {
+      "seed": 4103,
+      "variant": "V01"
+    },
+    {
+      "seed": 4103,
+      "variant": "H1"
+    },
+    {
+      "seed": 4103,
+      "variant": "V11E"
+    }
+  ],
+  "scenarios": [
+    "hot",
+    "session",
+    "unique"
+  ],
+  "input_boundary": "Resident verified RGB images and prompt text -> CPU-visible first token / final answer",
+  "timing_exclusions": [
+    "image file I/O",
+    "loading resident image set",
+    "model initialization",
+    "between-request diagnostics/logging"
+  ],
+  "resource_policy": "Same 8188 MiB GPU, serial runs, fixed pool byte quotas; actual reserved/device usage recorded. Not equal persistent-cache representations.",
+  "vllm_offline_core": "InprocClient, VLLM_ENABLE_V1_MULTIPROCESSING=0; no HTTP",
+  "encoder_capacity_control": "V11E sets scheduler_config.encoder_cache_size=16384 after config creation; compute budget stays 1024; no framework source edits",
+  "reference_source_sha256": {
+    "src/vlmbench/__init__.py": "29d3ed5dbeffc637fddfe9ccf1d2ed954dee38e13ff8adf363e0ee3ceff72f50",
+    "src/vlmbench/cache.py": "1ac9a2cece68ac7a89d1e7eb802dbd1c18cd87b588ebce94b218ab0aae27465b",
+    "src/vlmbench/engine.py": "9b8fb23bcf0ca83f4509028bc2a057011a5bff5d395820f765b24d11c508e329",
+    "src/vlmbench/metrics.py": "a3be0bed5ae2c942ae8e16de39d84a5bebc823fce0bd33fad0c39ae00cb6f92d",
+    "src/vlmbench/runner.py": "7fe1feee9d23a1096be64eb3a5e34f0eae4530db490273d8714e87a81908fc00",
+    "src/vlmbench/scheduler.py": "b5f251ed503fd1abdf776d1af4bce09789fc308c5c79b1e360277205af11a9c5",
+    "tools/vlm_runtime.py": "791ba559dade09aa4d16c7f5fdac8903f776061595c37971859992814c5e2ce3"
+  },
+  "prototype_runtime_sha256": "3e84b00485ea92db7f1b8d6abb64be1ea6765a19ec1a4e76f75e14bca70f10f1"
+}

@@ -1,0 +1,54 @@
+{
+  "repo_id": "lmms-lab-encoder/DocVQA",
+  "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+  "config": "DocVQA",
+  "split": "validation",
+  "source_method": "HF dataset viewer cached image export",
+  "scope": "small real-image environment smoke sample; not the formal evaluation split",
+  "official_primary_source": "https://www.docvqa.org/datasets/docvqa",
+  "viewer_total_rows": 5349,
+  "requested_first_rows": 32,
+  "page_count": 3,
+  "question_count": 8,
+  "images": {
+    "7027": {
+      "path": "images/page-7027.jpg",
+      "width": 808,
+      "height": 1077,
+      "mode": "L",
+      "format": "JPEG"
+    },
+    "4733": {
+      "path": "images/page-4733.jpg",
+      "width": 1701,
+      "height": 2386,
+      "mode": "L",
+      "format": "JPEG"
+    },
+    "6982": {
+      "path": "images/page-6982.jpg",
+      "width": 1750,
+      "height": 2270,
+      "mode": "L",
+      "format": "JPEG"
+    }
+  },
+  "files": {
+    "questions.jsonl": {
+      "bytes": 2173,
+      "sha256": "87d8958228018a1686b2349e7d7ed78a500e730cfc1907e32b88cba0647c0201"
+    },
+    "images/page-7027.jpg": {
+      "bytes": 328801,
+      "sha256": "c3c96c65dbaed8e2bd9e8cc8dd4bf264f31109e3a55c108446569496058dd315"
+    },
+    "images/page-4733.jpg": {
+      "bytes": 336138,
+      "sha256": "817034611bfbe11eaeb19e827a210dcc36bb55ae122687dd598bf86acd15c314"
+    },
+    "images/page-6982.jpg": {
+      "bytes": 303552,
+      "sha256": "eab67c186f2dc947880724151819a3c8bb030050bf1ccd18e2b2d2a61e726aa8"
+    }
+  }
+}

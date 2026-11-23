@@ -1,0 +1,66 @@
+{
+  "arrivals": 192,
+  "completed": 192,
+  "rejected": 0,
+  "failed": 0,
+  "good_requests": 1,
+  "window_s": 67.44990575699921,
+  "goodput_qps": 0.014825817601624016,
+  "completed_qps": 2.846556979511811,
+  "slo_attainment": 0.005208333333333333,
+  "ttft_s": {
+    "p50": 34.35243335500127,
+    "p95": 64.3885828220009,
+    "p99": 66.62817160399936
+  },
+  "latency_s": {
+    "p50": 34.4894153915011,
+    "p95": 64.45738277989804,
+    "p99": 66.69703525349829
+  },
+  "queue_s": {
+    "p50": 10.772728274003384,
+    "p95": 12.372072759699584,
+    "p99": 12.874713234001065
+  },
+  "sender_lag_s": {
+    "p50": 22.409718631499345,
+    "p95": 52.640450363749544,
+    "p99": 54.7624731591604
+  },
+  "anls": 0.8775394928305715,
+  "em": 0.8125,
+  "output_tokens": 1126,
+  "empty_answers": 0,
+  "variant": "FULL",
+  "mode": "offline",
+  "measured_elapsed_s": 67.44990575699921,
+  "batch_count": 97,
+  "vision_images_encoded": 99,
+  "vision_s": 15.04428666305542,
+  "prefill_s": 22.217243675231934,
+  "preprocessing_s": 8.061015437000606,
+  "scheduling_s": 0.020526495995000005,
+  "batch_shared_images": 53,
+  "cache": {
+    "misses": 99,
+    "gpu_peak_payload_bytes": 534478848,
+    "gpu_hits": 40,
+    "d2h_bytes": 654163968,
+    "d2h_s": 0.26522971800659434,
+    "gpu_evictions": 55,
+    "cpu_evictions": 33,
+    "gpu_payload_bytes": 534233088,
+    "cpu_payload_bytes": 262553600,
+    "gpu_limit": 536870912,
+    "cpu_limit": 268435456,
+    "gpu_entries": 44,
+    "cpu_entries": 22,
+    "active_leases": 0
+  },
+  "peak_allocated_bytes": 5140517888,
+  "peak_reserved_bytes": 5278531584,
+  "cpu_rss_bytes": 3056422912,
+  "errors": [],
+  "recorded_at": "2026-11-16T15:15:55.028816+08:00"
+}

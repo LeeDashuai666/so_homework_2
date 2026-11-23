@@ -1,0 +1,711 @@
+[
+  {
+    "question_id": "4741",
+    "page_id": "1985",
+    "boundary": 749,
+    "native": {
+      "question_id": "4741",
+      "answer": "3-6-01",
+      "token_ids": [
+        18,
+        12,
+        21,
+        12,
+        15,
+        16,
+        151645
+      ],
+      "generation_s": 0.5510872970007767
+    },
+    "candidates": [
+      {
+        "question_id": "4741",
+        "page_id": "1985",
+        "prefix": false,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.24399142100082827,
+        "generation_s": 0.5209575279986893,
+        "decode_s": 0.27696610699786106,
+        "decode_steps": 6,
+        "answer": "3-6-01",
+        "token_ids": [
+          18,
+          12,
+          21,
+          12,
+          15,
+          16,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": false,
+        "language_prefill_tokens": 770,
+        "persistent_payload_bytes": 12189696,
+        "allocated_bytes": 4449290752,
+        "peak_allocated_bytes": 4589226496
+      },
+      {
+        "question_id": "4741",
+        "page_id": "1985",
+        "prefix": false,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.10681668399774935,
+        "generation_s": 0.21096093400046811,
+        "decode_s": 0.10414425000271876,
+        "decode_steps": 6,
+        "answer": "3-6-01",
+        "token_ids": [
+          18,
+          12,
+          21,
+          12,
+          15,
+          16,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": true,
+        "language_prefill_tokens": 770,
+        "persistent_payload_bytes": 12189696,
+        "allocated_bytes": 4449290752,
+        "peak_allocated_bytes": 4589226496
+      },
+      {
+        "question_id": "4741",
+        "page_id": "1985",
+        "prefix": true,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.4108099619988934,
+        "generation_s": 0.6572608019996551,
+        "decode_s": 0.24645084000076167,
+        "decode_steps": 6,
+        "answer": "3-6-01",
+        "token_ids": [
+          18,
+          12,
+          21,
+          12,
+          15,
+          16,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": true,
+        "language_prefill_tokens": 770,
+        "persistent_payload_bytes": 85901312,
+        "allocated_bytes": 4524564992,
+        "peak_allocated_bytes": 4589226496
+      },
+      {
+        "question_id": "4741",
+        "page_id": "1985",
+        "prefix": true,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.048178175999055384,
+        "generation_s": 0.15012551700056065,
+        "decode_s": 0.10194734100150527,
+        "decode_steps": 6,
+        "answer": "3-6-01",
+        "token_ids": [
+          18,
+          12,
+          21,
+          12,
+          15,
+          16,
+          151645
+        ],
+        "prefix_hit": true,
+        "vision_hit": false,
+        "language_prefill_tokens": 21,
+        "persistent_payload_bytes": 85901312,
+        "allocated_bytes": 4524564992,
+        "peak_allocated_bytes": 4589226496
+      }
+    ]
+  },
+  {
+    "question_id": "4742",
+    "page_id": "1985",
+    "boundary": 749,
+    "native": {
+      "question_id": "4742",
+      "answer": "Morehead, Ky",
+      "token_ids": [
+        7661,
+        1983,
+        11,
+        22878,
+        151645
+      ],
+      "generation_s": 0.4007297040006961
+    },
+    "candidates": [
+      {
+        "question_id": "4742",
+        "page_id": "1985",
+        "prefix": false,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.24219672700201045,
+        "generation_s": 0.41636994299915386,
+        "decode_s": 0.17417321599714342,
+        "decode_steps": 4,
+        "answer": "Morehead, Ky",
+        "token_ids": [
+          7661,
+          1983,
+          11,
+          22878,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": false,
+        "language_prefill_tokens": 770,
+        "persistent_payload_bytes": 98091008,
+        "allocated_bytes": 4536754688,
+        "peak_allocated_bytes": 4677151232
+      },
+      {
+        "question_id": "4742",
+        "page_id": "1985",
+        "prefix": false,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.10699896399819409,
+        "generation_s": 0.17653100000097766,
+        "decode_s": 0.06953203600278357,
+        "decode_steps": 4,
+        "answer": "Morehead, Ky",
+        "token_ids": [
+          7661,
+          1983,
+          11,
+          22878,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": true,
+        "language_prefill_tokens": 770,
+        "persistent_payload_bytes": 98091008,
+        "allocated_bytes": 4536754688,
+        "peak_allocated_bytes": 4677151232
+      },
+      {
+        "question_id": "4742",
+        "page_id": "1985",
+        "prefix": true,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.04918052799985162,
+        "generation_s": 0.2191703550015518,
+        "decode_s": 0.16998982700170018,
+        "decode_steps": 4,
+        "answer": "Morehead, Ky",
+        "token_ids": [
+          7661,
+          1983,
+          11,
+          22878,
+          151645
+        ],
+        "prefix_hit": true,
+        "vision_hit": false,
+        "language_prefill_tokens": 21,
+        "persistent_payload_bytes": 98091008,
+        "allocated_bytes": 4536754688,
+        "peak_allocated_bytes": 4677151232
+      },
+      {
+        "question_id": "4742",
+        "page_id": "1985",
+        "prefix": true,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.05074391000016476,
+        "generation_s": 0.11915832100203261,
+        "decode_s": 0.06841441100186785,
+        "decode_steps": 4,
+        "answer": "Morehead, Ky",
+        "token_ids": [
+          7661,
+          1983,
+          11,
+          22878,
+          151645
+        ],
+        "prefix_hit": true,
+        "vision_hit": false,
+        "language_prefill_tokens": 21,
+        "persistent_payload_bytes": 98091008,
+        "allocated_bytes": 4536754688,
+        "peak_allocated_bytes": 4677151232
+      }
+    ]
+  },
+  {
+    "question_id": "59623",
+    "page_id": "6573",
+    "boundary": 649,
+    "native": {
+      "question_id": "59623",
+      "answer": "DATE",
+      "token_ids": [
+        7097,
+        151645
+      ],
+      "generation_s": 0.2576646529996651
+    },
+    "candidates": [
+      {
+        "question_id": "59623",
+        "page_id": "6573",
+        "prefix": false,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.21059910499752732,
+        "generation_s": 0.25268617599795107,
+        "decode_s": 0.04208707100042375,
+        "decode_steps": 1,
+        "answer": "DATE",
+        "token_ids": [
+          7097,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": false,
+        "language_prefill_tokens": 677,
+        "persistent_payload_bytes": 108642304,
+        "allocated_bytes": 4544842240,
+        "peak_allocated_bytes": 4677151232
+      },
+      {
+        "question_id": "59623",
+        "page_id": "6573",
+        "prefix": false,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.09714142299708328,
+        "generation_s": 0.11454908099767636,
+        "decode_s": 0.017407658000593074,
+        "decode_steps": 1,
+        "answer": "DATE",
+        "token_ids": [
+          7097,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": true,
+        "language_prefill_tokens": 677,
+        "persistent_payload_bytes": 108642304,
+        "allocated_bytes": 4544842240,
+        "peak_allocated_bytes": 4677151232
+      },
+      {
+        "question_id": "59623",
+        "page_id": "6573",
+        "prefix": true,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.13464640600068378,
+        "generation_s": 0.17376801900172723,
+        "decode_s": 0.03912161300104344,
+        "decode_steps": 1,
+        "answer": "DATE",
+        "token_ids": [
+          7097,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": true,
+        "language_prefill_tokens": 677,
+        "persistent_payload_bytes": 172523520,
+        "allocated_bytes": 4611371520,
+        "peak_allocated_bytes": 4677151232
+      },
+      {
+        "question_id": "59623",
+        "page_id": "6573",
+        "prefix": true,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.049132446001749486,
+        "generation_s": 0.06613830599962967,
+        "decode_s": 0.01700585999788018,
+        "decode_steps": 1,
+        "answer": "DATE",
+        "token_ids": [
+          7097,
+          151645
+        ],
+        "prefix_hit": true,
+        "vision_hit": false,
+        "language_prefill_tokens": 28,
+        "persistent_payload_bytes": 172523520,
+        "allocated_bytes": 4611371520,
+        "peak_allocated_bytes": 4677151232
+      }
+    ]
+  },
+  {
+    "question_id": "59624",
+    "page_id": "6573",
+    "boundary": 649,
+    "native": {
+      "question_id": "59624",
+      "answer": "NAME",
+      "token_ids": [
+        7535,
+        151645
+      ],
+      "generation_s": 0.2526965510005539
+    },
+    "candidates": [
+      {
+        "question_id": "59624",
+        "page_id": "6573",
+        "prefix": false,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.2103478780009027,
+        "generation_s": 0.25258913899961044,
+        "decode_s": 0.04224126099870773,
+        "decode_steps": 1,
+        "answer": "NAME",
+        "token_ids": [
+          7535,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": false,
+        "language_prefill_tokens": 674,
+        "persistent_payload_bytes": 183074816,
+        "allocated_bytes": 4621922816,
+        "peak_allocated_bytes": 4745198080
+      },
+      {
+        "question_id": "59624",
+        "page_id": "6573",
+        "prefix": false,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.09181881000040448,
+        "generation_s": 0.10929630600003293,
+        "decode_s": 0.017477495999628445,
+        "decode_steps": 1,
+        "answer": "NAME",
+        "token_ids": [
+          7535,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": true,
+        "language_prefill_tokens": 674,
+        "persistent_payload_bytes": 183074816,
+        "allocated_bytes": 4621922816,
+        "peak_allocated_bytes": 4745198080
+      },
+      {
+        "question_id": "59624",
+        "page_id": "6573",
+        "prefix": true,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.05215310699713882,
+        "generation_s": 0.09272912499727681,
+        "decode_s": 0.04057601800013799,
+        "decode_steps": 1,
+        "answer": "NAME",
+        "token_ids": [
+          7535,
+          151645
+        ],
+        "prefix_hit": true,
+        "vision_hit": false,
+        "language_prefill_tokens": 25,
+        "persistent_payload_bytes": 183074816,
+        "allocated_bytes": 4621922816,
+        "peak_allocated_bytes": 4745198080
+      },
+      {
+        "question_id": "59624",
+        "page_id": "6573",
+        "prefix": true,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.048215015998721356,
+        "generation_s": 0.06537752599979285,
+        "decode_s": 0.017162510001071496,
+        "decode_steps": 1,
+        "answer": "NAME",
+        "token_ids": [
+          7535,
+          151645
+        ],
+        "prefix_hit": true,
+        "vision_hit": false,
+        "language_prefill_tokens": 25,
+        "persistent_payload_bytes": 183074816,
+        "allocated_bytes": 4621922816,
+        "peak_allocated_bytes": 4745198080
+      }
+    ]
+  },
+  {
+    "question_id": "21121",
+    "page_id": "6299",
+    "boundary": 749,
+    "native": {
+      "question_id": "21121",
+      "answer": "Research 478",
+      "token_ids": [
+        27428,
+        220,
+        19,
+        22,
+        23,
+        151645
+      ],
+      "generation_s": 0.44085069600259885
+    },
+    "candidates": [
+      {
+        "question_id": "21121",
+        "page_id": "6299",
+        "prefix": false,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.24268117799874744,
+        "generation_s": 0.6280814509991615,
+        "decode_s": 0.385400273000414,
+        "decode_steps": 5,
+        "answer": "Research 478",
+        "token_ids": [
+          27428,
+          220,
+          19,
+          22,
+          23,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": false,
+        "language_prefill_tokens": 771,
+        "persistent_payload_bytes": 195264512,
+        "allocated_bytes": 4636985856,
+        "peak_allocated_bytes": 4777039360
+      },
+      {
+        "question_id": "21121",
+        "page_id": "6299",
+        "prefix": false,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.1076917409991438,
+        "generation_s": 0.19500474500091514,
+        "decode_s": 0.08731300400177133,
+        "decode_steps": 5,
+        "answer": "Research 478",
+        "token_ids": [
+          27428,
+          220,
+          19,
+          22,
+          23,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": true,
+        "language_prefill_tokens": 771,
+        "persistent_payload_bytes": 195264512,
+        "allocated_bytes": 4636985856,
+        "peak_allocated_bytes": 4777039360
+      },
+      {
+        "question_id": "21121",
+        "page_id": "6299",
+        "prefix": true,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.14037579099749564,
+        "generation_s": 0.34690408099777414,
+        "decode_s": 0.2065282900002785,
+        "decode_steps": 5,
+        "answer": "Research 478",
+        "token_ids": [
+          27428,
+          220,
+          19,
+          22,
+          23,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": true,
+        "language_prefill_tokens": 771,
+        "persistent_payload_bytes": 268976128,
+        "allocated_bytes": 4712950272,
+        "peak_allocated_bytes": 4777039360
+      },
+      {
+        "question_id": "21121",
+        "page_id": "6299",
+        "prefix": true,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.04747637499895063,
+        "generation_s": 0.13266571200074395,
+        "decode_s": 0.08518933700179332,
+        "decode_steps": 5,
+        "answer": "Research 478",
+        "token_ids": [
+          27428,
+          220,
+          19,
+          22,
+          23,
+          151645
+        ],
+        "prefix_hit": true,
+        "vision_hit": false,
+        "language_prefill_tokens": 22,
+        "persistent_payload_bytes": 268976128,
+        "allocated_bytes": 4712950272,
+        "peak_allocated_bytes": 4777039360
+      }
+    ]
+  },
+  {
+    "question_id": "21126",
+    "page_id": "6299",
+    "boundary": 749,
+    "native": {
+      "question_id": "21126",
+      "answer": "359.62",
+      "token_ids": [
+        18,
+        20,
+        24,
+        13,
+        21,
+        17,
+        151645
+      ],
+      "generation_s": 0.49941668400060735
+    },
+    "candidates": [
+      {
+        "question_id": "21126",
+        "page_id": "6299",
+        "prefix": false,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.24369627100168145,
+        "generation_s": 0.49573108299955493,
+        "decode_s": 0.2520348119978735,
+        "decode_steps": 6,
+        "answer": "359.62",
+        "token_ids": [
+          18,
+          20,
+          24,
+          13,
+          21,
+          17,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": false,
+        "language_prefill_tokens": 781,
+        "persistent_payload_bytes": 281165824,
+        "allocated_bytes": 4725139968,
+        "peak_allocated_bytes": 4868182528
+      },
+      {
+        "question_id": "21126",
+        "page_id": "6299",
+        "prefix": false,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.1088064489995304,
+        "generation_s": 0.21195708199957153,
+        "decode_s": 0.10315063300004113,
+        "decode_steps": 6,
+        "answer": "359.62",
+        "token_ids": [
+          18,
+          20,
+          24,
+          13,
+          21,
+          17,
+          151645
+        ],
+        "prefix_hit": false,
+        "vision_hit": true,
+        "language_prefill_tokens": 781,
+        "persistent_payload_bytes": 281165824,
+        "allocated_bytes": 4725139968,
+        "peak_allocated_bytes": 4868182528
+      },
+      {
+        "question_id": "21126",
+        "page_id": "6299",
+        "prefix": true,
+        "graph": false,
+        "fixed_steps": null,
+        "ttft_s": 0.11949865600035992,
+        "generation_s": 0.3677383430003829,
+        "decode_s": 0.24823968700002297,
+        "decode_steps": 6,
+        "answer": "359.62",
+        "token_ids": [
+          18,
+          20,
+          24,
+          13,
+          21,
+          17,
+          151645
+        ],
+        "prefix_hit": true,
+        "vision_hit": false,
+        "language_prefill_tokens": 32,
+        "persistent_payload_bytes": 281165824,
+        "allocated_bytes": 4725139968,
+        "peak_allocated_bytes": 4868182528
+      },
+      {
+        "question_id": "21126",
+        "page_id": "6299",
+        "prefix": true,
+        "graph": true,
+        "fixed_steps": null,
+        "ttft_s": 0.052810432000114815,
+        "generation_s": 0.15547771000274224,
+        "decode_s": 0.10266727800262743,
+        "decode_steps": 6,
+        "answer": "359.62",
+        "token_ids": [
+          18,
+          20,
+          24,
+          13,
+          21,
+          17,
+          151645
+        ],
+        "prefix_hit": true,
+        "vision_hit": false,
+        "language_prefill_tokens": 32,
+        "persistent_payload_bytes": 281165824,
+        "allocated_bytes": 4725139968,
+        "peak_allocated_bytes": 4868182528
+      }
+    ]
+  }
+]
