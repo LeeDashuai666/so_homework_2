@@ -72,7 +72,6 @@ docker image inspect sha256:befccf0e7e4089aa23926bb6f887a85c0d46c2a99e6de5c5ffdf
 - `launch.py`、`execute.py`：串行GPU编排、开发门槛、协议冻结、源码快照与进度记录。
 - `data/`：原始页面、真实问题和冻结划分清单。
 - `results/`：开发/正式逐请求记录、质量门槛、源码、trace及中间统计。
-- `logs/`：总调度进度和接口诊断日志。
 - `cache/`：临时编译产物，复现结果与交付包不依赖将其打包。
 
 旧的`cross_layer_v2`实现和测量不修改；宿主基线在本实验适配器中使用已解码图片，并通过观测原实现内部时钟取得首token绝对时间。vLLM采用命名worker extension读取执行计数，记录内容只用于诊断，不替代模型输出。

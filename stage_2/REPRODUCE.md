@@ -63,7 +63,7 @@ python stage_2/tools/check_submission.py
 
 ## 5. AI 辅助与重新选参
 
-[AI 使用说明](report/AI使用说明.md)记录 Codex 的开发辅助及实验流程中的本地 Qwen3-0.6B。重放保存的决策与既有 vLLM GPU 记录运行下列默认命令。要再次执行 AI，准备[权重锁](experiments/ai_cache_tuning/policy-model.lock.json)所指定的本地快照，传入其目录和一个新结果目录：
+[AI 使用说明](docs/AI使用说明.md)记录 Codex 的开发辅助及实验流程中的本地 Qwen3-0.6B。重放保存的决策与既有 vLLM GPU 记录运行下列默认命令。要再次执行 AI，准备[权重锁](experiments/ai_cache_tuning/policy-model.lock.json)所指定的本地快照，传入其目录和一个新结果目录：
 
 ```bash
 ./stage_2/experiments/ai_cache_tuning/run.sh

@@ -1,2 +1,0 @@
-START V00 preflight 4101 /home/lxy18/system_homework/stage_2/experiments/framework_compare/results/preflight-V00-r2
-FINISH {"variant": "V00", "phase": "preflight", "seed": 4101, "returncode": 0, "elapsed_s": 63.71639650499992, "output": "/home/lxy18/system_homework/stage_2/experiments/framework_compare/results/preflight-V00-r2", "log": "/home/lxy18/system_homework/stage_2/experiments/framework_compare/results/preflight-V00-r2.log"}

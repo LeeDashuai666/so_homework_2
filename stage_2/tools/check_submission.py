@@ -76,7 +76,7 @@ def main():
     }
     required = [
         "docs/设计文档.docx", "docs/设计文档.md",
-        "report/AI使用说明.md", "REPRODUCE.md", "requirements.lock", "env.sh",
+        "docs/AI使用说明.md", "REPRODUCE.md", "requirements.lock", "env.sh",
         "docs/课程要求自查.md", "data/README.md", "tools/package_submission.py",
         "experiments/cross_layer_v2/formal/verify.py", "experiments/cross_layer_v2/formal/results/summary.json",
         "experiments/cross_layer_v2/formal/results/形式化验证报告.md",

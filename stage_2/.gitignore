@@ -7,3 +7,8 @@ env/wheelhouse/
 __pycache__/
 *.pyc
 /logs/
+
+# Report scripts regenerate these reading copies.
+*.html
+/results/submission-audit/
+/experiments/framework_compare/logs/

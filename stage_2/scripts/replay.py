@@ -35,9 +35,10 @@ def main():
     shutil.copytree(ROOT / "data/traces", destination / "data/traces")
     (destination / "logs").mkdir()
     (destination / "report").mkdir()
-    for name in ["AI使用说明.md", "统计口径.md"]:
-        if (ROOT / "report" / name).is_file():
-            shutil.copy2(ROOT / "report" / name, destination / "report" / name)
+    for relative in [Path("docs/AI使用说明.md"), Path("report/统计口径.md")]:
+        if (ROOT / relative).is_file():
+            (destination / relative.parent).mkdir(exist_ok=True)
+            shutil.copy2(ROOT / relative, destination / relative)
     if (ROOT / "results/initial-packed-vision").is_dir():
         shutil.copytree(ROOT / "results/initial-packed-vision", destination / "results/initial-packed-vision")
     (destination / "replay-origin.json").write_text(json.dumps({"source": str(ROOT),

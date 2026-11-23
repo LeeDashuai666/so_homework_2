@@ -5,7 +5,7 @@
 当前完成的是开发集验证。第一轮正式数据、报告、协议、源码和提交包保留；本目录的结果尚未替代最终报告。
 
 - [经验与第二轮方案](../../plan/经验总结与第二轮优化.md)
-- [开发验证报告](开发验证报告.md) · [离线 HTML](开发验证报告.html)
+- [开发验证报告](开发验证报告.md)
 - [原始参数和测量代码哈希](results/pilot/manifest.json) · [审计和统计](results/pilot/audit-and-analysis.json)
 - [GPU 状态与容量检查](results/runtime-check.json)
 - [公共前缀KV与CUDA Graph形式化验证](formal/README.md)：9项安全性质UNSAT、9项故障负控制SAT，36份SMT2独立重放。
