@@ -26,14 +26,15 @@ def main():
     selected = {}
     trees = ["src", "scripts", "tools", "tests", "configs", "env", "report", "results",
              "logs", "plan", "docs", "experiments/cross_layer_v2", "experiments/framework_compare",
-             "experiments/ai_cache_tuning", "data/processed/docvqa", "data/traces", "data/raw/docvqa-smoke"]
+             "experiments/ai_cache_tuning", "experiments/adaptive_kv", "data/processed/docvqa", "data/traces", "data/raw/docvqa-smoke"]
     omitted = {"cache", ".cache", "__pycache__", ".pytest_cache", ".venv"}
     for directory in trees:
         for path in sorted((ROOT / directory).rglob("*")):
             relative = path.relative_to(ROOT)
             if path.is_file() and not (set(relative.parts) & omitted) and path.suffix != ".pyc":
                 selected[(Path("stage_2") / relative).as_posix()] = path
-    for name in ["README.md", "REPRODUCE.md", "requirements.lock", "run.sh", "env.sh"]:
+    for name in ["README.md", "REPRODUCE.md", "requirements.lock", "run.sh", "env.sh",
+                 "data/README.md", "data/Apache-2.0.txt", "experiments/README.md"]:
         selected["stage_2/" + name] = ROOT / name
     # The document renderer uses this exact style reference; the rest of stage_1 is excluded.
     reference = ROOT.parent / "stage_1/docs/设计文档.docx"
@@ -46,7 +47,7 @@ def main():
     inventory = dist / "current-submission-manifest.json"
     inventory.write_text(json.dumps({
         "created_at": datetime.now(ZoneInfo("Asia/Hong_Kong")).isoformat(),
-        "scope": "Current design, second-round ablation/framework evaluation, plus preserved first-round evidence",
+        "scope": "Adaptive cache, GPU writeback, framework evaluation, and prior state evidence",
         "files": records,
         "excluded": [".venv", "model weights", "Docker image binaries", "shared HF cache/full Parquet shards",
                      "compile caches", "dist", "replays", "unrelated legacy RAG datasets"],

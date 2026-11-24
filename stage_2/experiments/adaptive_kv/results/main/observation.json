@@ -1,0 +1,42 @@
+{
+  "budget_mib": 320,
+  "candidates": [
+    "cost-default",
+    "cost-local",
+    "cost-wide"
+  ],
+  "dev_only": {
+    "cost-default": {
+      "identical_to_visual": true,
+      "mean_scene_p95_ms": 305.59,
+      "mean_scene_ttft_ms": 206.93,
+      "prefix_hits_by_scene": [
+        6.0,
+        6.0
+      ]
+    },
+    "cost-local": {
+      "identical_to_visual": true,
+      "mean_scene_p95_ms": 312.18,
+      "mean_scene_ttft_ms": 205.74,
+      "prefix_hits_by_scene": [
+        6.0,
+        6.0
+      ]
+    },
+    "cost-wide": {
+      "identical_to_visual": true,
+      "mean_scene_p95_ms": 300.75,
+      "mean_scene_ttft_ms": 201.01,
+      "prefix_hits_by_scene": [
+        9.0,
+        9.0
+      ]
+    }
+  },
+  "scenario_order": [
+    "mixed",
+    "session"
+  ],
+  "source_documents": 16
+}

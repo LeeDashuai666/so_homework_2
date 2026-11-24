@@ -1,0 +1,506 @@
+{
+  "ai_choice": "cost-default",
+  "ai_decision_s": 12.963648917999762,
+  "ai_total_s": 14.439581484999962,
+  "calibration": {
+    "gain_ms": 93.15378549990783,
+    "promotion_ms": 2.3977839998678974
+  },
+  "development": {
+    "mixed": {
+      "cost-default": {
+        "anls": 0.8814935064935066,
+        "encoder_calls_per_trace": 28.0,
+        "evictions_per_trace": 13.0,
+        "n": 44,
+        "peak_allocated_gib": 4.71481990814209,
+        "peak_payload_mib": 314.71875,
+        "prefix_hits_per_trace": 6.0,
+        "promotions_per_trace": 2.0,
+        "request_by_block_ms": [
+          319.6054293181822
+        ],
+        "request_mean_ms": 319.6054293181822,
+        "request_p95_ms": 542.2227745499413,
+        "token_equal": 44,
+        "ttft_by_block_ms": [
+          226.31763334091332
+        ],
+        "ttft_mean_ms": 226.31763334091332,
+        "ttft_p95_ms": 305.66091054981825,
+        "vision_hits_per_trace": 10.0
+      },
+      "cost-local": {
+        "anls": 0.8814935064935066,
+        "encoder_calls_per_trace": 28.0,
+        "evictions_per_trace": 13.0,
+        "n": 44,
+        "peak_allocated_gib": 4.71481990814209,
+        "peak_payload_mib": 314.71875,
+        "prefix_hits_per_trace": 6.0,
+        "promotions_per_trace": 2.0,
+        "request_by_block_ms": [
+          319.6530758863839
+        ],
+        "request_mean_ms": 319.6530758863839,
+        "request_p95_ms": 539.2201320998765,
+        "token_equal": 44,
+        "ttft_by_block_ms": [
+          228.3521698182085
+        ],
+        "ttft_mean_ms": 228.3521698182085,
+        "ttft_p95_ms": 331.5619190000007,
+        "vision_hits_per_trace": 10.0
+      },
+      "cost-wide": {
+        "anls": 0.8814935064935066,
+        "encoder_calls_per_trace": 28.0,
+        "evictions_per_trace": 13.0,
+        "n": 44,
+        "peak_allocated_gib": 4.713812828063965,
+        "peak_payload_mib": 315.390625,
+        "prefix_hits_per_trace": 9.0,
+        "promotions_per_trace": 3.0,
+        "request_by_block_ms": [
+          320.0339155000103
+        ],
+        "request_mean_ms": 320.0339155000103,
+        "request_p95_ms": 557.8911817498692,
+        "token_equal": 44,
+        "ttft_by_block_ms": [
+          226.3845419091178
+        ],
+        "ttft_mean_ms": 226.3845419091178,
+        "ttft_p95_ms": 308.10174344990173,
+        "vision_hits_per_trace": 7.0
+      },
+      "prefix": {
+        "anls": 0.8814935064935066,
+        "encoder_calls_per_trace": 44.0,
+        "evictions_per_trace": 41.0,
+        "n": 44,
+        "peak_allocated_gib": 4.713080406188965,
+        "peak_payload_mib": 316.75,
+        "prefix_hits_per_trace": 0.0,
+        "promotions_per_trace": 44.0,
+        "request_by_block_ms": [
+          387.5789470454575
+        ],
+        "request_mean_ms": 387.5789470454575,
+        "request_p95_ms": 569.6433739502027,
+        "token_equal": 44,
+        "ttft_by_block_ms": [
+          293.67350836362635
+        ],
+        "ttft_mean_ms": 293.67350836362635,
+        "ttft_p95_ms": 309.71552644978146,
+        "vision_hits_per_trace": 0.0
+      },
+      "vision": {
+        "anls": 0.8814935064935066,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 0.0,
+        "n": 44,
+        "peak_allocated_gib": 4.577704429626465,
+        "peak_payload_mib": 184.1875,
+        "prefix_hits_per_trace": 0.0,
+        "promotions_per_trace": 0.0,
+        "request_by_block_ms": [
+          289.5680293408883
+        ],
+        "request_mean_ms": 289.5680293408883,
+        "request_p95_ms": 545.5810786499342,
+        "token_equal": 44,
+        "ttft_by_block_ms": [
+          196.57534738635977
+        ],
+        "ttft_mean_ms": 196.57534738635977,
+        "ttft_p95_ms": 303.77110110009653,
+        "vision_hits_per_trace": 28.0
+      }
+    },
+    "session": {
+      "cost-default": {
+        "anls": 0.8814935064935066,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 1.0,
+        "n": 44,
+        "peak_allocated_gib": 4.713431358337402,
+        "peak_payload_mib": 313.15625,
+        "prefix_hits_per_trace": 6.0,
+        "promotions_per_trace": 3.0,
+        "request_by_block_ms": [
+          281.2120777727345
+        ],
+        "request_mean_ms": 281.2120777727345,
+        "request_p95_ms": 537.7892796999505,
+        "token_equal": 44,
+        "ttft_by_block_ms": [
+          187.54678159087814
+        ],
+        "ttft_mean_ms": 187.54678159087814,
+        "ttft_p95_ms": 305.51659054990523,
+        "vision_hits_per_trace": 22.0
+      },
+      "cost-local": {
+        "anls": 0.8814935064935066,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 1.0,
+        "n": 44,
+        "peak_allocated_gib": 4.713431358337402,
+        "peak_payload_mib": 313.15625,
+        "prefix_hits_per_trace": 6.0,
+        "promotions_per_trace": 3.0,
+        "request_by_block_ms": [
+          274.73051929543794
+        ],
+        "request_mean_ms": 274.73051929543794,
+        "request_p95_ms": 525.466520600162,
+        "token_equal": 44,
+        "ttft_by_block_ms": [
+          183.13124045451704
+        ],
+        "ttft_mean_ms": 183.13124045451704,
+        "ttft_p95_ms": 292.80544139980975,
+        "vision_hits_per_trace": 22.0
+      },
+      "cost-wide": {
+        "anls": 0.8814935064935066,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 7.0,
+        "n": 44,
+        "peak_allocated_gib": 4.714102745056152,
+        "peak_payload_mib": 314.515625,
+        "prefix_hits_per_trace": 9.0,
+        "promotions_per_trace": 6.0,
+        "request_by_block_ms": [
+          266.8366704772945
+        ],
+        "request_mean_ms": 266.8366704772945,
+        "request_p95_ms": 531.7965487499806,
+        "token_equal": 44,
+        "ttft_by_block_ms": [
+          175.62644277272327
+        ],
+        "ttft_mean_ms": 175.62644277272327,
+        "ttft_p95_ms": 293.40359755015015,
+        "vision_hits_per_trace": 19.0
+      },
+      "prefix": {
+        "anls": 0.8814935064935066,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 13.0,
+        "n": 44,
+        "peak_allocated_gib": 4.713080406188965,
+        "peak_payload_mib": 316.75,
+        "prefix_hits_per_trace": 28.0,
+        "promotions_per_trace": 16.0,
+        "request_by_block_ms": [
+          225.55564297722825
+        ],
+        "request_mean_ms": 225.55564297722825,
+        "request_p95_ms": 504.4023374502787,
+        "token_equal": 44,
+        "ttft_by_block_ms": [
+          134.8554189772296
+        ],
+        "ttft_mean_ms": 134.8554189772296,
+        "ttft_p95_ms": 294.0422406999005,
+        "vision_hits_per_trace": 0.0
+      },
+      "vision": {
+        "anls": 0.8814935064935066,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 0.0,
+        "n": 44,
+        "peak_allocated_gib": 4.577704429626465,
+        "peak_payload_mib": 184.1875,
+        "prefix_hits_per_trace": 0.0,
+        "promotions_per_trace": 0.0,
+        "request_by_block_ms": [
+          289.5184030000192
+        ],
+        "request_mean_ms": 289.5184030000192,
+        "request_p95_ms": 511.5107998998156,
+        "token_equal": 44,
+        "ttft_by_block_ms": [
+          196.8505857500056
+        ],
+        "ttft_mean_ms": 196.8505857500056,
+        "ttft_p95_ms": 295.6671741002765,
+        "vision_hits_per_trace": 28.0
+      }
+    }
+  },
+  "evaluation": {
+    "mixed": {
+      "cost-default": {
+        "anls": 0.87118783993784,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 0.0,
+        "n": 88,
+        "peak_allocated_gib": 4.682881832122803,
+        "peak_payload_mib": 316.625,
+        "prefix_hits_per_trace": 6.0,
+        "promotions_per_trace": 2.0,
+        "request_by_block_ms": [
+          283.5436310000949,
+          282.5854035227787
+        ],
+        "request_mean_ms": 283.0645172614368,
+        "request_p95_ms": 438.8094106498556,
+        "token_equal": 88,
+        "ttft_by_block_ms": [
+          189.9465380909698,
+          189.26102813634316
+        ],
+        "ttft_mean_ms": 189.60378311365648,
+        "ttft_p95_ms": 303.31702690000384,
+        "vision_hits_per_trace": 22.0
+      },
+      "cost-wide": {
+        "anls": 0.87118783993784,
+        "encoder_calls_per_trace": 28.0,
+        "evictions_per_trace": 13.0,
+        "n": 88,
+        "peak_allocated_gib": 4.695065975189209,
+        "peak_payload_mib": 317.453125,
+        "prefix_hits_per_trace": 9.0,
+        "promotions_per_trace": 3.0,
+        "request_by_block_ms": [
+          313.1325568636343,
+          312.55485445459186
+        ],
+        "request_mean_ms": 312.8437056591131,
+        "request_p95_ms": 519.0719000504942,
+        "token_equal": 88,
+        "ttft_by_block_ms": [
+          219.72665425001153,
+          219.1052322272588
+        ],
+        "ttft_mean_ms": 219.41594323863518,
+        "ttft_p95_ms": 304.3284761002269,
+        "vision_hits_per_trace": 7.0
+      },
+      "prefix": {
+        "anls": 0.87118783993784,
+        "encoder_calls_per_trace": 44.0,
+        "evictions_per_trace": 40.0,
+        "n": 88,
+        "peak_allocated_gib": 4.6447882652282715,
+        "peak_payload_mib": 266.0,
+        "prefix_hits_per_trace": 0.0,
+        "promotions_per_trace": 44.0,
+        "request_by_block_ms": [
+          386.62426515917434,
+          386.6422414544931
+        ],
+        "request_mean_ms": 386.6332533068337,
+        "request_p95_ms": 520.1183262498944,
+        "token_equal": 88,
+        "ttft_by_block_ms": [
+          293.0477053409752,
+          293.05255399993837
+        ],
+        "ttft_mean_ms": 293.0501296704568,
+        "ttft_p95_ms": 305.4713191005703,
+        "vision_hits_per_trace": 0.0
+      },
+      "vision": {
+        "anls": 0.87118783993784,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 0.0,
+        "n": 88,
+        "peak_allocated_gib": 4.546536922454834,
+        "peak_payload_mib": 176.78125,
+        "prefix_hits_per_trace": 0.0,
+        "promotions_per_trace": 0.0,
+        "request_by_block_ms": [
+          296.1032735227449,
+          294.1835297726191
+        ],
+        "request_mean_ms": 295.143401647682,
+        "request_p95_ms": 443.05505020020064,
+        "token_equal": 88,
+        "ttft_by_block_ms": [
+          202.6047746591592,
+          200.80978643177744
+        ],
+        "ttft_mean_ms": 201.70728054546834,
+        "ttft_p95_ms": 300.9934023499227,
+        "vision_hits_per_trace": 28.0
+      }
+    },
+    "session": {
+      "cost-default": {
+        "anls": 0.87118783993784,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 0.0,
+        "n": 88,
+        "peak_allocated_gib": 4.682973384857178,
+        "peak_payload_mib": 316.625,
+        "prefix_hits_per_trace": 6.0,
+        "promotions_per_trace": 2.0,
+        "request_by_block_ms": [
+          282.4524177955151,
+          282.0990025227895
+        ],
+        "request_mean_ms": 282.2757101591523,
+        "request_p95_ms": 444.17291785039197,
+        "token_equal": 88,
+        "ttft_by_block_ms": [
+          188.928086727277,
+          188.78046131827762
+        ],
+        "ttft_mean_ms": 188.8542740227773,
+        "ttft_p95_ms": 300.92701899966414,
+        "vision_hits_per_trace": 22.0
+      },
+      "cost-wide": {
+        "anls": 0.87118783993784,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 6.0,
+        "n": 88,
+        "peak_allocated_gib": 4.6938605308532715,
+        "peak_payload_mib": 316.359375,
+        "prefix_hits_per_trace": 9.0,
+        "promotions_per_trace": 6.0,
+        "request_by_block_ms": [
+          276.71299120462123,
+          275.9841693182559
+        ],
+        "request_mean_ms": 276.3485802614386,
+        "request_p95_ms": 444.89944794991055,
+        "token_equal": 88,
+        "ttft_by_block_ms": [
+          183.54183659091012,
+          182.59627579552463
+        ],
+        "ttft_mean_ms": 183.0690561932174,
+        "ttft_p95_ms": 302.87246724997203,
+        "vision_hits_per_trace": 19.0
+      },
+      "prefix": {
+        "anls": 0.87118783993784,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 12.0,
+        "n": 88,
+        "peak_allocated_gib": 4.6428656578063965,
+        "peak_payload_mib": 266.0,
+        "prefix_hits_per_trace": 28.0,
+        "promotions_per_trace": 16.0,
+        "request_by_block_ms": [
+          238.14126270458885,
+          236.235932977293
+        ],
+        "request_mean_ms": 237.18859784094093,
+        "request_p95_ms": 452.78034000025394,
+        "token_equal": 88,
+        "ttft_by_block_ms": [
+          145.476103568254,
+          142.79359529553983
+        ],
+        "ttft_mean_ms": 144.1348494318969,
+        "ttft_p95_ms": 308.9821699502408,
+        "vision_hits_per_trace": 0.0
+      },
+      "vision": {
+        "anls": 0.87118783993784,
+        "encoder_calls_per_trace": 16.0,
+        "evictions_per_trace": 0.0,
+        "n": 88,
+        "peak_allocated_gib": 4.546666622161865,
+        "peak_payload_mib": 176.78125,
+        "prefix_hits_per_trace": 0.0,
+        "promotions_per_trace": 0.0,
+        "request_by_block_ms": [
+          295.2736435454013,
+          295.05799454550055
+        ],
+        "request_mean_ms": 295.1658190454509,
+        "request_p95_ms": 447.4893065000742,
+        "token_equal": 88,
+        "ttft_by_block_ms": [
+          201.80268286356875,
+          201.73226431825242
+        ],
+        "ttft_mean_ms": 201.76747359091058,
+        "ttft_p95_ms": 302.55734320003285,
+        "vision_hits_per_trace": 28.0
+      }
+    }
+  },
+  "hardware": {
+    "fused": {
+      "decode_per_token_ms": 17.89351465104024,
+      "decode_trial_means_ms": {
+        "0": 18.380075916638816,
+        "1": 18.15361312499893,
+        "2": 17.591578208339342,
+        "3": 17.46294829164678,
+        "4": 17.64080916666444,
+        "5": 17.654235291691595,
+        "6": 18.13694395832499,
+        "7": 18.12791325001702
+      },
+      "n": 24,
+      "request_mean_ms": 192.10123966668866,
+      "traced_append_or_index_copy_events_per_step": 28.0,
+      "traced_gpu_kernels_per_step": 1684.0,
+      "traced_graph_submissions": 2,
+      "ttft_mean_ms": 48.8894461250311
+    },
+    "graph": {
+      "decode_per_token_ms": 18.051286010409246,
+      "decode_trial_means_ms": {
+        "0": 18.517310291675432,
+        "1": 18.493001375001466,
+        "2": 17.586797041644786,
+        "3": 17.600053541665755,
+        "4": 17.823635499970198,
+        "5": 17.728017374982603,
+        "6": 18.388196000008367,
+        "7": 18.27327695832537
+      },
+      "n": 24,
+      "request_mean_ms": 197.47612129166706,
+      "traced_append_or_index_copy_events_per_step": 56.0,
+      "traced_gpu_kernels_per_step": 1796.0,
+      "traced_graph_submissions": 2,
+      "ttft_mean_ms": 53.010485291641395
+    },
+    "packed": {
+      "decode_per_token_ms": 18.328846072923472,
+      "decode_trial_means_ms": {
+        "0": 19.219257583320843,
+        "1": 19.16184908335102,
+        "2": 18.413240125028096,
+        "3": 17.52981799995723,
+        "4": 17.628649041663873,
+        "5": 17.772603541705696,
+        "6": 18.064803458325212,
+        "7": 18.840547750035814
+      },
+      "n": 24,
+      "request_mean_ms": 194.972798125112,
+      "traced_append_or_index_copy_events_per_step": 56.0,
+      "traced_gpu_kernels_per_step": 1796.0,
+      "traced_graph_submissions": 2,
+      "ttft_mean_ms": 48.28249975003018
+    }
+  },
+  "hardware_checks": {
+    "fixed_addresses": true,
+    "full_capacity_guard": 1024,
+    "paired_hardware_token_comparisons": 48,
+    "persistent_snapshot_immutable": true,
+    "stale_tail_cleared": true,
+    "strided_append_slots": [
+      0,
+      7,
+      1023
+    ]
+  },
+  "measurement_records": 1144,
+  "rule_choice": "cost-wide"
+}

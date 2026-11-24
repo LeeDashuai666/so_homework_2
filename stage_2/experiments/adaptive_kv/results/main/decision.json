@@ -1,0 +1,96 @@
+{
+  "candidate_token_ids": {
+    "A": [
+      32
+    ],
+    "B": [
+      33
+    ],
+    "C": [
+      34
+    ]
+  },
+  "choice": "A",
+  "choices": {
+    "A": "cost-default",
+    "B": "cost-local",
+    "C": "cost-wide"
+  },
+  "configuration": "cost-default",
+  "decision_s": 12.963648917999762,
+  "development_sha256": "ef7bf8a85e175e2ab6f9ca2c9c57c170e157543a209afac13a5ed20cfd75c60a",
+  "environment": {
+    "decoding": "one greedy token constrained to candidate letters",
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "thinking": false,
+    "threads": 2,
+    "torch": "2.14.0+cu130",
+    "transformers": "5.17.0"
+  },
+  "model_and_decision_s": 14.439581484999962,
+  "model_load_s": 1.4584963209999842,
+  "model_lock": {
+    "name": "Qwen/Qwen3-0.6B",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "sha256": {
+      "config.json": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+      "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+      "model.safetensors": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+      "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+    }
+  },
+  "observation": {
+    "budget_mib": 320,
+    "candidates": [
+      "cost-default",
+      "cost-local",
+      "cost-wide"
+    ],
+    "dev_only": {
+      "cost-default": {
+        "identical_to_visual": true,
+        "mean_scene_p95_ms": 305.59,
+        "mean_scene_ttft_ms": 206.93,
+        "prefix_hits_by_scene": [
+          6.0,
+          6.0
+        ]
+      },
+      "cost-local": {
+        "identical_to_visual": true,
+        "mean_scene_p95_ms": 312.18,
+        "mean_scene_ttft_ms": 205.74,
+        "prefix_hits_by_scene": [
+          6.0,
+          6.0
+        ]
+      },
+      "cost-wide": {
+        "identical_to_visual": true,
+        "mean_scene_p95_ms": 300.75,
+        "mean_scene_ttft_ms": 201.01,
+        "prefix_hits_by_scene": [
+          9.0,
+          9.0
+        ]
+      }
+    },
+    "scenario_order": [
+      "mixed",
+      "session"
+    ],
+    "source_documents": 16
+  },
+  "process_peak_rss_kib": 2447548,
+  "prompt": "<|im_start|>system\nSelect one of the three cost-based cache configurations for Qwen3-VL document question answering. The target is mixed revisits and sequential sessions with equal weight. All candidates use the same 320 MiB persistent payload limit; visual cache preserves cheaper features, and prefix KV skips more work when revisits are close. Use the reported development measurements. Choose the smallest value of mean_scene_ttft_ms when both scenes have identical output tokens to the visual control. Prefer the smaller p95 on ties. Reply with the single letter assigned to the chosen configuration.<|im_end|>\n<|im_start|>user\n{\"budget_mib\": 320, \"candidates\": [\"cost-default\", \"cost-local\", \"cost-wide\"], \"choices\": {\"A\": \"cost-default\", \"B\": \"cost-local\", \"C\": \"cost-wide\"}, \"dev_only\": {\"cost-default\": {\"identical_to_visual\": true, \"mean_scene_p95_ms\": 305.59, \"mean_scene_ttft_ms\": 206.93, \"prefix_hits_by_scene\": [6.0, 6.0]}, \"cost-local\": {\"identical_to_visual\": true, \"mean_scene_p95_ms\": 312.18, \"mean_scene_ttft_ms\": 205.74, \"prefix_hits_by_scene\": [6.0, 6.0]}, \"cost-wide\": {\"identical_to_visual\": true, \"mean_scene_p95_ms\": 300.75, \"mean_scene_ttft_ms\": 201.01, \"prefix_hits_by_scene\": [9.0, 9.0]}}, \"scenario_order\": [\"mixed\", \"session\"], \"source_documents\": 16}<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "prompt_tokens": 379,
+  "protocol_sha256": "346581a2ffe2933bda858d45242ceefa20a211fd706d8818bb4c519059720988",
+  "raw_choice_logits": {
+    "A": 27.625,
+    "B": 25.125,
+    "C": 25.0
+  },
+  "rule_configuration": "cost-wide"
+}

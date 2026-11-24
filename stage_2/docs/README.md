@@ -1,7 +1,6 @@
 # 设计文档
 
-- [设计文档 Markdown](设计文档.md) · [设计文档 Word](设计文档.docx)
-- [AI 使用说明](AI使用说明.md)
-- [交付要求对照](课程要求自查.md) · [文档验收记录](设计文档.检查.json)
+- [Word](设计文档.docx) · [Markdown](设计文档.md) · [文档校验记录](设计文档.检查.json)
+- [AI 使用说明](AI使用说明.md) · [课程要求对照](课程要求自查.md)
 
-Markdown 和 Word 对应同一次验收。第 4.6 节记录前缀 KV 与 CUDA Graph 的形式化验证，第 4.7 节记录 vLLM 独立评估，第 4.8 节记录本地 AI 选参。原图可在 [assets/design](assets/design/) 查看。
+第 2.3 节将 AI 离线选参纳入缓存优化，第 3.3 节说明参数如何进入运行时，第 4.3 节给出独立评估结果。第 2.4、3.4 节说明连续 KV 工作区与 Triton 融合写回。第 4.7 节记录状态验证，第 4.8 节保留早一轮 vLLM 独立对照。实测图表见 [本轮图件](assets/adaptive/) 和 [框架对照图](assets/design/frameworks.png)。

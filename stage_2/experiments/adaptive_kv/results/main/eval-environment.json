@@ -1,0 +1,14 @@
+{
+  "gpu_smi_after_model_load": "NVIDIA GeForce RTX 4060 Laptop GPU, 592.00, 8188, 5649, 60",
+  "graph_build_s": {
+    "fused": 0.557845246999932,
+    "graph": 3.5883811879998575,
+    "packed": 0.48752153500026907
+  },
+  "kernel": "6.6.87.2-microsoft-standard-WSL2",
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "torch": "2.14.0+cu130",
+  "torch_cuda": "13.0",
+  "transformers": "5.17.0",
+  "triton": "3.8.0"
+}

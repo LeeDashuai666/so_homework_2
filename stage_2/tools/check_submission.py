@@ -27,8 +27,8 @@ def main():
         ("first-round-integrity", [sys.executable, str(ROOT / "scripts/verify_results.py")]),
         ("development-analysis", [sys.executable, str(ROOT / "experiments/cross_layer_v2/analyze_pilot.py")]),
         ("framework-analysis", [sys.executable, str(ROOT / "tools/analyze_framework_compare.py")]),
-        ("ai-cache-replay", [sys.executable, str(ROOT / "experiments/ai_cache_tuning/replay.py"),
-                             "--report", "--output", str(ROOT / "experiments/ai_cache_tuning/results/replay")]),
+        ("adaptive-cache-analysis", [sys.executable, str(ROOT / "experiments/adaptive_kv/analyze.py"),
+                                     str(ROOT / "experiments/adaptive_kv/results/main")]),
         ("cross-layer-formal", [sys.executable, str(ROOT / "experiments/cross_layer_v2/formal/verify.py"), "--replay"]),
         ("cpu-tests", [sys.executable, "-m", "pytest", "-q", str(ROOT / "tests")]),
     ]
@@ -53,7 +53,16 @@ def main():
     checks["first-round-smt-replay"] = {
         "passed": all(item["passed"] for item in replay.values()),
         "z3_solver_package": importlib.metadata.version("z3-solver"), "results": replay,
-        "scope": "First-round bounded feature-lease model; current prototype proof is checked separately",
+        "scope": "First-round bounded feature-lease model",
+    }
+    adaptive = ROOT / "experiments/adaptive_kv/results/main"
+    protocol = read(adaptive / "protocol.json")
+    adaptive_analysis = read(adaptive / "summary.json")
+    checks["adaptive-source-integrity"] = {
+        "passed": all((ROOT / name).is_file() and sha(ROOT / name) == expected
+                      for name, expected in protocol["files_sha256"].items()),
+        "protocol_sha256": sha(adaptive / "protocol.json"),
+        "measurement_records": adaptive_analysis["measurement_records"],
     }
     document = read(ROOT / "docs/设计文档.检查.json")
     hashes = {f"docs/设计文档.{ext}": sha(ROOT / f"docs/设计文档.{ext}")
@@ -62,6 +71,7 @@ def main():
         "passed": (hashes["docs/设计文档.md"] == document["source_sha256"]
                    and hashes["docs/设计文档.docx"] == document["docx_sha256"]
                    and sha(ROOT / "experiments/framework_compare/results/analysis/analysis.json") == document["framework_analysis_sha256"]
+                   and sha(adaptive / "summary.json") == document["adaptive_analysis_sha256"]
                    and document["pdf_text_matches_docx"]
                    and document["numerical_tables_match_audited_data"]),
         "sha256": hashes, "pages": document["pdf_pages"],
@@ -90,9 +100,19 @@ def main():
         "experiments/framework_compare/data/evaluation.jsonl",
         "experiments/framework_compare/框架对比实验报告.md",
         "experiments/framework_compare/results/analysis/means.csv",
-        "experiments/ai_cache_tuning/run.sh", "experiments/ai_cache_tuning/README.md",
-        "experiments/ai_cache_tuning/results/replay/decision.json",
-        "experiments/ai_cache_tuning/results/replay/summary.json",
+        "experiments/adaptive_kv/README.md", "experiments/adaptive_kv/run.sh",
+        "experiments/adaptive_kv/results/main/calibration.json",
+        "experiments/adaptive_kv/results/main/observation.json",
+        "experiments/adaptive_kv/results/main/decision.json",
+        "experiments/adaptive_kv/results/main/dev-environment.json",
+        "experiments/adaptive_kv/results/main/eval-environment.json",
+        "experiments/adaptive_kv/results/main/dev-requests.jsonl",
+        "experiments/adaptive_kv/results/main/eval-requests.jsonl",
+        "experiments/adaptive_kv/results/main/hardware.json",
+        "experiments/adaptive_kv/results/main/summary.json",
+        "experiments/adaptive_kv/results/main/trace-graph.json.gz",
+        "experiments/adaptive_kv/results/main/trace-packed.json.gz",
+        "experiments/adaptive_kv/results/main/trace-fused.json.gz",
     ]
     checks["required-files"] = {"passed": all((ROOT / name).is_file() for name in required),
                                 "files": {name: (ROOT / name).is_file() for name in required}}
@@ -109,9 +129,12 @@ def main():
         "checked_at": datetime.now(ZoneInfo("Asia/Hong_Kong")).isoformat(),
         "audit_script_sha256": sha(Path(__file__).resolve()),
         "passed": all(item["passed"] for item in checks.values()), "checks": checks,
-        "current_measurement": {name: analysis[name] for name in ["trials", "scene_blocks", "requests", "pages", "questions", "formal_quality_passed"]},
+        "current_measurement": {key: adaptive_analysis[key] for key in
+                                ["measurement_records", "ai_choice", "rule_choice", "hardware_checks"]},
+        "framework_comparison": {name: analysis[name] for name in
+                                 ["trials", "scene_blocks", "requests", "pages", "questions", "formal_quality_passed"]},
         "bonus": {"automated_execution": True, "ai_assistance_documented": True,
-                  "formal_verification": "current prefix/KV/CUDA Graph state contracts, plus first-round lease model"},
+                  "formal_verification": "earlier prefix/KV/CUDA Graph state contracts and first-round lease model"},
         "current_formal_verification": {key: formal[key] for key in ["passed", "safe_unsat", "negative_sat", "nonvacuity_sat_checks", "scope"]},
         "ai_development_tools_at_audit": client,
         "not_executed_in_this_audit": ["fresh GPU matrix", "fresh-machine environment installation", "Word/PDF regeneration"],
